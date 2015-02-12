@@ -471,3 +471,119 @@
 [Mon 02 02 13:33:01 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
 [Mon 02 02 13:33:01 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
 [Mon 02 02 13:33:02 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Thu 02 05 01:50:59 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Thu 02 05 21:53:31 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Thu 02 05 21:53:46 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Thu 02 05 22:05:43 2015]	exception:Critical	Kurogo->addPackage@252	/courses/	A KurogoConfigurationException has occured: Unable to load package Courses
+[Thu 02 05 22:09:47 2015]	maps:Warning	MapWebModule->getCurrentFeed@246	/map/	Warning: unable to find feed data for feed 
+[Thu 02 05 22:09:47 2015]	maps:Warning	MapWebModule->getCurrentFeed@246	/map/	Warning: unable to find feed data for feed 
+[Thu 02 05 22:09:54 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/emergency/	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-contacts.ini
+[Thu 02 05 22:09:54 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/emergency/	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-contacts.ini
+[Thu 02 05 22:09:54 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/emergency/	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Thu 02 05 22:09:59 2015]	data:Warning	HTMLPager->__construct@80	/news/story?storyID=http%3A%2F%2Fwebadmin.news.harvard.edu%2Fgazette%2F%3Fp%3D165761&section=harvard&_b=%5B%7B%22t%22%3A%22News%22%2C%22lt%22%3A%22News%22%2C%22p%22%3A%22index%22%2C%22a%22%3A%22%22%7D%5D&ajax=1	HTMLPager got loadHTML warning (line 1; column 137) htmlParseEntityRef: expecting ';'
+
+[Thu 02 05 22:09:59 2015]	data:Warning	HTMLPager->__construct@80	/news/story?storyID=http%3A%2F%2Fwebadmin.news.harvard.edu%2Fgazette%2F%3Fp%3D165761&section=harvard&_b=%5B%7B%22t%22%3A%22News%22%2C%22lt%22%3A%22News%22%2C%22p%22%3A%22index%22%2C%22a%22%3A%22%22%7D%5D&ajax=1	HTMLPager got loadHTML warning (line 1; column 172) htmlParseEntityRef: expecting ';'
+
+[Thu 02 05 22:12:20 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Thu 02 05 22:12:42 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Thu 02 05 22:12:58 2015]	exception:Critical	Kurogo->addPackage@252	/courses/	A KurogoConfigurationException has occured: Unable to load package Courses
+[Thu 02 05 22:34:31 2015]	exception:Critical	DataRetriever::factory@300	/courses/	A KurogoConfigurationException has occured: Retriever class MoodleDataRetriever.php not defined
+[Thu 02 05 22:49:06 2015]	exception:Critical	DataRetriever::factory@300	/courses/index	A KurogoConfigurationException has occured: Retriever class MoodleDataRetriever.php not defined
+[Thu 02 05 23:31:18 2015]	exception:Critical	Kurogo->addPackage@252	/courses/index	A KurogoConfigurationException has occured: Unable to load package lib
+[Thu 02 05 23:37:07 2015]	maps:Warning	MapWebModule->getCurrentFeed@246	/map/	Warning: unable to find feed data for feed 
+[Thu 02 05 23:37:07 2015]	maps:Warning	MapWebModule->getCurrentFeed@246	/map/	Warning: unable to find feed data for feed 
+[Fri 02 06 10:12:54 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Fri 02 06 10:13:18 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Fri 02 06 10:13:28 2015]	db:Warning	db->errorHandler@160	/home/searchResult?id=people&filter=Curses&ajax=1	sqlite error with SELECT * FROM users WHERE (firstname LIKE ? OR lastname LIKE ? OR email LIKE ?) ORDER BY lastname,firstname: no such table: users
+[Fri 02 06 10:13:28 2015]	module:Warning	HomeWebModule->runFederatedSearchForModule@145	/home/searchResult?id=people&filter=Curses&ajax=1	Federated search for module people failed: Error with SELECT * FROM users WHERE (firstname LIKE ? OR lastname LIKE ? OR email LIKE ?) ORDER BY lastname,firstname: no such table: users
+[Fri 02 06 10:13:28 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/searchResult?id=map&filter=Curses&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/maps/MobileCampus.kml
+[Fri 02 06 10:13:29 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/searchResult?id=map&filter=Curses&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/maps/MobileCampus.kml
+[Fri 02 06 10:13:38 2015]	exception:Critical	Kurogo->addPackage@252	/courses/	A KurogoConfigurationException has occured: Unable to load package lib
+[Fri 02 06 10:27:29 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/emergency/	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-contacts.ini
+[Fri 02 06 10:27:29 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/emergency/	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-contacts.ini
+[Fri 02 06 10:27:29 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/emergency/	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Fri 02 06 10:46:55 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Fri 02 06 10:47:15 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/emergency/	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-contacts.ini
+[Fri 02 06 10:47:15 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/emergency/	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-contacts.ini
+[Fri 02 06 10:47:15 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/emergency/	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Fri 02 06 10:47:19 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/emergency/contacts?_b=%5B%7B%22t%22%3A%22Emergency+Info%22%2C%22lt%22%3A%22Emergency+Info%22%2C%22p%22%3A%22index%22%2C%22a%22%3A%22%22%7D%5D	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-contacts.ini
+[Fri 02 06 10:48:33 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Fri 02 06 10:48:51 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Fri 02 06 11:11:42 2015]	exception:Critical	Kurogo->addPackage@252	/courses/	A KurogoConfigurationException has occured: Unable to load package lib
+[Fri 02 06 11:12:34 2015]	exception:Critical	Kurogo->addPackage@252	/courses/index	A KurogoConfigurationException has occured: Unable to load package lib
+[Fri 02 06 11:12:37 2015]	exception:Critical	Kurogo->addPackage@252	/courses/index	A KurogoConfigurationException has occured: Unable to load package lib
+[Fri 02 06 11:12:38 2015]	exception:Critical	Kurogo->addPackage@252	/courses/index	A KurogoConfigurationException has occured: Unable to load package lib
+[Fri 02 06 11:12:39 2015]	exception:Critical	Kurogo->addPackage@252	/courses/index	A KurogoConfigurationException has occured: Unable to load package lib
+[Fri 02 06 14:33:18 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Fri 02 06 14:33:40 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Fri 02 06 18:09:24 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Fri 02 06 18:12:58 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Fri 02 06 18:13:01 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:13:01 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:13:02 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:13:02 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:13:03 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:13:03 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:13:05 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:13:05 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:13:05 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:13:05 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:13:06 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:13:06 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:13:06 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:13:07 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:13:07 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:13:07 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:18:31 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Fri 02 06 18:18:48 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Fri 02 06 18:18:48 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:18:49 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:18:49 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:18:49 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:18:50 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:18:51 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:18:52 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:18:52 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:18:53 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:18:53 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:18:54 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:18:54 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:18:54 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:18:54 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:18:55 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:18:55 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:20:29 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Fri 02 06 18:20:50 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Fri 02 06 18:20:50 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:20:51 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:20:51 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:20:52 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:20:52 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:20:53 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:20:55 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:20:56 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:20:56 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:20:57 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:20:57 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:20:58 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:20:58 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:20:59 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:20:59 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 18:21:00 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 06 23:01:51 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Fri 02 06 23:02:20 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Fri 02 06 23:25:59 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Sat 02 07 20:41:02 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Sat 02 07 20:41:02 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Sat 02 07 20:41:46 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Sat 02 07 20:42:17 2015]	exception:Critical	WebModule->loadPageConfig@1517	/courses/	A KurogoPageNotFoundException has occured: Page index not found
+[Sat 02 07 20:42:32 2015]	exception:Critical	WebModule->loadPageConfig@1517	/courses/	A KurogoPageNotFoundException has occured: Page index not found
+[Sat 02 07 20:51:47 2015]	exception:Critical	WebModule->loadPageConfig@1517	/courses/index	A KurogoPageNotFoundException has occured: Page index not found
+[Sat 02 07 20:51:52 2015]	exception:Critical	WebModule->loadPageConfig@1517	/courses/index	A KurogoPageNotFoundException has occured: Page index not found
+[Sat 02 07 20:52:23 2015]	exception:Critical	WebModule->loadPageConfig@1517	/courses/index	A KurogoPageNotFoundException has occured: Page index not found
+[Mon 02 09 00:03:10 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Mon 02 09 00:03:28 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Mon 02 09 00:03:53 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Mon 02 09 00:03:56 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Wed 02 11 14:36:47 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/courses/details?wstoken=47aae912ad404c743d7b66ad0c6c0742&wsfunction=core_course_get_contents&courseid=1839&_b=%5B%7B%22t%22%3A%22Courses%22%2C%22lt%22%3A%22Courses%22%2C%22p%22%3A%22index%22%2C%22a%22%3A%22%22%7D%2C%7B%22t%22%3A%22Courses%22%2C%22lt%22%3A%22Courses%22%2C%22p%22%3A%22index%22%2C%22a%22%3A%22wstoken%3D47aae912ad404c743d7b66ad0c6c0742%26wsfunction%3Dcore_course_get_contents%26courseid%3D76%22%7D%2C%7B%22t%22%3A%22Courses%22%2C%22lt%22%3A%22Courses%22%2C%22p%22%3A%22index%22%2C%22a%22%3A%22wstoken%3D47aae912ad404c743d7b66ad0c6c0742%26wsfunction%3Dcore_course_get_contents%26courseid%3D386%22%7D%2C%7B%22t%22%3A%22Courses%22%2C%22lt%22%3A%22Courses%22%2C%22p%22%3A%22index%22%2C%22a%22%3A%22wstoken%3D47aae912ad404c743d7b66ad0c6c0742%26wsfunction%3Dcore_course_get_contents%26courseid%3D2392%22%7D%2C%7B%22t%22%3A%22Courses%22%2C%22lt%22%3A%22Courses%22%2C%22p%22%3A%22index%22%2C%22a%22%3A%22wstoken%3D47aae912ad404c743d7b66ad0c6c0742%26wsfunction%3Dcore_course_get_contents%26courseid%3D386%22%7D%5D	Error Retrieving Data for http://ourvle.mona.uwi.edu/webservice/rest/server.php?courseid=1839&wstoken=47aae912ad404c743d7b66ad0c6c0742&wsfunction=core_course_get_contents
+[Wed 02 11 14:38:13 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/courses/details?wstoken=47aae912ad404c743d7b66ad0c6c0742&wsfunction=core_course_get_contents&courseid=1839&_b=%5B%7B%22t%22%3A%22Courses%22%2C%22lt%22%3A%22Courses%22%2C%22p%22%3A%22index%22%2C%22a%22%3A%22%22%7D%2C%7B%22t%22%3A%22Courses%22%2C%22lt%22%3A%22Courses%22%2C%22p%22%3A%22index%22%2C%22a%22%3A%22wstoken%3D47aae912ad404c743d7b66ad0c6c0742%26wsfunction%3Dcore_course_get_contents%26courseid%3D76%22%7D%2C%7B%22t%22%3A%22Courses%22%2C%22lt%22%3A%22Courses%22%2C%22p%22%3A%22index%22%2C%22a%22%3A%22wstoken%3D47aae912ad404c743d7b66ad0c6c0742%26wsfunction%3Dcore_course_get_contents%26courseid%3D386%22%7D%2C%7B%22t%22%3A%22Courses%22%2C%22lt%22%3A%22Courses%22%2C%22p%22%3A%22index%22%2C%22a%22%3A%22wstoken%3D47aae912ad404c743d7b66ad0c6c0742%26wsfunction%3Dcore_course_get_contents%26courseid%3D2392%22%7D%2C%7B%22t%22%3A%22Courses%22%2C%22lt%22%3A%22Courses%22%2C%22p%22%3A%22index%22%2C%22a%22%3A%22wstoken%3D47aae912ad404c743d7b66ad0c6c0742%26wsfunction%3Dcore_course_get_contents%26courseid%3D386%22%7D%2C%7B%22t%22%3A%22Courses%22%2C%22lt%22%3A%22Courses%22%2C%22p%22%3A%22index%22%2C%22a%22%3A%22wstoken%3D47aae912ad404c743d7b66ad0c6c0742%26wsfunction%3Dcore_course_get_contents%26courseid%3D1839%22%7D%5D	Error Retrieving Data for http://ourvle.mona.uwi.edu/webservice/rest/server.php?courseid=1839&wstoken=47aae912ad404c743d7b66ad0c6c0742&wsfunction=core_course_get_contents

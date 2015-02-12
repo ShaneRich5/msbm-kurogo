@@ -1,0 +1,8 @@
+<strong>Retriever class MoodleDataRetriever.php not defined</strong><br><br><strong>Fatal error</strong>:  Uncaught exception 'KurogoConfigurationException' with message 'Retriever class MoodleDataRetriever.php not defined' in C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\DataRetriever.php:300
+Stack trace:
+#0 C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\courses\CoursesWebModule.php(15): factory(string, array)
+#1 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\WebModule.php(1784): initializeForPage()
+#2 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\WebModule.php(1990): setPageVariables()
+#3 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\www\index.php(323): displayPage()
+#4 {main}
+  thrown in <strong>C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\DataRetriever.php</strong> on line <strong>300</strong>

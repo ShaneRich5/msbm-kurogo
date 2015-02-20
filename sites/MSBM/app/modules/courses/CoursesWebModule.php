@@ -88,22 +88,25 @@ class CoursesWebModule extends WebModule
                 $id = $this->getArg('courseid');
                 $token = $this->getArg('wstoken');
                 $func = $this->getArg('wsfunction');
-
+                $this->assign('wstoken', $token);
+                $this->assign('id', $id);
+                $this->assign('func', $func);
                 if ($courseContent = $this->controller->getContent($id, $token, $func)) {
                     $contentList = array();
 
-                    foreach ($courseContent as $section)
-                    {
+                    foreach ($courseContent as $section) {
                         $detail = array(
-                            'id' => $section['id'],
-                            'name' => $section['name']
+                            'subtitle' => $section['id'],
+                            'title' => $section['name']
                         );
                         $contentList[] = $detail;
                     }
                     $this->assign('contentList', $contentList);
-                } else {
-                    $this->redirectTo('index');
                 }
+
+//                else {
+//                    $this->redirectTo('index');
+//                }
                 break;
             default:
                 parent::initializeForPage();

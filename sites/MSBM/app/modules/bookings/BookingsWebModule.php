@@ -18,6 +18,9 @@ class BookingsWebModule extends WebModule
                 $this->assign('message', 'Hello World');
                 $this->assign('url', $this->buildBreadcrumbURL('book', array()));
                 break;
+            case 'book':
+
+                break;
 
             default:
                 parent::initializeForPage();

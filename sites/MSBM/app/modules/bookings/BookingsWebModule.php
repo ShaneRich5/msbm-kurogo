@@ -28,6 +28,14 @@ class BookingsWebModule extends WebModule
         switch($this->page)
         {
             case 'index':
+                $sqlDate = "SELECT * FROM booking booking_time";
+                $resultDate = $db->query($sqlDate, array(''));
+                while ($row = $resultDate->fetch())
+                {
+
+                }
+                break;
+            case 'requestBooking':
 
                 $nav = array(
                     'subtitle' => 'Subtitle',
@@ -39,7 +47,7 @@ class BookingsWebModule extends WebModule
 
 //                $sqlLocations = "SELECT * FROM booking_location";
 //                $result = $db->query($sqlLocations, array('location', 'field1', 'field2'));
-//                while ($row = $result->fetch)
+//                while ($row = $result->fetch())
 //                {
 //                    // add the location data here
 //                }

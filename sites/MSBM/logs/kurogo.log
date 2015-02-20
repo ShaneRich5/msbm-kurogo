@@ -616,3 +616,5 @@
 [Thu 02 19 10:28:23 2015]	home:Warning	FacebookDataParser->parseData@184	/home/pane?id=social&ajax=1	Unhandled facebook type event
 [Thu 02 19 19:28:32 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
 [Thu 02 19 19:30:56 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Thu 02 19 19:36:36 2015]	exception:Critical	ConfigFileStore->loadConfig@42	/bookings/	A KurogoConfigurationException has occured: ConfigFile: cannot load bookings configuration file pages
+[Thu 02 19 19:36:43 2015]	exception:Critical	ConfigFileStore->loadConfig@42	/bookings/index	A KurogoConfigurationException has occured: ConfigFile: cannot load bookings configuration file pages

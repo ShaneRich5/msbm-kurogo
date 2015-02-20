@@ -1,7 +1,5 @@
 <?php
 
-//includePackage('lib');
-
 /**
  * Class CoursesWebModule
  * @package Module
@@ -59,18 +57,29 @@ class CoursesWebModule extends WebModule
                 $coursesList = array();
 
 
+//                foreach ($userCourses as $courseData)
+//                {
+//                    $course = array(
+//                        'id' => $courseData['id'],
+//                        'shortname' => $courseData['shortname'],
+//                        'fullname' => $courseData['fullname'],
+//                        'usercount' => $courseData['enrolledusercount'],
+//                        'idnumber' => $courseData['idnumber'],
+//                        'url' =>  '/courses/details?wstoken=47aae912ad404c743d7b66ad0c6c0742&wsfunction=core_course_get_contents&courseid=' . $courseData['id']
+//                    );
+//                    $coursesList[] = $course;
+//                }
+
                 foreach ($userCourses as $courseData)
                 {
                     $course = array(
-                        'id' => $courseData['id'],
-                        'shortname' => $courseData['shortname'],
-                        'fullname' => $courseData['fullname'],
-                        'usercount' => $courseData['enrolledusercount'],
-                        'idnumber' => $courseData['idnumber'],
-                        'url' =>  '/courses/details?wstoken=47aae912ad404c743d7b66ad0c6c0742&wsfunction=core_course_get_contents&courseid=' . $courseData['id']
+                        'subtitle' => $courseData['shortname'],
+                        'title' => $courseData['fullname'],
+                        'url' => $this->buildBreadcrumbURL('details', array('wstoken' => '47aae912ad404c743d7b66ad0c6c0742','wsfunction' => 'core_course_get_contents', 'courseid' => $courseData['id']))
                     );
                     $coursesList[] = $course;
                 }
+
                 $this->assign('coursesList', $coursesList);
                 break;
 

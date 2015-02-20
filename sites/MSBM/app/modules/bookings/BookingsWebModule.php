@@ -1,14 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Shane
- * Date: 2/19/2015
- * Time: 9:03 AM
- */
 
+
+/**
+ * Class BookingsWebModule
+ * @package Modules
+ * @subpackage Bookings
+ */
 class BookingsWebModule extends WebModule
 {
-    protected $id = 'booking';
+    protected $id = 'bookings';
 
     protected function initializeForPage()
     {
@@ -18,9 +18,7 @@ class BookingsWebModule extends WebModule
                 $this->assign('message', 'Hello World');
                 $this->assign('url', $this->buildBreadcrumbURL('book', array()));
                 break;
-            case 'book':
 
-                break;
             default:
                 parent::initializeForPage();
         }

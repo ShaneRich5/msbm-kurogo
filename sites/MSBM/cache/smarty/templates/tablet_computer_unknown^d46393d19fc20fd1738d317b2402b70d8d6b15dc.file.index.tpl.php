@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.7, created on 2015-02-10 16:02:37
+<?php /* Smarty version Smarty-3.0.7, created on 2015-02-12 20:15:28
          compiled from "C:\\MAMP\\htdocs\\msbm\\sites\\MSBM\\app\\modules\\courses\\templates\\index.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1806154da71ed46e302-46371310%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1872454dd50308bf150-99956052%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'd46393d19fc20fd1738d317b2402b70d8d6b15dc' => 
     array (
       0 => 'C:\\\\MAMP\\\\htdocs\\\\msbm\\\\sites\\\\MSBM\\\\app\\\\modules\\\\courses\\\\templates\\\\index.tpl',
-      1 => 1423602155,
+      1 => 1423790126,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1806154da71ed46e302-46371310',
+  'nocache_hash' => '1872454dd50308bf150-99956052',
   'function' => 
   array (
   ),
@@ -31,7 +31,8 @@ if ($_smarty_tpl->_count($_from) > 0){
  $_smarty_tpl->tpl_vars['key']->value = $_smarty_tpl->tpl_vars['course']->key;
 ?>
     <?php if ($_smarty_tpl->tpl_vars['course']->value){?>
-        <p class="focal"><?php echo $_smarty_tpl->tpl_vars['course']->value['id'];?>
+        <p class="focal"><?php echo $_smarty_tpl->tpl_vars['course']->value['url'];?>
+ <?php echo $_smarty_tpl->tpl_vars['course']->value['id'];?>
  <?php echo $_smarty_tpl->tpl_vars['course']->value['shortname'];?>
  <?php echo $_smarty_tpl->tpl_vars['course']->value['fullname'];?>
  <?php echo $_smarty_tpl->tpl_vars['course']->value['usercount'];?>

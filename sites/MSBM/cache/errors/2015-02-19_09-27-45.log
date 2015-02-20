@@ -1,0 +1,11 @@
+<strong>ConfigFile: cannot load bookings configuration file module</strong><br><br><strong>Fatal error</strong>:  Uncaught exception 'KurogoConfigurationException' with message 'ConfigFile: cannot load bookings configuration file module' in C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\Config\ConfigFileStore.php:42
+Stack trace:
+#0 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\Kurogo.php(418): loadConfig(string, string, integer)
+#1 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\Kurogo.php(429): getConfig(string, string, integer)
+#2 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\WebModule.php(984): getModuleConfig(string, string)
+#3 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\WebModule.php(831): getAllModuleNavigationData(boolean)
+#4 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\WebModule.php(1745): getModuleNavlist()
+#5 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\WebModule.php(1990): setPageVariables()
+#6 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\www\index.php(323): displayPage()
+#7 {main}
+  thrown in <strong>C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\Config\ConfigFileStore.php</strong> on line <strong>42</strong>

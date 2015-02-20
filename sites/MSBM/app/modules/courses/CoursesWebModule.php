@@ -11,7 +11,6 @@ class CoursesWebModule extends WebModule
 {
     protected $id = 'courses';
 
-
     protected function initializeForPage()
     {
         $this->controller = DataRetriever::factory('MoodleDataRetriever', array());
@@ -68,12 +67,14 @@ class CoursesWebModule extends WebModule
                         'fullname' => $courseData['fullname'],
                         'usercount' => $courseData['enrolledusercount'],
                         'idnumber' => $courseData['idnumber'],
-                        'url' => $this->buildBreadcrumbURL('details', array('wstoken' => '47aae912ad404c743d7b66ad0c6c0742','wsfunction' => 'core_course_get_contents', 'courseid' => $courseData['id']))
+                        'url' =>  '/courses/details?wstoken=47aae912ad404c743d7b66ad0c6c0742&wsfunction=core_course_get_contents&courseid=' . $courseData['id']
                     );
                     $coursesList[] = $course;
                 }
                 $this->assign('coursesList', $coursesList);
                 break;
+
+            # 'url' => $this->buildBreadcrumbURL('details', array('wstoken' => '47aae912ad404c743d7b66ad0c6c0742','wsfunction' => 'core_course_get_contents', 'courseid' => $courseData['id']), false)
             case 'details':
                 $id = $this->getArg('courseid');
                 $token = $this->getArg('wstoken');
@@ -95,6 +96,8 @@ class CoursesWebModule extends WebModule
                     $this->redirectTo('index');
                 }
                 break;
+            default:
+                parent::initializeForPage();
 
         }
 

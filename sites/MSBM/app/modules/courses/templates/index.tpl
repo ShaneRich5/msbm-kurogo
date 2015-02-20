@@ -7,7 +7,7 @@
 {*<h2 class="focal">{$course[0]['id']}</h2>*}
 {foreach $coursesList as $key => $course}
     {if $course}
-        <p class="focal">{$course['id']} {$course['shortname']} {$course['fullname']} {$course['usercount']} {$course['idnumber']} <a href="{$course['url']}">link</a></p>
+        <p class="focal">{$course['url']} {$course['id']} {$course['shortname']} {$course['fullname']} {$course['usercount']} {$course['idnumber']} <a href="{$course['url']}">link</a></p>
     {/if}
 {/foreach}
 {include file="findInclude:common/templates/footer.tpl"}

@@ -7,7 +7,7 @@
 
 
 <div class="focal">
-    <form action="/book">
+    <form action="/all">
         <p>
             <label for="time_from">From: </label>
             <input id="time_from" type="time" name="from">

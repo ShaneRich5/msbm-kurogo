@@ -638,3 +638,62 @@
 [Fri 02 20 08:48:22 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=video&ajax=1	Error Retrieving Data for https://gdata.youtube.com/feeds/mobile/videos?alt=jsonc&format=6&v=2&orderby=published&author=MSBMUWIMona&max-results=5&start-index=1
 [Fri 02 20 08:48:22 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Error Retrieving Data for https://graph.facebook.com/oauth/access_token?client_id=1043639048995405&client_secret=e925a9726989f40abde29c0365a1cf5a&grant_type=client_credentials
 [Fri 02 20 08:48:22 2015]	home:Warning	FacebookDataRetriever->getPosts@52	/home/pane?id=social&ajax=1	Unable to retrieve facebook access token
+[Fri 02 20 15:23:56 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Fri 02 20 15:24:00 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 15:24:00 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 15:24:01 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 15:24:02 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 15:24:03 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 15:24:09 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 15:24:11 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 15:24:11 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 15:24:13 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 15:24:14 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 15:24:15 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 15:24:16 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 15:24:17 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 15:24:21 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 15:24:21 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 15:24:22 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 15:24:23 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 15:25:25 2015]	db:Warning	db->errorHandler@160	/bookings/	mysql error with SELECT * FROM booking booking_time: Table 'kurogo.booking' doesn't exist
+[Fri 02 20 15:25:25 2015]	exception:Critical	db->errorHandler@146	/bookings/	A KurogoDataException has occured: Error with SELECT * FROM booking booking_time: Table 'kurogo.booking' doesn't exist
+[Fri 02 20 15:25:38 2015]	db:Warning	db->errorHandler@160	/bookings/	mysql error with SELECT * FROM booking booking_time: Table 'kurogo.booking' doesn't exist
+[Fri 02 20 15:25:38 2015]	exception:Critical	db->errorHandler@146	/bookings/	A KurogoDataException has occured: Error with SELECT * FROM booking booking_time: Table 'kurogo.booking' doesn't exist
+[Fri 02 20 15:26:49 2015]	exception:Critical	Module::factory@130	/book/	A KurogoModuleNotFound has occured: Module book not found
+[Fri 02 20 15:48:17 2015]	db:Warning	db->errorHandler@160	/bookings/	mysql error with SELECT * FROM booking booking_time: Table 'kurogo.booking' doesn't exist
+[Fri 02 20 15:48:17 2015]	exception:Critical	db->errorHandler@146	/bookings/	A KurogoDataException has occured: Error with SELECT * FROM booking booking_time: Table 'kurogo.booking' doesn't exist
+[Fri 02 20 15:48:20 2015]	db:Warning	db->errorHandler@160	/bookings/index	mysql error with SELECT * FROM booking booking_time: Table 'kurogo.booking' doesn't exist
+[Fri 02 20 15:48:20 2015]	exception:Critical	db->errorHandler@146	/bookings/index	A KurogoDataException has occured: Error with SELECT * FROM booking booking_time: Table 'kurogo.booking' doesn't exist
+[Fri 02 20 15:48:25 2015]	db:Warning	db->errorHandler@160	/bookings/	mysql error with SELECT * FROM booking booking_time: Table 'kurogo.booking' doesn't exist
+[Fri 02 20 15:48:25 2015]	exception:Critical	db->errorHandler@146	/bookings/	A KurogoDataException has occured: Error with SELECT * FROM booking booking_time: Table 'kurogo.booking' doesn't exist
+[Fri 02 20 18:24:12 2015]	exception:Critical	Module::factory@130	/book/	A KurogoModuleNotFound has occured: Module book not found
+[Fri 02 20 18:24:34 2015]	exception:Critical	Module::factory@130	/book/index	A KurogoModuleNotFound has occured: Module book not found
+[Fri 02 20 18:24:40 2015]	exception:Critical	Module::factory@130	/book/	A KurogoModuleNotFound has occured: Module book not found
+[Fri 02 20 18:25:12 2015]	exception:Critical	Module::factory@130	/book/	A KurogoModuleNotFound has occured: Module book not found
+[Fri 02 20 18:28:00 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Fri 02 20 18:28:04 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 18:28:05 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 18:28:05 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 18:28:06 2015]	exception:Critical	Module::factory@130	/all/	A KurogoModuleNotFound has occured: Module all not found
+[Fri 02 20 18:28:06 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 18:28:10 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 18:28:19 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 18:28:21 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 18:28:22 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 18:28:23 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Fri 02 20 18:29:06 2015]	exception:Critical	Module::factory@130	/all/index	A KurogoModuleNotFound has occured: Module all not found
+[Fri 02 20 18:29:40 2015]	exception:Critical	Module::factory@130	/all/index	A KurogoModuleNotFound has occured: Module all not found
+[Fri 02 20 18:29:42 2015]	exception:Critical	Module::factory@130	/all/index	A KurogoModuleNotFound has occured: Module all not found
+[Fri 02 20 18:30:51 2015]	exception:Critical	Module::factory@130	/all/	A KurogoModuleNotFound has occured: Module all not found
+[Fri 02 20 18:32:39 2015]	exception:Critical	Module::factory@130	/all/index	A KurogoModuleNotFound has occured: Module all not found
+[Fri 02 20 18:32:45 2015]	exception:Critical	Module::factory@130	/all/index	A KurogoModuleNotFound has occured: Module all not found
+[Fri 02 20 18:33:10 2015]	exception:Critical	Module::factory@130	/all/	A KurogoModuleNotFound has occured: Module all not found
+[Fri 02 20 18:33:46 2015]	exception:Critical	Module::factory@130	/create/	A KurogoModuleNotFound has occured: Module create not found
+[Fri 02 20 18:34:54 2015]	exception:Critical	WebModule->setPage@1576	/bookings/bookings/create?username=Shadow&password=DelveIn2	A KurogoPageNotFoundException has occured: Invalid Page Name
+[Fri 02 20 18:36:40 2015]	exception:Critical	WebModule->setPage@1576	/bookings/all.tpl	A KurogoPageNotFoundException has occured: Invalid Page Name
+[Fri 02 20 18:36:55 2015]	exception:Critical	WebModule->setPage@1576	/bookings/all.tpl?username=Shadow&password=DelveIn2	A KurogoPageNotFoundException has occured: Invalid Page Name
+[Fri 02 20 21:40:01 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Fri 02 20 21:45:07 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Sat 02 21 15:26:30 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Sat 02 21 16:19:35 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml

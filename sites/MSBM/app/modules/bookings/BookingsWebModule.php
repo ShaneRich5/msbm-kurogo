@@ -24,18 +24,25 @@ class BookingsWebModule extends WebModule
     protected function initializeForPage()
     {
         $db = new db();
+        $this->controller = DataRetriever::factory('MoodleDataRetriever', array());
 
         switch($this->page)
         {
             case 'index':
-                $sqlDate = "SELECT * FROM booking booking_time";
-                $resultDate = $db->query($sqlDate, array(''));
-                while ($row = $resultDate->fetch())
+                if ($token = Kurogo::getCache('token'))
                 {
-
+                    $this->redirectTo('booking/all');
                 }
+//                $sqlDate = "SELECT * FROM booking booking_time";
+//                $resultDate = $db->query($sqlDate, array('id', 'uwi_id', 'name', 'time_from', 'time_to'));
+//
+//                while ($row = $resultDate->fetch())
+//                {
+//
+//                }
+
                 break;
-            case 'requestBooking':
+            case 'create':
 
                 $nav = array(
                     'subtitle' => 'Subtitle',
@@ -99,10 +106,12 @@ class BookingsWebModule extends WebModule
                 $this->assign('formListID', 'booking-form');
 
                 break;
-            case 'book':
+            case 'all':
+                $this->assign('username', $this->getArg('username'));
                 break;
             default:
                 parent::initializeForPage();
+                break;
         }
     }
 }

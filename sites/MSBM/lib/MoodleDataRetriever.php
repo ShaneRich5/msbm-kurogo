@@ -22,7 +22,7 @@ class MoodleDataRetriever extends URLDataRetriever
         $this->setBaseURL('http://ourvle.mona.uwi.edu/login/token.php');
         $this->addParameter('username', $user['username']);
         $this->addParameter('password', $user['password']);
-//        $this->addParameter('service', $user['service']);
+        $this->addParameter('service', $user['service']);
         $this->setMethod('GET');
 //        $this->addParameter($this->format['service'], $this->format['type']);
         $token = $this->getData($response);
@@ -54,13 +54,14 @@ class MoodleDataRetriever extends URLDataRetriever
         return $this->getData($response);
     }
 
-    public function getContent($courseid, $token, $func) {
+    public function getContent($courseid, $token) {
         # gets course content
         # http://ourvle.mona.uwi.edu/webservice/rest/server.php?wstoken=47aae912ad404c743d7b66ad0c6c0742&wsfunction=core_course_get_contents&courseid=76
         $this->setBaseURL('http://ourvle.mona.uwi.edu/webservice/rest/server.php');
         $this->addParameter('courseid', $courseid);
         $this->addParameter('wstoken', $token);
-        $this->addParameter('wsfunction', $func);
+        $this->addParameter('wsfunction', 'core_course_get_contents');
+        $this->addParameter($this->format['service'], $this->format['type']);
         $this->setMethod('GET');
         return $this->getData($response);
     }

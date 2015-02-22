@@ -1,0 +1,7 @@
+<strong>Invalid Page Name</strong><br><br><strong>Fatal error</strong>:  Uncaught exception 'KurogoPageNotFoundException' with message 'Invalid Page Name' in C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\WebModule.php:1576
+Stack trace:
+#0 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\WebModule.php(613): setPage(string)
+#1 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\WebModule.php(580): init(string, array)
+#2 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\www\index.php(321): factory(string, string, array)
+#3 {main}
+  thrown in <strong>C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\WebModule.php</strong> on line <strong>1576</strong>

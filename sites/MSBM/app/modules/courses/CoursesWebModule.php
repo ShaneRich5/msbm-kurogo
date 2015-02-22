@@ -11,40 +11,57 @@ class CoursesWebModule extends WebModule
 
     protected function initializeForPage()
     {
-        $this->controller = DataRetriever::factory('MoodleDataRetriever', array());
+        $this->controller = DataRetriever::factory('MoodleDataRetriever', array()); // interacts with moodle's api
 
         switch ($this->page)
         {
+            // login validation
             case 'index':
-                $this->assign('message', 'Hello World');
+                if (issset($_COOKIE['moodle_token'])) // checks if the user's token has been saved in memory
+                {
+                    $this->redirectTo('all'); // and if so, redirects to courses page
+                } else if (!empty($_POST)){  // attempts login
+                    /**
+                     * ADD VALIDATION
+                     *
+                     * TODO
+                     */
+                    $credentials = array(
+                        'username' => $_POST['username'],
+                        'password' => $_POST['password'],
+                        'service' => 'moodle_mobile_app'
+                    );
 
-                # hard coded values
-                # should be replaced by authentication
-//
-//                $user = array(
-//                    'username' => '620065739',
-//                    'password' => '19941206',
-//                    'service' => 'moodle_mobile_app'
-//                );
-//
-//                # get user's moodle token
-//                $this->token = $this->controller->getToken($user); #JSON obj
+                    $loginResult = $this->controller->getToken($credentials); // retrieves the token
 
-//                $this->assign('token', $this->token['token']);
+                    if (array_key_exists('error', $loginResult))
+                        $this->assign('error', 'Incorrect username or password');
+                    else
+                    {
+                        $_COOKIE['moodle_token'] = $loginResult['token'];
+                        Kurogo::redirectToURL('all');
+                    }
+
+
+                }
+
+                break;
+            case 'all':
 
                 $userParam = array(
-                    'wstoken' => '47aae912ad404c743d7b66ad0c6c0742',
+                    'wstoken' => $_COOKIE['moodle_token'],
                     'wsfunction' => 'core_webservice_get_site_info'
                 );
 
                 # Retrieve user information
                 $userInfo = $this->controller->getUserId($userParam);
+                $_SESSION['userid'] = $userInfo['userid'];
 
                 $this->assign('info', $userInfo['userid']);
 
                 # Retrieve json list of courses
                 $coursesParam = array(
-                    'wstoken' => '47aae912ad404c743d7b66ad0c6c0742',
+                    'wstoken' => $_COOKIE['moodle_token'],
                     'wsfunction' => 'core_enrol_get_users_courses',
                     'userid' => $userInfo['userid'],
                 );
@@ -57,25 +74,16 @@ class CoursesWebModule extends WebModule
                 $coursesList = array();
 
 
-//                foreach ($userCourses as $courseData)
-//                {
-//                    $course = array(
-//                        'id' => $courseData['id'],
-//                        'shortname' => $courseData['shortname'],
-//                        'fullname' => $courseData['fullname'],
-//                        'usercount' => $courseData['enrolledusercount'],
-//                        'idnumber' => $courseData['idnumber'],
-//                        'url' =>  '/courses/details?wstoken=47aae912ad404c743d7b66ad0c6c0742&wsfunction=core_course_get_contents&courseid=' . $courseData['id']
-//                    );
-//                    $coursesList[] = $course;
-//                }
 
                 foreach ($userCourses as $courseData)
                 {
                     $course = array(
                         'subtitle' => $courseData['shortname'],
                         'title' => $courseData['fullname'],
-                        'url' => $this->buildBreadcrumbURL('details', array('wstoken' => '47aae912ad404c743d7b66ad0c6c0742','wsfunction' => 'core_course_get_contents', 'courseid' => $courseData['id']))
+                        'url' => $this->buildBreadcrumbURL('details', array(
+                            'wstoken' => '47aae912ad404c743d7b66ad0c6c0742',
+                            'courseid' => $courseData['id'])
+                        )
                     );
                     $coursesList[] = $course;
                 }
@@ -84,95 +92,55 @@ class CoursesWebModule extends WebModule
                 break;
 
             # 'url' => $this->buildBreadcrumbURL('details', array('wstoken' => '47aae912ad404c743d7b66ad0c6c0742','wsfunction' => 'core_course_get_contents', 'courseid' => $courseData['id']), false)
+
             case 'details':
                 $id = $this->getArg('courseid');
                 $token = $this->getArg('wstoken');
-                $func = $this->getArg('wsfunction');
+
                 $this->assign('wstoken', $token);
                 $this->assign('id', $id);
-                $this->assign('func', $func);
-                if ($courseContent = $this->controller->getContent($id, $token, $func)) {
-                    $contentList = array();
 
-                    foreach ($courseContent as $section) {
-                        $detail = array(
-                            'subtitle' => $section['id'],
-                            'title' => $section['name']
+                if ($courseContent = $this->controller->getContent($id, $token)) {
+//                    var_dump($courseContent);
+                    $contentList = array();
+                    $detailsList = array();
+
+                    foreach ($courseContent as $sectionContent) {
+
+                        $details = array();
+
+//                        var_dump(is_array($sectionContent['modules']));
+
+                        if(is_array($sectionContent['modules']))
+                        {
+                            foreach ($sectionContent['modules'] as $sectionDetails)
+                            {
+                                var_dump(array_key_exists('name', $sectionContent));
+                                $details = array(
+                                    'name' => $sectionDetails['name']
+                                );
+                                $detailsList[] = $details;
+                            }
+
+                        }
+
+                        $section = array(
+                            'subtitle' => $sectionContent['id'],
+                            'section_name' => $sectionContent['name'],
+                            'section_details' => $detailsList
                         );
-                        $contentList[] = $detail;
+
+
+                        $contentList[] = $section;
                     }
                     $this->assign('contentList', $contentList);
                 }
 
-//                else {
-//                    $this->redirectTo('index');
-//                }
                 break;
             default:
                 parent::initializeForPage();
 
         }
 
-//<KEY name="idnumber"> &wsfunction=core_course_get_contents&courseid=76
-//<VALUE>JAPA10010</VALUE>
-//</KEY>
-
-
-
-
-//  wsfunction=core_enrol_get_users_courses&userid=9742
-
-//
-//        switch($this->page)
-//        {
-//            case 'index':
-//                # Retrieve user information
-//                $userInfo = $this->$controller->getUserId($userParam);
-//
-//                # Retrieve json list of courses
-//                $coursesParam = array(
-//                    'wstoken' => $this->$token['wstoken'],
-//                    'wsfunction' => 'moodlewsrestformat',
-//                    'moodlewsrestformat' => 'json'
-//                );
-//                $userCourses = $this->controller->getCourses($coursesParam);
-//
-//                $courseList = array();
-//                foreach ($userCourses as $courseData) {
-//                    $course = array(
-//                        'wstoken' => $this->$token['wstoken'],
-//                        'shortname' => $courseData['shortname'],
-//                        'fullname' => $courseData['fullname'],
-//                        'url' => $this->buildBreadcrumbURL('content', array('id' => $courseData['id'], 'token' => $token['wstoken'], 'name' => $courseData['shortname']))
-//                    );
-//                    $courseList[] = $course;
-//                }
-//
-//                $this->assign('message', 'My Courses');
-//                $this->assign('token', $token['token']);
-//                $this->assign('userid', $userInfo['userid']);
-//                $this->assign('courseList', $courseList);
-//
-//                # http://ourvle.mona.uwi.edu/webservice/rest/server.php?wstoken=e23c35eeda5b1799ffcea51cec0c19b2&wsfunction=core_webservice_get_site_info
-//
-//                break;
-//            case 'content':
-//                # pull course details
-//                # http://ourvle.mona.uwi.edu/webservice/rest/server.php?wstoken=e23c35eeda5b1799ffcea51cec0c19b2&wsfunction=core_course_get_contents&courseid=1485
-//
-//                $courseData = array(
-//                    'id' => $this->getArg('id'), # course content
-//                    'token' => $this->getArg('token'), # user token
-//                    'name' => $this->getArg('shortname') # shortened course name
-//                );
-//
-//                if ($courseContent = $this->$controller->getContent($courseData)) {
-//                    foreach ($courseContent as $courseData) {
-//
-//                    }
-////                    $this->assign('courseName', $courseContent['']);
-//                }
-//            $this->assign('course_name', $courseData['name']);
-//        }
     }
 }

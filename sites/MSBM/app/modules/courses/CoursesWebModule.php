@@ -13,11 +13,12 @@ class CoursesWebModule extends WebModule
     {
         $this->controller = DataRetriever::factory('MoodleDataRetriever', array()); // interacts with moodle's api
 
+//        var_dump($this->issset($_COOKIE['moodle_token']));
         switch ($this->page)
         {
             // login validation
             case 'index':
-                if (issset($_COOKIE['moodle_token'])) // checks if the user's token has been saved in memory
+                if (isset($_COOKIE['moodle_token'])) // checks if the user's token has been saved in memory
                 {
                     $this->redirectTo('all'); // and if so, redirects to courses page
                 } else if (!empty($_POST)){  // attempts login
@@ -38,7 +39,7 @@ class CoursesWebModule extends WebModule
                         $this->assign('error', 'Incorrect username or password');
                     else
                     {
-                        $_COOKIE['moodle_token'] = $loginResult['token'];
+                        setcookie('moodle_token', $loginResult['token'], time() + (60 *60 *24 * 30));
                         Kurogo::redirectToURL('all');
                     }
 
@@ -47,7 +48,7 @@ class CoursesWebModule extends WebModule
 
                 break;
             case 'all':
-
+                $this->assign('token', $_COOKIE['moodle_token']);
                 $userParam = array(
                     'wstoken' => $_COOKIE['moodle_token'],
                     'wsfunction' => 'core_webservice_get_site_info'

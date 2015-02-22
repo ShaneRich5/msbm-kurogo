@@ -1,7 +1,0 @@
-<strong>Page detail not found</strong><br><br><strong>Fatal error</strong>:  Uncaught exception 'KurogoPageNotFoundException' with message 'Page detail not found' in C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\WebModule.php:1517
-Stack trace:
-#0 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\WebModule.php(1702): loadPageConfig()
-#1 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\WebModule.php(1990): setPageVariables()
-#2 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\www\index.php(323): displayPage()
-#3 {main}
-  thrown in <strong>C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\WebModule.php</strong> on line <strong>1517</strong>

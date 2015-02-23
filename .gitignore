@@ -34,3 +34,14 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 
+
+#kurogo
+*~
+._*
+.DS_Store
+Thumbs.db
+site/*/data/db.sqlite
+site/*/cache/*
+site/*/logs/*
+nbrproject
+nbproject/*

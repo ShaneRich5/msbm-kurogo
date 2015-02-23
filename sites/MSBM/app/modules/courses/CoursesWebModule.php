@@ -18,10 +18,14 @@ class CoursesWebModule extends WebModule
         {
             // login validation
             case 'index':
-                if (isset($_COOKIE['moodle_token'])) // checks if the user's token has been saved in memory
+
+                # if the user's token has been saved in memory, skip this page,
+                # else, display login page
+                if (isset($_COOKIE['moodle_token']))
                 {
-                    $this->redirectTo('all'); // and if so, redirects to courses page
-                } else if (!empty($_POST)){  // attempts login
+                    $this->redirectTo('all');
+                }
+                else if (!empty($_POST)){
                     /**
                      * ADD VALIDATION
                      *
@@ -35,6 +39,8 @@ class CoursesWebModule extends WebModule
 
                     $loginResult = $this->controller->getToken($credentials); // retrieves the token
 
+                    # if unsuccessful, present user with error
+                    # else, save the data to a cookie and proceed
                     if (array_key_exists('error', $loginResult))
                         $this->assign('error', 'Incorrect username or password');
                     else
@@ -42,22 +48,15 @@ class CoursesWebModule extends WebModule
                         setcookie('moodle_token', $loginResult['token'], time() + (60 *60 *24 * 30));
                         Kurogo::redirectToURL('all');
                     }
-
-
                 }
 
                 break;
             case 'all':
-                $this->assign('token', $_COOKIE['moodle_token']);
-                $userParam = array(
-                    'wstoken' => $_COOKIE['moodle_token'],
-                    'wsfunction' => 'core_webservice_get_site_info'
-                );
 
-                # Retrieve user information
-                $userInfo = $this->controller->getUserId($userParam);
+                # Retrieve user info, using stored cookie
+                $userInfo = $this->controller->getUserId($_COOKIE['moodle_token']);
+
                 $_SESSION['userid'] = $userInfo['userid'];
-
                 $this->assign('info', $userInfo['userid']);
 
                 # Retrieve json list of courses
@@ -102,21 +101,17 @@ class CoursesWebModule extends WebModule
                 $this->assign('id', $id);
 
                 if ($courseContent = $this->controller->getContent($id, $token)) {
-//                    var_dump($courseContent);
+
                     $contentList = array();
-                    $detailsList = array();
 
                     foreach ($courseContent as $sectionContent) {
 
-                        $details = array();
-
-//                        var_dump(is_array($sectionContent['modules']));
+                        $detailsList = array();
 
                         if(is_array($sectionContent['modules']))
                         {
                             foreach ($sectionContent['modules'] as $sectionDetails)
                             {
-                                var_dump(array_key_exists('name', $sectionContent));
                                 $details = array(
                                     'name' => $sectionDetails['name']
                                 );

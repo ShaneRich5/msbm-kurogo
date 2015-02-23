@@ -29,13 +29,13 @@ class MoodleDataRetriever extends URLDataRetriever
         return $token;
     }
 
-    public function getUserId($params)
+    public function getUserId($wstoken)
     {
         # example of a call for user id
         # http://ourvle.mona.uwi.edu/webservice/rest/server.php?wstoken=e23c35eeda5b1799ffcea51cec0c19b2&wsfunction=core_webservice_get_site_info
         $this->setBaseURL('http://ourvle.mona.uwi.edu/webservice/rest/server.php');
-        $this->addParameter('wstoken', $params['wstoken']);
-        $this->addParameter('wsfunction', $params['wsfunction']);
+        $this->addParameter('wstoken', $wstoken);
+        $this->addParameter('wsfunction', 'core_webservice_get_site_info');
         $this->addParameter($this->format['service'], $this->format['type']);
         $this->setMethod('GET');
         return $this->getData($response);

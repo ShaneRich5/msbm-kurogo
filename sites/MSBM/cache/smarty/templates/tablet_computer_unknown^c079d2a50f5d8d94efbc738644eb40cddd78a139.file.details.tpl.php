@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.7, created on 2015-02-21 17:52:21
+<?php /* Smarty version Smarty-3.0.7, created on 2015-02-22 18:24:18
          compiled from "C:\\MAMP\\htdocs\\msbm\\sites\\MSBM\\app\\modules\\courses\\templates\\details.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2221654e90c253d3db3-00183816%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:555054ea6522c84964-44700200%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'c079d2a50f5d8d94efbc738644eb40cddd78a139' => 
     array (
       0 => 'C:\\\\MAMP\\\\htdocs\\\\msbm\\\\sites\\\\MSBM\\\\app\\\\modules\\\\courses\\\\templates\\\\details.tpl',
-      1 => 1424559125,
+      1 => 1424647455,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2221654e90c253d3db3-00183816',
+  'nocache_hash' => '555054ea6522c84964-44700200',
   'function' => 
   array (
   ),
@@ -28,6 +28,7 @@ if ($_smarty_tpl->_count($_from) > 0){
     <h1 class="focal"><?php echo $_smarty_tpl->tpl_vars['content']->value['section_name'];?>
 </h1>
 
+    <div class="focal">
     <ul class="results">
         <?php  $_smarty_tpl->tpl_vars['item'] = new Smarty_Variable;
  $_from = $_smarty_tpl->tpl_vars['content']->value['section_details']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -37,16 +38,13 @@ if ($_smarty_tpl->_count($_from) > 0){
             <li>
                 <?php echo $_smarty_tpl->tpl_vars['item']->value['name'];?>
 
+                <?php echo $_smarty_tpl->tpl_vars['item']->value['contents'];?>
+
             </li>
         <?php }} ?>
     </ul>
+    </div>
 <?php }} ?>
 
-
-
-
-
-<?php $_template = new Smarty_Internal_Template("findInclude:common/templates/results.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
-$_template->assign('results',$_smarty_tpl->getVariable('contentList')->value); echo $_template->getRenderedTemplate();?><?php unset($_template);?>
 <?php $_template = new Smarty_Internal_Template("findInclude:common/templates/footer.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
  echo $_template->getRenderedTemplate();?><?php unset($_template);?>

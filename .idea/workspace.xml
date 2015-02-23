@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbd5efdf-0a89-4404-9291-046ffa58c367" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/news/url_00794f913e8e520db87984623a97168a" afterPath="$PROJECT_DIR$/sites/MSBM/cache/news/url_00794f913e8e520db87984623a97168a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/social/Facebook/url_1ca06a63e22115697212e72de010e669" afterPath="$PROJECT_DIR$/sites/MSBM/cache/social/Facebook/url_1ca06a63e22115697212e72de010e669" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/video/url_247c27239675a9a9ba14a01b722dddf5" afterPath="$PROJECT_DIR$/sites/MSBM/cache/video/url_247c27239675a9a9ba14a01b722dddf5" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/calendar/url_58b80ce398f22b300d06d41e67b4b429" afterPath="$PROJECT_DIR$/sites/MSBM/cache/calendar/url_58b80ce398f22b300d06d41e67b4b429" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/social/Facebook/url_aa34a39ace3407da96f9e2be45c68e65" afterPath="$PROJECT_DIR$/sites/MSBM/cache/social/Facebook/url_aa34a39ace3407da96f9e2be45c68e65" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/url_b3eae180fbef0471f8713545dd699256" afterPath="$PROJECT_DIR$/sites/MSBM/cache/url_b3eae180fbef0471f8713545dd699256" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/social/Facebook/url_bab67b5c0bb85dd53c83c0b53add328f" afterPath="$PROJECT_DIR$/sites/MSBM/cache/social/Facebook/url_bab67b5c0bb85dd53c83c0b53add328f" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/url_b4dadaaac8e4846e308d31137474084a" afterPath="$PROJECT_DIR$/sites/MSBM/cache/url_b4dadaaac8e4846e308d31137474084a" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/app/modules/courses/CoursesWebModule.php" afterPath="$PROJECT_DIR$/sites/MSBM/app/modules/courses/CoursesWebModule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/app/modules/courses/templates/all.tpl" afterPath="$PROJECT_DIR$/sites/MSBM/app/modules/courses/templates/all.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/logs/kurogo.log" afterPath="$PROJECT_DIR$/sites/MSBM/logs/kurogo.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/lib/MoodleDataRetriever.php" afterPath="$PROJECT_DIR$/sites/MSBM/lib/MoodleDataRetriever.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/app/modules/courses/templates/details.tpl" afterPath="$PROJECT_DIR$/sites/MSBM/app/modules/courses/templates/details.tpl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/logs/kurogo_stats_log_v1" afterPath="$PROJECT_DIR$/sites/MSBM/logs/kurogo_stats_log_v1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^901eaf408ec1374f4f5367d06d65dec1f97f4d1b.file.all.tpl.php" afterPath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^901eaf408ec1374f4f5367d06d65dec1f97f4d1b.file.all.tpl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^c079d2a50f5d8d94efbc738644eb40cddd78a139.file.details.tpl.php" afterPath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^c079d2a50f5d8d94efbc738644eb40cddd78a139.file.details.tpl.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="msbm.iws" />
@@ -62,28 +56,56 @@
     <favorites_list name="msbm" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="CoursesWebModule.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/courses/CoursesWebModule.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.038462" vertical-offset="468" max-vertical-offset="2601">
-              <caret line="49" column="23" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="all.tpl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/courses/templates/all.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.09483961" vertical-offset="0" max-vertical-offset="717">
-              <caret line="4" column="79" selection-start-line="4" selection-start-column="79" selection-end-line="4" selection-end-column="79" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="CoursesWebModule.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/courses/CoursesWebModule.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.25142047" vertical-offset="1455" max-vertical-offset="2516">
+                  <caret line="96" column="48" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="48" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="all.tpl" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/courses/templates/all.tpl">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="187">
+                  <caret line="4" column="67" selection-start-line="4" selection-start-column="67" selection-end-line="4" selection-end-column="67" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="details.tpl" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/courses/templates/details.tpl">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="391">
+                  <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="MoodleDataRetriever.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/sites/MSBM/lib/MoodleDataRetriever.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.35511363" vertical-offset="260" max-vertical-offset="1156">
+                  <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -105,10 +127,10 @@
         <option value="$PROJECT_DIR$/sites/MSBM/app/modules/bookings/BookingsWebModule.php" />
         <option value="$PROJECT_DIR$/sites/MSBM/app/modules/courses/config/pages.ini" />
         <option value="$PROJECT_DIR$/sites/MSBM/app/modules/courses/templates/index.tpl" />
-        <option value="$PROJECT_DIR$/sites/MSBM/lib/MoodleDataRetriever.php" />
-        <option value="$PROJECT_DIR$/sites/MSBM/app/modules/courses/templates/details.tpl" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/sites/MSBM/app/modules/courses/templates/all.tpl" />
+        <option value="$PROJECT_DIR$/sites/MSBM/lib/MoodleDataRetriever.php" />
+        <option value="$PROJECT_DIR$/sites/MSBM/app/modules/courses/templates/details.tpl" />
         <option value="$PROJECT_DIR$/sites/MSBM/app/modules/courses/CoursesWebModule.php" />
       </list>
     </option>
@@ -146,6 +168,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -332,14 +355,13 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="li&#9;FILE&#9;file://C:/MAMP/htdocs/msbm/Kurogo-Mobile-Web/app/common/templates/listItem.tpl&#10;res&#9;FILE&#9;file://C:/MAMP/htdocs/msbm/Kurogo-Mobile-Web/app/common/templates/results.tpl&#10;DA&#9;FILE&#9;file://C:/MAMP/htdocs/msbm/sites/MSBM/lib/MoodleDataRetriever.php&#10;Moo&#9;FILE&#9;file://C:/MAMP/htdocs/msbm/sites/MSBM/lib/MoodleDataRetriever.php&#10;login&#9;FILE&#9;file://C:/MAMP/htdocs/msbm/Kurogo-Mobile-Web/app/common/templates/page/login-tablet.tpl&#10;site&#9;FILE&#9;file://C:/MAMP/htdocs/msbm/sites/sites.ini&#10;listitem.tpl&#9;FILE&#9;file://C:/MAMP/htdocs/msbm/Kurogo-Mobile-Web/app/common/templates/listItem.tpl" />
+    <property name="SearchEverywhereHistoryKey" value="Moodle&#9;FILE&#9;file://C:/MAMP/htdocs/msbm/sites/MSBM/lib/MoodleDataRetriever.php&#10;li&#9;FILE&#9;file://C:/MAMP/htdocs/msbm/Kurogo-Mobile-Web/app/common/templates/listItem.tpl&#10;res&#9;FILE&#9;file://C:/MAMP/htdocs/msbm/Kurogo-Mobile-Web/app/common/templates/results.tpl&#10;DA&#9;FILE&#9;file://C:/MAMP/htdocs/msbm/sites/MSBM/lib/MoodleDataRetriever.php&#10;Moo&#9;FILE&#9;file://C:/MAMP/htdocs/msbm/sites/MSBM/lib/MoodleDataRetriever.php&#10;login&#9;FILE&#9;file://C:/MAMP/htdocs/msbm/Kurogo-Mobile-Web/app/common/templates/page/login-tablet.tpl&#10;site&#9;FILE&#9;file://C:/MAMP/htdocs/msbm/sites/sites.ini&#10;listitem.tpl&#9;FILE&#9;file://C:/MAMP/htdocs/msbm/Kurogo-Mobile-Web/app/common/templates/listItem.tpl" />
     <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
@@ -356,17 +378,20 @@
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
     <configuration default="true" type="com.intellij.database.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
       <option name="VM_PARAMETERS" value="" />
       <option name="USER_CFG_CLASS" />
       <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
     <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
       <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -376,9 +401,6 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -406,19 +428,19 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19833565" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.03256445" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2320217" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -726,7 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="816">
           <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -748,7 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="561">
           <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -770,38 +790,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23809524" vertical-offset="153" max-vertical-offset="884">
           <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/courses/templates/all.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="187">
+          <caret line="4" column="67" selection-start-line="4" selection-start-column="67" selection-end-line="4" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/courses/templates/details.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="425">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="391">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/MSBM/lib/MoodleDataRetriever.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537" vertical-offset="442" max-vertical-offset="1156">
-          <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.35511363" vertical-offset="260" max-vertical-offset="1156">
+          <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/courses/CoursesWebModule.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.038462" vertical-offset="468" max-vertical-offset="2601">
-          <caret line="49" column="23" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/courses/templates/all.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09483961" vertical-offset="0" max-vertical-offset="717">
-          <caret line="4" column="79" selection-start-line="4" selection-start-column="79" selection-end-line="4" selection-end-column="79" />
+        <state vertical-scroll-proportion="0.25142047" vertical-offset="1455" max-vertical-offset="2516">
+          <caret line="96" column="48" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="48" />
           <folding />
         </state>
       </provider>

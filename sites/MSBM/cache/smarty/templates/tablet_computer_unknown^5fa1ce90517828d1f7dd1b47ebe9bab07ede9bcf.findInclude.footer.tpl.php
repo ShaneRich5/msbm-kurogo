@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.0.7, created on 2015-02-20 18:32:40
+<?php /* Smarty version Smarty-3.0.7, created on 2015-02-26 00:15:56
          compiled from "findInclude:common/templates/footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:661454e7c418598ef8-63588623%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
@@ -7,25 +7,25 @@ $_smarty_tpl->decodeProperties(array (
     '5fa1ce90517828d1f7dd1b47ebe9bab07ede9bcf' => 
     array (
       0 => 'findInclude:common/templates/footer.tpl',
-      1 => 1364684942,
+      1 => 1424926860,
       2 => 'findInclude',
     ),
     'd806b43c0881cbb1da33a2802474f53e8a4485ee' => 
     array (
       0 => 'C:\\MAMP\\htdocs\\msbm\\Kurogo-Mobile-Web\\app\\common\\templates\\footer.tpl',
-      1 => 1364684942,
+      1 => 1424926860,
       2 => 'file',
     ),
     '' => 
     array (
       0 => 'findInclude:common/templates/page/moduleDebug.tpl',
-      1 => 1364684942,
+      1 => 1424926860,
       2 => 'findInclude',
     ),
     '369720295b1eb622e3344b5374618464a06284b6' => 
     array (
       0 => 'C:\\MAMP\\htdocs\\msbm\\Kurogo-Mobile-Web\\app\\common\\templates\\page\\login.tpl',
-      1 => 1364684942,
+      1 => 1424926860,
       2 => 'file',
     ),
   ),

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.0.7, created on 2015-02-20 18:32:39
+<?php /* Smarty version Smarty-3.0.7, created on 2015-02-26 00:25:27
          compiled from "C:\\MAMP\\htdocs\\msbm\\Kurogo-Mobile-Web\\app\\modules\\kurogo\\templates\\error.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1495254e7c417a0e501-54633202%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_smarty_tpl->decodeProperties(array (
     '06b643940675a5310f74b9428824efc412827d04' => 
     array (
       0 => 'C:\\\\MAMP\\\\htdocs\\\\msbm\\\\Kurogo-Mobile-Web\\\\app\\\\modules\\\\kurogo\\\\templates\\\\error.tpl',
-      1 => 1364684944,
+      1 => 1424926863,
       2 => 'file',
     ),
   ),

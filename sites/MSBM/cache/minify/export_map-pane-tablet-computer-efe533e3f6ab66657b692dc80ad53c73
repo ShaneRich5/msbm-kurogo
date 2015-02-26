@@ -1,7 +1,7 @@
 a:3:{s:10:"properties";a:7:{s:15:"inlineCSSBlocks";a:0:{}s:7:"cssURLs";a:0:{}s:22:"inlineJavascriptBlocks";a:0:{}s:28:"inlineJavascriptFooterBlocks";a:3:{i:0;s:146:"var CONFIG_MODULE = 'map';
 var MIN_LAT_SPAN = 5.3644180297852E-6;
 var MIN_LON_SPAN = 1.072883605957E-5;
-var NO_RESULTS_FOUND = "No results found";";i:1;s:1115:"
+var NO_RESULTS_FOUND = "No results found";";i:1;s:1149:"
 /*
  * Copyright © 2010 - 2013 Modo Labs Inc. All rights reserved.
  *

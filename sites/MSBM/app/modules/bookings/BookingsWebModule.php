@@ -29,7 +29,7 @@ class BookingsWebModule extends WebModule
         switch($this->page)
         {
             case 'index':
-                if ($token = Kurogo::getCache('token'))
+                if ($token = $_COOKIE['moodle_token'])
                 {
                     $this->redirectTo('booking/all');
                 }

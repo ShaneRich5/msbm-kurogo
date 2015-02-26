@@ -108,22 +108,61 @@ class CoursesWebModule extends WebModule
 
                         $detailsList = array();
 
-                        if(is_array($sectionContent['modules']))
+                        if (is_array($sectionContent['modules']))
                         {
                             foreach ($sectionContent['modules'] as $sectionDetails)
                             {
                                 $details = array(
-                                    'name' => $sectionDetails['name']
+                                    'title'  => $sectionDetails['name'],
                                 );
+                                if (array_key_exists('contents', $sectionDetails))
+                                {
+//                                    var_dump($sectionDetails['contents']);
+
+                                    foreach($sectionDetails['contents'] as $findUrl)
+                                    {
+                                        if (array_key_exists('fileurl', $findUrl))
+                                        {
+                                            $details = array_merge($details, array(
+                                                'url' => $findUrl['fileurl'] . '&token=' . $_COOKIE['moodle_token']
+                                            ));
+//                                            var_dump($findUrl['fileurl']);
+                                        }
+                                    }
+
+                                      if (array_key_exists('fileurl', $sectionDetails['contents'])){
+//                                        var_dump($sectionDetails['contents']['fileurl']);
+//                                        array_merge($details, array(
+//                                            'url' => $sectionDetails['contents']['fileurl']
+//                                        ));
+//                                        var_dump(array('url' => $sectionDetails['contents']['fileurl']));
+                                    }
+
+                                }
+
+//                                if (array_key_exists('contents', $sectionDetails))
+//                                {
+//                                    var_dump($sectionDetails['contents']);
+//                                    if (array_key_exists('fileurl', $sectionDetails['contents']))
+//                                    {
+//                                        var_dump(array_key_exists('fileurl', $sectionDetails['contents']));
+//                                    }
+
+//                                    $details = array_merge($details, array(
+//                                        'url' => $sectionDetails['contents']['fileurl'] . $_COOKIE['moodle_token']
+//                                    ));
+//                                }
+//                                var_dump($sectionDetails['contents']);
+
                                 $detailsList[] = $details;
                             }
 
                         }
 
                         $section = array(
-                            'subtitle' => $sectionContent['id'],
-                            'section_name' => $sectionContent['name'],
-                            'section_details' => $detailsList
+                            'subtitle'          => $sectionContent['id'],
+                            'section_name'      => $sectionContent['name'],
+                            'section_details'   => $detailsList
                         );
 
 
@@ -131,7 +170,6 @@ class CoursesWebModule extends WebModule
                     }
                     $this->assign('contentList', $contentList);
                 }
-
                 break;
             default:
                 parent::initializeForPage();

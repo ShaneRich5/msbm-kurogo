@@ -1,17 +1,31 @@
+<<<<<<< HEAD
 <?php /* Smarty version Smarty-3.0.7, created on 2015-02-23 10:35:59
          compiled from "findInclude:common/templates/results.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1570354eb48df545366-87710775%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+=======
+<?php /* Smarty version Smarty-3.0.7, created on 2015-02-25 10:17:02
+         compiled from "findInclude:common/templates/results.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:143070064554ede76e78a7e4-21801483%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+>>>>>>> ab25c7a18bf13d6ae04ee4658daffc4301f49165
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '3ccf8308e8a0e2a5b1dbd27afb04022de556e605' => 
     array (
       0 => 'findInclude:common/templates/results.tpl',
+<<<<<<< HEAD
       1 => 1364684942,
       2 => 'findInclude',
     ),
   ),
   'nocache_hash' => '1570354eb48df545366-87710775',
+=======
+      1 => 1424848287,
+      2 => 'findInclude',
+    ),
+  ),
+  'nocache_hash' => '143070064554ede76e78a7e4-21801483',
+>>>>>>> ab25c7a18bf13d6ae04ee4658daffc4301f49165
   'function' => 
   array (
   ),

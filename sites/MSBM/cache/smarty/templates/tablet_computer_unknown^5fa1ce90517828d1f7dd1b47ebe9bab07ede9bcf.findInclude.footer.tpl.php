@@ -1,12 +1,19 @@
+<<<<<<< HEAD
 <?php /* Smarty version Smarty-3.0.7, created on 2015-02-23 10:33:04
          compiled from "findInclude:common/templates/footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:553554eb4830d6ef88-88317354%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+=======
+<?php /* Smarty version Smarty-3.0.7, created on 2015-02-25 10:07:30
+         compiled from "findInclude:common/templates/footer.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:166296507354ed75c129abb0-74348026%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+>>>>>>> ab25c7a18bf13d6ae04ee4658daffc4301f49165
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '5fa1ce90517828d1f7dd1b47ebe9bab07ede9bcf' => 
     array (
       0 => 'findInclude:common/templates/footer.tpl',
+<<<<<<< HEAD
       1 => 1364684942,
       2 => 'findInclude',
     ),
@@ -14,11 +21,21 @@ $_smarty_tpl->decodeProperties(array (
     array (
       0 => 'C:\\MAMP\\htdocs\\msbm\\Kurogo-Mobile-Web\\app\\common\\templates\\footer.tpl',
       1 => 1364684942,
+=======
+      1 => 1424848287,
+      2 => 'findInclude',
+    ),
+    '1d1c69f34e9c0832e46bd91151423a2e71d19128' => 
+    array (
+      0 => '/home/projects/msbm/kurogo/app/common/templates/footer.tpl',
+      1 => 1424848287,
+>>>>>>> ab25c7a18bf13d6ae04ee4658daffc4301f49165
       2 => 'file',
     ),
     '' => 
     array (
       0 => 'findInclude:common/templates/page/moduleDebug.tpl',
+<<<<<<< HEAD
       1 => 1364684942,
       2 => 'findInclude',
     ),
@@ -30,6 +47,19 @@ $_smarty_tpl->decodeProperties(array (
     ),
   ),
   'nocache_hash' => '553554eb4830d6ef88-88317354',
+=======
+      1 => 1424848287,
+      2 => 'findInclude',
+    ),
+    '1675cb49a54703e464cdec691f787b0e1939c86b' => 
+    array (
+      0 => '/home/projects/msbm/kurogo/app/common/templates/page/login.tpl',
+      1 => 1424848287,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '166296507354ed75c129abb0-74348026',
+>>>>>>> ab25c7a18bf13d6ae04ee4658daffc4301f49165
   'function' => 
   array (
   ),

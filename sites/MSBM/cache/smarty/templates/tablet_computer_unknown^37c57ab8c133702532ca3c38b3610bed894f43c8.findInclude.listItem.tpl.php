@@ -1,23 +1,41 @@
+<<<<<<< HEAD
 <?php /* Smarty version Smarty-3.0.7, created on 2015-02-23 10:35:59
          compiled from "findInclude:common/templates/listItem.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2054854eb48df5bbfe2-51997350%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+=======
+<?php /* Smarty version Smarty-3.0.7, created on 2015-02-25 02:12:32
+         compiled from "findInclude:common/templates/listItem.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:79374529054ed75e082bdb3-18807687%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+>>>>>>> ab25c7a18bf13d6ae04ee4658daffc4301f49165
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '37c57ab8c133702532ca3c38b3610bed894f43c8' => 
     array (
       0 => 'findInclude:common/templates/listItem.tpl',
+<<<<<<< HEAD
       1 => 1364684942,
       2 => 'findInclude',
     ),
   ),
   'nocache_hash' => '2054854eb48df5bbfe2-51997350',
+=======
+      1 => 1424708944,
+      2 => 'findInclude',
+    ),
+  ),
+  'nocache_hash' => '79374529054ed75e082bdb3-18807687',
+>>>>>>> ab25c7a18bf13d6ae04ee4658daffc4301f49165
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
 )); /*/%%SmartyHeaderCode%%*/?>
+<<<<<<< HEAD
 <?php if (!is_callable('smarty_modifier_truncate')) include 'C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\smarty\plugins\modifier.truncate.php';
+=======
+<?php if (!is_callable('smarty_modifier_truncate')) include '/home/projects/msbm/kurogo/lib/smarty/plugins/modifier.truncate.php';
+>>>>>>> ab25c7a18bf13d6ae04ee4658daffc4301f49165
 ?><?php ob_start(); ?>
   <?php if (isset($_smarty_tpl->getVariable('item',null,true,false)->value['label'])){?>
     <?php if ($_smarty_tpl->getVariable('boldLabels')->value){?>

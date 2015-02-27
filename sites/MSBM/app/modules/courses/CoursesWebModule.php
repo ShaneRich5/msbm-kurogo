@@ -171,6 +171,12 @@ class CoursesWebModule extends WebModule
                     $this->assign('contentList', $contentList);
                 }
                 break;
+            case 'logout':
+                if (isset($_COOKIE['moodle_token']))
+                    setcookie('moodle_token', '', time() - 3600);
+                $this->redirectTo('index');
+                break;
+
             default:
                 parent::initializeForPage();
 

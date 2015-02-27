@@ -699,6 +699,7 @@
 [Sat 02 21 16:19:35 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
 [Sun 02 22 15:01:38 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
 [Sun 02 22 15:11:06 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+<<<<<<< HEAD
 [Mon 02 23 10:32:56 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
 [Mon 02 23 10:35:39 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
 [Mon 02 23 15:18:01 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
@@ -743,3 +744,20 @@
 [Mon 02 23 16:58:34 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
 [Wed 02 25 19:02:10 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
 [Wed 02 25 19:02:24 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=video&ajax=1	Error Retrieving Data for https://gdata.youtube.com/feeds/mobile/videos?alt=jsonc&format=6&v=2&orderby=published&author=MSBMUWIMona&max-results=5&start-index=1
+=======
+[Thu 02 26 00:25:27 2015]	exception:Critical	WebModule->loadPageConfig@1517	/bookings/create	A KurogoPageNotFoundException has occured: Page create not found
+[Thu 02 26 10:30:57 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Thu 02 26 21:35:10 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Thu 02 26 21:35:57 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Thu 02 26 21:52:50 2015]	exception:Critical	Google_Auth_OAuth2->authenticate@87	/bookings/	A Google_Auth_Exception has occured: Invalid code
+[Thu 02 26 22:11:09 2015]	exception:Critical	WebModule->loadPageConfig@1517	/courses/logout	A KurogoPageNotFoundException has occured: Page logout not found
+[Thu 02 26 22:11:30 2015]	exception:Critical	WebModule->loadPageConfig@1517	/courses/login	A KurogoPageNotFoundException has occured: Page login not found
+[Thu 02 26 22:11:48 2015]	exception:Critical	WebModule->loadPageConfig@1517	/courses/login	A KurogoPageNotFoundException has occured: Page login not found
+[Thu 02 26 22:11:51 2015]	exception:Critical	WebModule->loadPageConfig@1517	/courses/login	A KurogoPageNotFoundException has occured: Page login not found
+[Thu 02 26 22:11:55 2015]	exception:Critical	WebModule->loadPageConfig@1517	/courses/login	A KurogoPageNotFoundException has occured: Page login not found
+[Thu 02 26 22:12:08 2015]	exception:Critical	WebModule->setPage@1576	/courses/all/logout	A KurogoPageNotFoundException has occured: Invalid Page Name
+[Thu 02 26 22:12:35 2015]	exception:Critical	WebModule->setPage@1576	/courses/all/logout	A KurogoPageNotFoundException has occured: Invalid Page Name
+[Thu 02 26 22:12:37 2015]	exception:Critical	WebModule->setPage@1576	/courses/all/logout	A KurogoPageNotFoundException has occured: Invalid Page Name
+[Thu 02 26 22:12:51 2015]	exception:Critical	WebModule->setPage@1576	/courses/all/logout	A KurogoPageNotFoundException has occured: Invalid Page Name
+[Thu 02 26 22:12:52 2015]	exception:Critical	WebModule->setPage@1576	/courses/all/logout	A KurogoPageNotFoundException has occured: Invalid Page Name
+>>>>>>> dev

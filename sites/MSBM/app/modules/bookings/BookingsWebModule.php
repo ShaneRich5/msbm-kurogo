@@ -30,10 +30,12 @@ class BookingsWebModule extends WebModule
     {
         $this->client = new Google_Client();
         // OAuth2 client ID and secret can be found in the Google Developers Console.
+
+        # test values hard coded
         $this->client->setClientId('987849558796-5a1oa8h6la31s7l8ve5vsisjlhsahfrj.apps.googleusercontent.com');
         $this->client->setClientSecret('onkohzxipY8Rm-XTeouk8nyV');
         $this->client->setRedirectUri('http://www.kurogo.artuvic.com/oauth2callback');
-        $this->client->addScope('https://www.googleapis.com/auth/calendar');
+        $this->client->addScope('email');
 
         $this->service = new Google_Service_Calendar($this->client);
     }

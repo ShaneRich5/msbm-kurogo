@@ -2,27 +2,364 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbd5efdf-0a89-4404-9291-046ffa58c367" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sites/MSBM/lib/CalendarDataRetriever.php" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Exception.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\AuthException.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\BadMethodCallException.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Base.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\BaseMediaSource.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\CaptchaRequiredException.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Entry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Exception.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Author.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Category.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Content.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Contributor.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Control.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Draft.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Edited.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Element.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Email.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Generator.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Icon.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Id.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Link.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Logo.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Name.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Person.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Published.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Rights.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Source.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Subtitle.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Summary.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Text.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Title.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Updated.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Extension\Uri.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Feed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\FeedEntryParent.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\FeedSourceParent.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\HttpException.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\IOException.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\InvalidArgumentException.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\LoggingHttpClientAdapterSocket.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\MediaEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\MediaFileSource.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\MediaSource.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\Util.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\App\VersionException.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\AuthSub.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Books.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Books\CollectionEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Books\CollectionFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Books\Extension\AnnotationLink.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Books\Extension\BooksCategory.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Books\Extension\BooksLink.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Books\Extension\Embeddability.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Books\Extension\InfoLink.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Books\Extension\PreviewLink.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Books\Extension\Review.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Books\Extension\ThumbnailLink.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Books\Extension\Viewability.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Books\VolumeEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Books\VolumeFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Books\VolumeQuery.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Calendar.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Calendar\EventEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Calendar\EventFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Calendar\EventQuery.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Calendar\Extension\AccessLevel.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Calendar\Extension\Color.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Calendar\Extension\Hidden.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Calendar\Extension\Link.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Calendar\Extension\QuickAdd.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Calendar\Extension\Selected.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Calendar\Extension\SendEventNotifications.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Calendar\Extension\Timezone.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Calendar\Extension\WebContent.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Calendar\ListEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Calendar\ListFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\ClientLogin.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Docs.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Docs\DocumentListEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Docs\DocumentListFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Docs\Query.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\DublinCore.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\DublinCore\Extension\Creator.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\DublinCore\Extension\Date.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\DublinCore\Extension\Description.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\DublinCore\Extension\Format.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\DublinCore\Extension\Identifier.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\DublinCore\Extension\Language.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\DublinCore\Extension\Publisher.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\DublinCore\Extension\Rights.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\DublinCore\Extension\Subject.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\DublinCore\Extension\Title.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Entry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Exif.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Exif\Entry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Exif\Extension\Distance.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Exif\Extension\Exposure.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Exif\Extension\FStop.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Exif\Extension\Flash.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Exif\Extension\FocalLength.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Exif\Extension\ImageUniqueId.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Exif\Extension\Iso.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Exif\Extension\Make.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Exif\Extension\Model.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Exif\Extension\Tags.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Exif\Extension\Time.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Exif\Feed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Extension.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Extension\AttendeeStatus.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Extension\AttendeeType.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Extension\Comments.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Extension\EntryLink.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Extension\EventStatus.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Extension\ExtendedProperty.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Extension\FeedLink.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Extension\OpenSearchItemsPerPage.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Extension\OpenSearchStartIndex.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Extension\OpenSearchTotalResults.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Extension\OriginalEvent.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Extension\Rating.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Extension\Recurrence.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Extension\RecurrenceException.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Extension\Reminder.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Extension\Transparency.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Extension\Visibility.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Extension\When.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Extension\Where.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Extension\Who.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Feed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\EmailListEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\EmailListFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\EmailListQuery.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\EmailListRecipientEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\EmailListRecipientFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\EmailListRecipientQuery.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\Error.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\Extension\EmailList.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\Extension\Login.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\Extension\Name.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\Extension\Nickname.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\Extension\Property.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\Extension\Quota.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\GroupEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\GroupFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\GroupQuery.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\MemberEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\MemberFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\MemberQuery.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\NicknameEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\NicknameFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\NicknameQuery.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\OwnerEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\OwnerFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\OwnerQuery.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\Query.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\ServiceException.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\UserEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\UserFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gapps\UserQuery.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gbase.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gbase\Entry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gbase\Extension\BaseAttribute.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gbase\Feed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gbase\ItemEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gbase\ItemFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gbase\ItemQuery.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gbase\Query.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gbase\SnippetEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gbase\SnippetFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Gbase\SnippetQuery.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Geo.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Geo\Entry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Geo\Extension\GeoRssWhere.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Geo\Extension\GmlPoint.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Geo\Extension\GmlPos.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Geo\Feed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Health.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Health\Extension\Ccr.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Health\ProfileEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Health\ProfileFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Health\ProfileListEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Health\ProfileListFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Health\Query.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\HttpAdapterStreamingProxy.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\HttpAdapterStreamingSocket.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\HttpClient.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Kind\EventEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Media.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\MediaMimeStream.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Media\Entry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Media\Extension\MediaCategory.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Media\Extension\MediaContent.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Media\Extension\MediaCopyright.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Media\Extension\MediaCredit.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Media\Extension\MediaDescription.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Media\Extension\MediaGroup.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Media\Extension\MediaHash.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Media\Extension\MediaKeywords.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Media\Extension\MediaPlayer.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Media\Extension\MediaRating.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Media\Extension\MediaRestriction.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Media\Extension\MediaText.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Media\Extension\MediaThumbnail.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Media\Extension\MediaTitle.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Media\Feed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\MimeBodyString.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\MimeFile.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\AlbumEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\AlbumFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\AlbumQuery.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\CommentEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\Access.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\AlbumId.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\BytesUsed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\Checksum.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\Client.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\CommentCount.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\CommentingEnabled.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\Height.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\Id.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\Location.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\MaxPhotosPerAlbum.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\Name.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\Nickname.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\NumPhotos.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\NumPhotosRemaining.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\PhotoId.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\Position.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\QuotaCurrent.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\QuotaLimit.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\Rotation.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\Size.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\Thumbnail.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\Timestamp.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\User.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\Version.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\Weight.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\Extension\Width.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\PhotoEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\PhotoFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\PhotoQuery.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\TagEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\UserEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\UserFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Photos\UserQuery.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Query.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Spreadsheets.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Spreadsheets\CellEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Spreadsheets\CellFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Spreadsheets\CellQuery.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Spreadsheets\DocumentQuery.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Spreadsheets\Extension\Cell.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Spreadsheets\Extension\ColCount.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Spreadsheets\Extension\Custom.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Spreadsheets\Extension\RowCount.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Spreadsheets\ListEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Spreadsheets\ListFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Spreadsheets\ListQuery.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Spreadsheets\SpreadsheetEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Spreadsheets\SpreadsheetFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Spreadsheets\WorksheetEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\Spreadsheets\WorksheetFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\ActivityEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\ActivityFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\CommentEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\CommentFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\ContactEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\ContactFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\AboutMe.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Age.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Books.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Company.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Control.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\CountHint.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Description.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Duration.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\FirstName.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Gender.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Hobbies.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Hometown.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\LastName.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Link.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Location.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\MediaContent.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\MediaCredit.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\MediaGroup.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\MediaRating.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Movies.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Music.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\NoEmbed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Occupation.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\PlaylistId.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\PlaylistTitle.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Position.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Private.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\QueryString.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Racy.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Recorded.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Relationship.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\ReleaseDate.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\School.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\State.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Statistics.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Status.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Token.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Uploaded.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\Username.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\Extension\VideoId.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\InboxEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\InboxFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\MediaEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\PlaylistListEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\PlaylistListFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\PlaylistVideoEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\PlaylistVideoFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\SubscriptionEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\SubscriptionFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\UserProfileEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\VideoEntry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\VideoFeed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Gdata\YouTube\VideoQuery.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Http\Client.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Http\Client\Adapter\Curl.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Http\Client\Adapter\Exception.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Http\Client\Adapter\Interface.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Http\Client\Adapter\Proxy.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Http\Client\Adapter\Socket.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Http\Client\Adapter\Stream.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Http\Client\Adapter\Test.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Http\Client\Exception.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Http\Exception.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Http\Response.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Http\Response\Stream.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Loader.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Registry.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Uri.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Uri\Exception.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Uri\Http.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Validate\Abstract.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Validate\Hostname.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Validate\Hostname\Biz.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Validate\Hostname\Cn.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Validate\Hostname\Com.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Validate\Hostname\Jp.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Validate\Interface.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Validate\Ip.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\Zend\Version.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/app/modules/bookings/BookingsWebModule.php" afterPath="$PROJECT_DIR$/sites/MSBM/app/modules/bookings/BookingsWebModule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/app/modules/bookings/templates/create.tpl" afterPath="$PROJECT_DIR$/sites/MSBM/app/modules/bookings/templates/create.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/export_map-pane-tablet-computer-efe533e3f6ab66657b692dc80ad53c73" afterPath="$PROJECT_DIR$/sites/MSBM/cache/minify/export_map-pane-tablet-computer-efe533e3f6ab66657b692dc80ad53c73" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/lib/CalendarDataRetriever.php" afterPath="$PROJECT_DIR$/sites/MSBM/lib/CalendarDataRetriever.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/app/modules/bookings/templates/index.tpl" afterPath="$PROJECT_DIR$/sites/MSBM/app/modules/bookings/templates/index.tpl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/logs/kurogo.log" afterPath="$PROJECT_DIR$/sites/MSBM/logs/kurogo.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/logs/kurogo_stats_log_v1" afterPath="$PROJECT_DIR$/sites/MSBM/logs/kurogo_stats_log_v1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/app/modules/bookings/config/pages.ini" afterPath="$PROJECT_DIR$/sites/MSBM/app/modules/bookings/config/pages.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^06b643940675a5310f74b9428824efc412827d04.file.error.tpl.php" afterPath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^06b643940675a5310f74b9428824efc412827d04.file.error.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^0b3bdf1b7663784ea5a4502f72a515f81db57668.file.index-tablet.tpl.php" afterPath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^0b3bdf1b7663784ea5a4502f72a515f81db57668.file.index-tablet.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^37c57ab8c133702532ca3c38b3610bed894f43c8.findInclude.listItem.tpl.php" afterPath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^37c57ab8c133702532ca3c38b3610bed894f43c8.findInclude.listItem.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^48482381065444786b0b5a96f053c87d1d054bc8.file.pane.tpl.php" afterPath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^48482381065444786b0b5a96f053c87d1d054bc8.file.pane.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^5fa1ce90517828d1f7dd1b47ebe9bab07ede9bcf.findInclude.footer.tpl.php" afterPath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^5fa1ce90517828d1f7dd1b47ebe9bab07ede9bcf.findInclude.footer.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^6e0cfab32a374a6dbc372f5f154da5bf1bc53859.file.pane.tpl.php" afterPath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^6e0cfab32a374a6dbc372f5f154da5bf1bc53859.file.pane.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^84aa7bebb379a8b294a029ad3ca0fe7f9594aef1.findInclude.header.tpl.php" afterPath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^84aa7bebb379a8b294a029ad3ca0fe7f9594aef1.findInclude.header.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^983f9412f287ff2d301c6fa806c85ce5f6848420.file.index.tpl.php" afterPath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^983f9412f287ff2d301c6fa806c85ce5f6848420.file.index.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^ad9f2771598f9bceda1c93ffb93e751f5a2aacda.file.pane.tpl.php" afterPath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^ad9f2771598f9bceda1c93ffb93e751f5a2aacda.file.pane.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^b1a236ee39fa5cc5b17fd4680e51241fd6fd0e34.findInclude.head.tpl.php" afterPath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^b1a236ee39fa5cc5b17fd4680e51241fd6fd0e34.findInclude.head.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^c180eeccd4fdf07bd06220a56985a313cc180c98.file.pane.tpl.php" afterPath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^c180eeccd4fdf07bd06220a56985a313cc180c98.file.pane.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^d8085a88737bff8530977410fb4228515b23563e.file.pane.tpl.php" afterPath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^d8085a88737bff8530977410fb4228515b23563e.file.pane.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^e0da102ffe9594e6bbf07f2fb81198dafdebb5ed.file.pane.tpl.php" afterPath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^e0da102ffe9594e6bbf07f2fb81198dafdebb5ed.file.pane.tpl.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="msbm.iws" />
@@ -72,11 +409,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="CalendarDataRetriever.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/MSBM/lib/CalendarDataRetriever.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="510">
+              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="BookingsWebModule.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/bookings/BookingsWebModule.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39534885" vertical-offset="136" max-vertical-offset="2295">
-              <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.64244187" vertical-offset="391" max-vertical-offset="2567">
+              <caret line="49" column="53" selection-start-line="49" selection-start-column="53" selection-end-line="49" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Client.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/bookings/google-api-php-client/src/Google/Client.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.384615" vertical-offset="1445" max-vertical-offset="11509">
+              <caret line="121" column="30" selection-start-line="121" selection-start-column="18" selection-end-line="121" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="autoload.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/bookings/google-api-php-client/autoload.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="544">
+              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/bookings/templates/index.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="714">
+              <caret line="20" column="56" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -105,10 +482,11 @@
         <option value="$PROJECT_DIR$/sites/MSBM/lib/MoodleDataRetriever.php" />
         <option value="$PROJECT_DIR$/sites/MSBM/app/modules/courses/templates/details.tpl" />
         <option value="$PROJECT_DIR$/sites/MSBM/app/modules/courses/CoursesWebModule.php" />
-        <option value="$PROJECT_DIR$/sites/MSBM/app/modules/bookings/templates/index.tpl" />
         <option value="$PROJECT_DIR$/sites/MSBM/app/modules/bookings/config/pages.ini" />
         <option value="$PROJECT_DIR$/sites/MSBM/app/modules/bookings/templates/create.tpl" />
+        <option value="$PROJECT_DIR$/sites/MSBM/app/modules/bookings/templates/index.tpl" />
         <option value="$PROJECT_DIR$/sites/MSBM/lib/CalendarDataRetriever.php" />
+        <option value="$PROJECT_DIR$/sites/MSBM/app/modules/bookings/google-api-php-client/autoload.php" />
         <option value="$PROJECT_DIR$/sites/MSBM/app/modules/bookings/BookingsWebModule.php" />
       </list>
     </option>
@@ -118,6 +496,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
+    <option name="x" value="737" />
     <option name="width" value="737" />
     <option name="height" value="864" />
   </component>
@@ -238,6 +617,130 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="msbm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="msbm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSBM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bookings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="msbm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="msbm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSBM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bookings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="msbm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="msbm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSBM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bookings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="google-api-php-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="msbm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="msbm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSBM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -318,20 +821,17 @@
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
     <configuration default="true" type="com.intellij.database.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
       <option name="VM_PARAMETERS" value="" />
       <option name="USER_CFG_CLASS" />
       <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
-    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
-      <BehatRunner />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -341,6 +841,9 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -359,7 +862,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="737" height="864" extended-state="0" />
+    <frame x="737" y="0" width="737" height="864" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33642384" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -368,19 +871,19 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19833565" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3826323" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23994452" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -406,6 +909,40 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/sites/MSBM/lib/CalendarDataRetriever.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="510">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/bookings/BookingsWebModule.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="2295">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/bookings/templates/index.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="714">
+          <caret line="20" column="56" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/MSBM/lib/MoodleDataRetriever.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1241">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/bookings/BookingsWebModule.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="2295">
@@ -418,9 +955,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="510">
           <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-          <folding>
-            <element signature="e#6#89#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -602,13 +1137,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/bookings/templates/index.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="493">
-          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/bookings/templates/create.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="714">
@@ -628,36 +1156,55 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.048295453" vertical-offset="0" max-vertical-offset="9146">
           <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-          <folding>
-            <element signature="e#7#289#0#PHP" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/bookings/templates/index.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="714">
+          <caret line="20" column="56" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/MSBM/lib/MoodleDataRetriever.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41051137" vertical-offset="0" max-vertical-offset="1241">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.21732955" vertical-offset="51" max-vertical-offset="1241">
+          <caret line="12" column="55" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="55" />
           <folding>
             <element signature="e#6#88#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/bookings/google-api-php-client/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="544">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sites/MSBM/lib/CalendarDataRetriever.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.023709903" vertical-offset="0" max-vertical-offset="717">
-          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-          <folding>
-            <element signature="e#6#89#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="510">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/bookings/google-api-php-client/src/Google/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.384615" vertical-offset="1445" max-vertical-offset="11509">
+          <caret line="121" column="30" selection-start-line="121" selection-start-column="18" selection-end-line="121" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/bookings/BookingsWebModule.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39534885" vertical-offset="136" max-vertical-offset="2295">
-          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.64244187" vertical-offset="391" max-vertical-offset="2567">
+          <caret line="49" column="53" selection-start-line="49" selection-start-column="53" selection-end-line="49" selection-end-column="54" />
           <folding />
         </state>
       </provider>

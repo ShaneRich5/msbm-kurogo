@@ -3,6 +3,7 @@
 
 Kurogo::includePackage('db');
 
+require_once('google-api-php-client/autoload.php');
 /**
  * Class BookingsWebModule
  * @package Modules
@@ -10,6 +11,9 @@ Kurogo::includePackage('db');
  */
 class BookingsWebModule extends WebModule
 {
+
+
+
     /**
      * Specifies the module name
      *
@@ -17,16 +21,22 @@ class BookingsWebModule extends WebModule
      */
     protected $id = 'bookings';
 
-    private $service, $client, $email, $password;
+    private $service;
+    private $email;
+    private $password;
+    protected $client;
 
     function __construct()
     {
-        $this->service = Zend_Gdata_Calendar::AUTH_SERVICE_NAME;
-        
-        require_once 'Zend/Gdata.php';
-        require_once 'Zend/Loader.php';
-    }
+        $this->client = new Google_Client();
+        // OAuth2 client ID and secret can be found in the Google Developers Console.
+        $this->client->setClientId('987849558796-5a1oa8h6la31s7l8ve5vsisjlhsahfrj.apps.googleusercontent.com');
+        $this->client->setClientSecret('onkohzxipY8Rm-XTeouk8nyV');
+        $this->client->setRedirectUri('http://www.kurogo.artuvic.com/oauth2callback');
+        $this->client->addScope('https://www.googleapis.com/auth/calendar');
 
+        $this->service = new Google_Service_Calendar($this->client);
+    }
 
     /**
      *
@@ -37,7 +47,13 @@ class BookingsWebModule extends WebModule
         switch($this->page)
         {
             case 'index':
+//                print "Please visit:\n$authUrl\n\n";
+                print "Please enter the auth code:\n";
+                $authCode = trim(fgets(STDIN));
 
+                // Exchange authorization code for access token
+                $accessToken = $this->client->authenticate($authCode);
+                $this->client->setAccessToken($accessToken);
                 break;
             case 'create':
 

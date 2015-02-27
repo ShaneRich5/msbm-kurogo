@@ -2,13 +2,67 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbd5efdf-0a89-4404-9291-046ffa58c367" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/url_b4dadaaac8e4846e308d31137474084a" afterPath="$PROJECT_DIR$/sites/MSBM/cache/url_b4dadaaac8e4846e308d31137474084a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/app/modules/courses/CoursesWebModule.php" afterPath="$PROJECT_DIR$/sites/MSBM/app/modules/courses/CoursesWebModule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/lib/MoodleDataRetriever.php" afterPath="$PROJECT_DIR$/sites/MSBM/lib/MoodleDataRetriever.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/app/modules/courses/templates/details.tpl" afterPath="$PROJECT_DIR$/sites/MSBM/app/modules/courses/templates/details.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/logs/kurogo_stats_log_v1" afterPath="$PROJECT_DIR$/sites/MSBM/logs/kurogo_stats_log_v1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^c079d2a50f5d8d94efbc738644eb40cddd78a139.file.details.tpl.php" afterPath="$PROJECT_DIR$/sites/MSBM/cache/smarty/templates/tablet_computer_unknown^c079d2a50f5d8d94efbc738644eb40cddd78a139.file.details.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/FileLoader/images/d3352b2fcbb92160b3db391e94a02abe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/kurogo/currentVersion" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/export_calendar-pane-tablet-computer-ad9acdaf3c6abd3b341cc6ac8fba8b0e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/export_emergency-pane-tablet-computer-99b935f8ffdc549285e7d73fc98d5163" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/export_map-pane-tablet-computer-efe533e3f6ab66657b692dc80ad53c73" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/export_news-pane-tablet-computer-249e9e85c8e7a40139b614cc3913daf8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/export_social-pane-tablet-computer-e86081ab6ad6eb05d17e78daf2282698" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/export_video-pane-tablet-computer-d42856eea1c960ef786c7726d1ded82d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/group_css-bookings-index-tablet-computer-unknown-d41d8cd98f00b204e9800998ecf8427e-bookings" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/group_css-calendar-pane-tablet-computer-unknown-d41d8cd98f00b204e9800998ecf8427e-calendar-pageOnly" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/group_css-courses-details-tablet-computer-unknown-d41d8cd98f00b204e9800998ecf8427e-courses" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/group_css-courses-index-tablet-computer-unknown-d41d8cd98f00b204e9800998ecf8427e-courses" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/group_css-emergency-pane-tablet-computer-unknown-d41d8cd98f00b204e9800998ecf8427e-emergency-pageOnly" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/group_css-home-index-tablet-computer-unknown-d41d8cd98f00b204e9800998ecf8427e-home" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/group_css-kurogo-error-tablet-computer-unknown-d41d8cd98f00b204e9800998ecf8427e-kurogo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/group_css-map-pane-tablet-computer-unknown-d41d8cd98f00b204e9800998ecf8427e-map-pageOnly" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/group_css-news-pane-tablet-computer-unknown-d41d8cd98f00b204e9800998ecf8427e-news-pageOnly" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/group_css-social-pane-tablet-computer-unknown-d41d8cd98f00b204e9800998ecf8427e-social-pageOnly" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/group_css-video-pane-tablet-computer-unknown-d41d8cd98f00b204e9800998ecf8427e-video-pageOnly" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/group_js-bookings-index-tablet-computer-unknown-d41d8cd98f00b204e9800998ecf8427e-bookings" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/group_js-calendar-pane-tablet-computer-unknown-d41d8cd98f00b204e9800998ecf8427e-calendar-pageOnly" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/group_js-courses-details-tablet-computer-unknown-d41d8cd98f00b204e9800998ecf8427e-courses" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/group_js-courses-index-tablet-computer-unknown-d41d8cd98f00b204e9800998ecf8427e-courses" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/group_js-emergency-pane-tablet-computer-unknown-d41d8cd98f00b204e9800998ecf8427e-emergency-pageOnly" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/group_js-home-index-tablet-computer-unknown-d41d8cd98f00b204e9800998ecf8427e-home" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/group_js-kurogo-error-tablet-computer-unknown-d41d8cd98f00b204e9800998ecf8427e-kurogo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/group_js-map-pane-tablet-computer-unknown-d41d8cd98f00b204e9800998ecf8427e-map-pageOnly" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/group_js-news-pane-tablet-computer-unknown-d41d8cd98f00b204e9800998ecf8427e-news-pageOnly" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/group_js-social-pane-tablet-computer-unknown-d41d8cd98f00b204e9800998ecf8427e-social-pageOnly" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/group_js-video-pane-tablet-computer-unknown-d41d8cd98f00b204e9800998ecf8427e-video-pageOnly" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_12626b417b5b037d1773e25b75c2ecc7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_12626b417b5b037d1773e25b75c2ecc7.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_25acb5c16e29263b8ccaa0c71ec2593b" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_25acb5c16e29263b8ccaa0c71ec2593b.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_29ab7c082a148af4bd926f86f44fb147" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_29ab7c082a148af4bd926f86f44fb147.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_35bf65d4db0bf57ea654b9891a150895" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_35bf65d4db0bf57ea654b9891a150895.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_3e7ea379e8a2c4c6245fcdd45c8563cc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_3e7ea379e8a2c4c6245fcdd45c8563cc.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_45eb5e7a4a4949b6fedaed516c10d99c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_45eb5e7a4a4949b6fedaed516c10d99c.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_5714154bf631414a99437838fb13c666" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_5714154bf631414a99437838fb13c666.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_57d6f5c522dbf162c273b3064c48e6a1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_57d6f5c522dbf162c273b3064c48e6a1.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_5e1c48ae22e6bbbad3f9095e47fd6c96" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_5e1c48ae22e6bbbad3f9095e47fd6c96.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_87494ca4d2baeed2792926c797266869" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_87494ca4d2baeed2792926c797266869.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_9352506a24ead8d79892e945177d5240" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_9352506a24ead8d79892e945177d5240.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_ae480d74fdf5c6381f6640ad0b8c438e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_ae480d74fdf5c6381f6640ad0b8c438e.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_e9f4684bf60b39dd018d61d65dc35c2c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_e9f4684bf60b39dd018d61d65dc35c2c.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_ecb2775956a451728f4a29be60e25d61" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_ecb2775956a451728f4a29be60e25d61.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_fc9770b76795ad59ad553330aef226a6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/MSBM/cache/minify/minify_fc9770b76795ad59ad553330aef226a6.gz" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/MSBM/app/modules/booking/BookingWebModule.php" afterPath="$PROJECT_DIR$/sites/MSBM/app/modules/booking/BookingWebModule.php" />
     </list>
     <ignored path="msbm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,8 +116,8 @@
           <file leaf-file-name="CoursesWebModule.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/courses/CoursesWebModule.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.25142047" vertical-offset="1455" max-vertical-offset="2516">
-                  <caret line="96" column="48" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="48" />
+                <state vertical-scroll-proportion="0.24080268" vertical-offset="324" max-vertical-offset="2664">
+                  <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
@@ -72,7 +126,7 @@
           <file leaf-file-name="all.tpl" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/courses/templates/all.tpl">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="187">
+                <state vertical-scroll-proportion="-2.6666667" vertical-offset="0" max-vertical-offset="198">
                   <caret line="4" column="67" selection-start-line="4" selection-start-column="67" selection-end-line="4" selection-end-column="67" />
                   <folding />
                 </state>
@@ -82,7 +136,7 @@
           <file leaf-file-name="details.tpl" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/courses/templates/details.tpl">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="391">
+                <state vertical-scroll-proportion="-10.666667" vertical-offset="0" max-vertical-offset="414">
                   <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
                   <folding />
                 </state>
@@ -93,11 +147,31 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="MoodleDataRetriever.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="MoodleDataRetriever.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/sites/MSBM/lib/MoodleDataRetriever.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.35511363" vertical-offset="260" max-vertical-offset="1156">
+                <state vertical-scroll-proportion="4.111111" vertical-offset="651" max-vertical-offset="1224">
                   <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="BookingWebModule.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/booking/BookingWebModule.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="4.1839466" vertical-offset="540" max-vertical-offset="4464">
+                  <caret line="169" column="10" selection-start-line="169" selection-start-column="10" selection-end-line="169" selection-end-column="10" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.tpl" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/kurogo-mw-1.8.3/sites/Universitas/app/modules/booking/templates/index.tpl">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-12.666667" vertical-offset="0" max-vertical-offset="792">
+                  <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
                   <folding />
                 </state>
               </provider>
@@ -132,6 +206,8 @@
         <option value="$PROJECT_DIR$/sites/MSBM/lib/MoodleDataRetriever.php" />
         <option value="$PROJECT_DIR$/sites/MSBM/app/modules/courses/templates/details.tpl" />
         <option value="$PROJECT_DIR$/sites/MSBM/app/modules/courses/CoursesWebModule.php" />
+        <option value="$PROJECT_DIR$/sites/MSBM/app/modules/booking/BookingWebModule.php" />
+        <option value="$USER_HOME$/kurogo-mw-1.8.3/sites/Universitas/app/modules/booking/templates/index.tpl" />
       </list>
     </option>
   </component>
@@ -140,10 +216,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1490" />
-    <option name="height" value="880" />
+    <option name="x" value="1365" />
+    <option name="width" value="1368" />
+    <option name="height" value="769" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -168,7 +243,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -177,189 +251,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msbm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msbm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msbm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msbm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sites" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msbm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msbm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sites" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSBM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msbm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msbm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sites" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSBM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msbm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msbm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sites" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSBM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msbm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msbm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sites" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSBM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="courses" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msbm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msbm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sites" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSBM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="courses" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msbm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msbm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sites" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSBM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/kurogo-mw-1.8.3/sites/Universitas/app/modules/booking/templates/index.tpl" />
     <property name="FullScreen" value="false" />
     <property name="SearchEverywhereHistoryKey" value="Moodle&#9;FILE&#9;file://C:/MAMP/htdocs/msbm/sites/MSBM/lib/MoodleDataRetriever.php&#10;li&#9;FILE&#9;file://C:/MAMP/htdocs/msbm/Kurogo-Mobile-Web/app/common/templates/listItem.tpl&#10;res&#9;FILE&#9;file://C:/MAMP/htdocs/msbm/Kurogo-Mobile-Web/app/common/templates/results.tpl&#10;DA&#9;FILE&#9;file://C:/MAMP/htdocs/msbm/sites/MSBM/lib/MoodleDataRetriever.php&#10;Moo&#9;FILE&#9;file://C:/MAMP/htdocs/msbm/sites/MSBM/lib/MoodleDataRetriever.php&#10;login&#9;FILE&#9;file://C:/MAMP/htdocs/msbm/Kurogo-Mobile-Web/app/common/templates/page/login-tablet.tpl&#10;site&#9;FILE&#9;file://C:/MAMP/htdocs/msbm/sites/sites.ini&#10;listitem.tpl&#9;FILE&#9;file://C:/MAMP/htdocs/msbm/Kurogo-Mobile-Web/app/common/templates/listItem.tpl" />
     <property name="dynamic.classpath" value="false" />
@@ -378,29 +277,28 @@
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
     <configuration default="true" type="com.intellij.database.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
       <option name="VM_PARAMETERS" value="" />
       <option name="USER_CFG_CLASS" />
       <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
-    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
-      <BehatRunner />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
-      <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -419,7 +317,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1490" height="880" extended-state="6" />
+    <frame x="1365" y="0" width="1368" height="769" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33642384" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -428,19 +326,19 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19833565" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2320217" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23133236" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -464,13 +362,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Kurogo-Mobile-Web/lib/People/PeopleRetriever.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="743">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Kurogo-Mobile-Web/lib/People/DatabasePeopleRetriever.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4743">
@@ -667,13 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://db-console:/a1dd10a6/03910ff5-cf29-4744-8db6-e65f5e17fd0d/">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="727">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Kurogo-Mobile-Web/app/common/templates/page/login-tablet.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="730">
@@ -793,9 +677,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sites/MSBM/lib/MoodleDataRetriever.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.111111" vertical-offset="651" max-vertical-offset="1224">
+          <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/courses/templates/all.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="187">
+        <state vertical-scroll-proportion="-2.6666667" vertical-offset="0" max-vertical-offset="198">
           <caret line="4" column="67" selection-start-line="4" selection-start-column="67" selection-end-line="4" selection-end-column="67" />
           <folding />
         </state>
@@ -803,24 +695,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/courses/templates/details.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="391">
+        <state vertical-scroll-proportion="-10.666667" vertical-offset="0" max-vertical-offset="414">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/MSBM/lib/MoodleDataRetriever.php">
+    <entry file="file://$USER_HOME$/kurogo-mw-1.8.3/sites/Universitas/app/modules/booking/templates/index.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35511363" vertical-offset="260" max-vertical-offset="1156">
-          <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
+        <state vertical-scroll-proportion="-12.666667" vertical-offset="0" max-vertical-offset="792">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/booking/BookingWebModule.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.1839466" vertical-offset="540" max-vertical-offset="4464">
+          <caret line="169" column="10" selection-start-line="169" selection-start-column="10" selection-end-line="169" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/MSBM/app/modules/courses/CoursesWebModule.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25142047" vertical-offset="1455" max-vertical-offset="2516">
-          <caret line="96" column="48" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.24080268" vertical-offset="324" max-vertical-offset="2664">
+          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
           <folding />
         </state>
       </provider>

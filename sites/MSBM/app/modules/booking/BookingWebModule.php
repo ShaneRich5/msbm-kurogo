@@ -166,7 +166,13 @@ class BookingWebModule extends WebModule
             ),
         );
         $this->assign('links', $links);
-            break;
+        $this->assign('button', 'Button');
+          $this->assign('next',    'Next');
+          $this->assign('prev',    'Prev');
+          $this->assign('nextURL', $this->buildBreadcrumbURL($this->page, $this->args, false));
+          $this->assign('prevURL', $this->buildBreadcrumbURL($this->page, $this->args, false));
+        $this->assign('buttonURL', $this->buildBreadcrumbURL($this->page, $this->args, false));
+        break;
 
       case 'media':
         $this->assign('text', 'Multimedia Room');

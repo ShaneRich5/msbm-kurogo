@@ -3,7 +3,7 @@
 
 Kurogo::includePackage('db');
 
-require_once('google-api-php-client/autoload.php');
+//require_once('google-api-php-client/autoload.php');
 /**
  * Class BookingsWebModule
  * @package Modules
@@ -26,7 +26,7 @@ class BookingsWebModule extends WebModule
     private $password;
     protected $client;
 
-    function __construct()
+/*    function __construct()
     {
         $this->client = new Google_Client();
         // OAuth2 client ID and secret can be found in the Google Developers Console.
@@ -38,28 +38,121 @@ class BookingsWebModule extends WebModule
         $this->client->addScope('email');
 
         $this->service = new Google_Service_Calendar($this->client);
+    }*/
+
+    protected function getListsForPage($page) {
+        $lists = array();
+
+        $supportedFields = array(
+            'titles'    => 'title',
+            'subtitles' => 'subtitle',
+            'urls'      => 'url',
+            'imgs'      => 'img',
+            'classes'   => 'class',
+        );
+
+        $configs = $this->loadPageConfigArea($page, false);
+        foreach ($configs as $config) {
+            if (!isset($config['titles'])) { continue; }
+
+            $list = array(
+                'description' => self::argVal($config, 'description', 'list'),
+                'items' => array(),
+            );
+            foreach ($config['titles'] as $i => $title) {
+                $item = array();
+                foreach ($supportedFields as $fieldArray => $supportedField) {
+                    if (isset($config[$fieldArray], $config[$fieldArray][$i])) {
+                        $item[$supportedField] = $config[$fieldArray][$i];
+                    }
+                }
+                if (!isset($item['url'])) {
+                    $args = $this->args;
+                    if (isset($item['title'])) {
+                        $args['title'] = $item['title'];
+                    }
+                    $item['url'] = $this->buildBreadcrumbURL($this->page, $args);
+                }
+                $list['items'][] = $item;
+            }
+            $lists[] = $list;
+        }
+
+        return $lists;
+    }
+
+    protected function initializeForPage() {
+
+        switch($this->page) {
+            case 'index':
+                $links = array(
+                    array(
+                        'title' => 'Login',
+                        'url' => $this->buildBreadcrumbURL('login', array())
+                    ),
+                );
+                $this->assign('links', $links);
+                break;
+
+            case 'login':
+                $formFields = $this->loadPageConfigArea($this->page, false);
+                foreach ($formFields as $i => $formField) {
+                    if (isset($formField['option_keys'])) {
+                        $options = array();
+                        foreach ($formField['option_keys'] as $j => $optionKey) {
+                            $options[$optionKey] = $formField['option_values'][$j];
+                        }
+                        $formFields[$i]['options'] = $options;
+                        unset($formFields[$i]['option_keys']);
+                        unset($formFields[$i]['option_values']);
+                    }
+                }
+                $this->assign('formFields', $formFields);
+                break;
+
+            case 'logout':
+                $formFields = $this->loadPageConfigArea($this->page, false);
+                foreach ($formFields as $i => $formField) {
+                    if (isset($formField['option_keys'])) {
+                        $options = array();
+                        foreach ($formField['option_keys'] as $j => $optionKey) {
+                            $options[$optionKey] = $formField['option_values'][$j];
+                        }
+                        $formFields[$i]['options'] = $options;
+                        unset($formFields[$i]['option_keys']);
+                        unset($formFields[$i]['option_values']);
+                    }
+                }
+                $this->assign('formFields', $formFields);
+                break;
+
+            case 'today':
+                $this->assign('out', 'Logout');
+                $this->assign('outURL', $this->buildBreadcrumbURL('logout', array()));
+                $this->assign('lists', $this->getListsForPage($this->page));
+                break;
+
+        }//END-- of switch
     }
 
     /**
-     *
+     * Initialization Using the API
      */
-    protected function initializeForPage()
-    {
-
-        switch($this->page)
-        {
-            case 'index':
-//                print "Please visit:\n$authUrl\n\n";
-                print "Please enter the auth code:\n";
-                $authCode = trim(fgets(STDIN));
-
-                // Exchange authorization code for access token
-                $accessToken = $this->client->authenticate($authCode);
-                $this->client->setAccessToken($accessToken);
-                break;
-            case 'create':
-
-
+//    protected function initializeForPage()
+//    {
+//
+//        switch($this->page)
+//        {
+//            case 'index':
+////                print "Please visit:\n$authUrl\n\n";
+//                print "Please enter the auth code:\n";
+//                $authCode = trim(fgets(STDIN));
+//
+//                // Exchange authorization code for access token
+//                $accessToken = $this->client->authenticate($authCode);
+//                $this->client->setAccessToken($accessToken);
+//                break;
+//            case 'create':
 //                if ($token = Kurogo::getCache('token'))
 //                {
 //                    $this->redirectTo('booking/all');
@@ -132,17 +225,15 @@ class BookingsWebModule extends WebModule
 //                    )
 //
 //                );
-
 //                $this->assign('formFields', $form);
 //                $this->assign('formListID', 'booking-form');
-
 //                break;
-            case 'all':
-                $this->assign('username', $this->getArg('username'));
-                break;
-            default:
-                parent::initializeForPage();
-                break;
-        }
-    }
+//            case 'all':
+//                $this->assign('username', $this->getArg('username'));
+//                break;
+//            default:
+//                parent::initializeForPage();
+//                break;
+//        }
+//    }
 }

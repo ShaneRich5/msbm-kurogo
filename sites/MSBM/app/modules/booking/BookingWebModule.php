@@ -214,7 +214,7 @@ class BookingWebModule extends WebModule
                   unset($formFields[$i]['option_values']);
               }
         }
-      $this->assign('formFields', $formFields);
+        $this->assign('formFields', $formFields);
       break;
 
       case 'view':

@@ -761,3 +761,9 @@
 [Thu 02 26 22:12:51 2015]	exception:Critical	WebModule->setPage@1576	/courses/all/logout	A KurogoPageNotFoundException has occured: Invalid Page Name
 [Thu 02 26 22:12:52 2015]	exception:Critical	WebModule->setPage@1576	/courses/all/logout	A KurogoPageNotFoundException has occured: Invalid Page Name
 >>>>>>> dev
+[Sat 02 28 17:19:50 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Sat 02 28 18:14:58 2015]	exception:Critical	Module::factory@130	/booking/	A KurogoModuleNotFound has occured: Module booking not found
+[Sat 02 28 18:15:35 2015]	exception:Critical	Module::factory@130	/booking/media	A KurogoModuleNotFound has occured: Module booking not found
+[Sat 02 28 18:15:53 2015]	exception:Critical	Module::factory@130	/booking/gaz	A KurogoModuleNotFound has occured: Module booking not found
+[Sat 02 28 18:16:00 2015]	exception:Critical	Module::factory@130	/booking/create	A KurogoModuleNotFound has occured: Module booking not found
+[Sat 02 28 18:16:11 2015]	exception:Critical	Module::factory@130	/booking/view	A KurogoModuleNotFound has occured: Module booking not found

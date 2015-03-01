@@ -52,6 +52,9 @@ class CoursesWebModule extends WebModule
 
                 break;
             case 'all':
+                if (!isset($_COOKIE['moodle_token']))
+                    $this->redirectTo('index');
+
 
                 # Retrieve user info, using stored cookie
                 $userInfo = $this->controller->getUserId($_COOKIE['moodle_token']);
@@ -94,6 +97,9 @@ class CoursesWebModule extends WebModule
             # 'url' => $this->buildBreadcrumbURL('details', array('wstoken' => '47aae912ad404c743d7b66ad0c6c0742','wsfunction' => 'core_course_get_contents', 'courseid' => $courseData['id']), false)
 
             case 'details':
+                if (!isset($_COOKIE['moodle_token']))
+                    $this->redirectTo('index');
+
                 $id = $this->getArg('courseid');
                 $token = $this->getArg('wstoken');
 

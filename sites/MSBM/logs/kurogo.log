@@ -767,3 +767,4 @@
 [Sat 02 28 18:15:53 2015]	exception:Critical	Module::factory@130	/booking/gaz	A KurogoModuleNotFound has occured: Module booking not found
 [Sat 02 28 18:16:00 2015]	exception:Critical	Module::factory@130	/booking/create	A KurogoModuleNotFound has occured: Module booking not found
 [Sat 02 28 18:16:11 2015]	exception:Critical	Module::factory@130	/booking/view	A KurogoModuleNotFound has occured: Module booking not found
+[Sat 02 28 20:08:34 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml

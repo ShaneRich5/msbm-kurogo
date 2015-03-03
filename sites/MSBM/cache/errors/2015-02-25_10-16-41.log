@@ -1,9 +1,0 @@
-<strong>Error connecting to database</strong><br><br><strong>Fatal error</strong>:  Uncaught exception 'KurogoDataServerException' with message 'Error connecting to database' in /home/projects/msbm/kurogo/lib/db.php:71
-Stack trace:
-#0 /home/projects/msbm/kurogo/lib/db.php(52): init(array)
-#1 /home/projects/msbm/sites/MSBM/app/modules/bookings/BookingsWebModule.php(26): __construct()
-#2 /home/projects/msbm/kurogo/lib/WebModule.php(1784): initializeForPage()
-#3 /home/projects/msbm/kurogo/lib/WebModule.php(1990): setPageVariables()
-#4 /home/projects/msbm/kurogo/www/index.php(323): displayPage()
-#5 {main}
-  thrown in <strong>/home/projects/msbm/kurogo/lib/db.php</strong> on line <strong>71</strong>

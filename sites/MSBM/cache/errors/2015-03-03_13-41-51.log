@@ -1,0 +1,15 @@
+<strong>Syntax Error in template "/home/fearon/msbm-kurogo/sites/MSBM/app/modules/bookings/templates/index.tpl"  on line 15 "{*&lt;input id=&quot;password&quot; type=&quot;password&quot; name=&quot;password&quot;&gt;"  - Unexpected "*"</strong><br><br><strong>Fatal error</strong>:  Uncaught exception 'SmartyCompilerException' with message 'Syntax Error in template "/home/fearon/msbm-kurogo/sites/MSBM/app/modules/bookings/templates/index.tpl"  on line 15 "{*&lt;input id=&quot;password&quot; type=&quot;password&quot; name=&quot;password&quot;&gt;"  - Unexpected "*"' in /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/lib/smarty/sysplugins/smarty_internal_templatecompilerbase.php:431
+Stack trace:
+#0 /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/lib/smarty/sysplugins/smarty_internal_templateparser.php(2855): trigger_template_error()
+#1 /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/lib/smarty/sysplugins/smarty_internal_templateparser.php(2920): yy_syntax_error(integer, string)
+#2 /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/lib/smarty/sysplugins/smarty_internal_smartytemplatecompiler.php(51): doParse(integer, string)
+#3 /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/lib/smarty/sysplugins/smarty_internal_templatecompilerbase.php(82): doCompile(string)
+#4 /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/lib/smarty/sysplugins/smarty_internal_template.php(260): compileTemplate(object)
+#5 /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/lib/smarty/sysplugins/smarty_internal_template.php(422): compileTemplateSource()
+#6 /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/lib/smarty/sysplugins/smarty_internal_template.php(567): renderTemplate()
+#7 /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/lib/smarty/Smarty.class.php(336): getRenderedTemplate()
+#8 /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/lib/TemplateEngine.php(438): fetch(string, NULL, NULL)
+#9 /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/lib/WebModule.php(1993): fetchForDevice(string)
+#10 /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/www/index.php(323): displayPage()
+#11 {main}
+  thrown in <strong>/home/fearon/msbm-kurogo/Kurogo-Mobile-Web/lib/smarty/sysplugins/smarty_internal_templatecompilerbase.php</strong> on line <strong>431</strong>

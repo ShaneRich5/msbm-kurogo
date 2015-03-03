@@ -20,9 +20,4 @@
 {if $error}
     <div class="focal">{$error}</div>
 {/if}
-<div class="focal"><p>
-        {$token}
-        {$username}
-        {$password}
-    </p></div>
 {include file="findInclude:common/templates/footer.tpl"}

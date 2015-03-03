@@ -1,65 +1,35 @@
-<<<<<<< HEAD
-<?php /* Smarty version Smarty-3.0.7, created on 2015-02-23 10:33:04
+<?php /* Smarty version Smarty-3.0.7, created on 2015-03-03 13:37:06
          compiled from "findInclude:common/templates/footer.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:553554eb4830d6ef88-88317354%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
-=======
-<?php /* Smarty version Smarty-3.0.7, created on 2015-02-25 10:07:30
-         compiled from "findInclude:common/templates/footer.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:166296507354ed75c129abb0-74348026%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
->>>>>>> ab25c7a18bf13d6ae04ee4658daffc4301f49165
+<?php /*%%SmartyHeaderCode:147389112954f5ff52c91d86-77693809%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '5fa1ce90517828d1f7dd1b47ebe9bab07ede9bcf' => 
     array (
       0 => 'findInclude:common/templates/footer.tpl',
-<<<<<<< HEAD
-      1 => 1364684942,
+      1 => 1425407566,
       2 => 'findInclude',
     ),
-    'd806b43c0881cbb1da33a2802474f53e8a4485ee' => 
+    '2ac02fc10671ad735aebd97e3462472085b12fd9' => 
     array (
-      0 => 'C:\\MAMP\\htdocs\\msbm\\Kurogo-Mobile-Web\\app\\common\\templates\\footer.tpl',
-      1 => 1364684942,
-=======
-      1 => 1424848287,
-      2 => 'findInclude',
-    ),
-    '1d1c69f34e9c0832e46bd91151423a2e71d19128' => 
-    array (
-      0 => '/home/projects/msbm/kurogo/app/common/templates/footer.tpl',
-      1 => 1424848287,
->>>>>>> ab25c7a18bf13d6ae04ee4658daffc4301f49165
+      0 => '/home/fearon/msbm-kurogo/Kurogo-Mobile-Web/app/common/templates/footer.tpl',
+      1 => 1425407566,
       2 => 'file',
     ),
     '' => 
     array (
       0 => 'findInclude:common/templates/page/moduleDebug.tpl',
-<<<<<<< HEAD
-      1 => 1364684942,
+      1 => 1425407566,
       2 => 'findInclude',
     ),
-    '369720295b1eb622e3344b5374618464a06284b6' => 
+    'f6f0f44b0bd7621af8287b97960121e0afc48c48' => 
     array (
-      0 => 'C:\\MAMP\\htdocs\\msbm\\Kurogo-Mobile-Web\\app\\common\\templates\\page\\login.tpl',
-      1 => 1364684942,
+      0 => '/home/fearon/msbm-kurogo/Kurogo-Mobile-Web/app/common/templates/page/login.tpl',
+      1 => 1425407566,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '553554eb4830d6ef88-88317354',
-=======
-      1 => 1424848287,
-      2 => 'findInclude',
-    ),
-    '1675cb49a54703e464cdec691f787b0e1939c86b' => 
-    array (
-      0 => '/home/projects/msbm/kurogo/app/common/templates/page/login.tpl',
-      1 => 1424848287,
-      2 => 'file',
-    ),
-  ),
-  'nocache_hash' => '166296507354ed75c129abb0-74348026',
->>>>>>> ab25c7a18bf13d6ae04ee4658daffc4301f49165
+  'nocache_hash' => '147389112954f5ff52c91d86-77693809',
   'function' => 
   array (
   ),

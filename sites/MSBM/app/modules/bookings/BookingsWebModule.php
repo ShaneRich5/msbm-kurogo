@@ -1,6 +1,6 @@
 <?php
 
-require_once('google-api-php-client/autoload.php');
+require_once('/home/fearon/msbm-kurogo/sites/MSBM/app/modules/bookings/google-api-php-client/src/Google/autoload.php');
 /**
  * Class BookingsWebModule
  * @package Modules

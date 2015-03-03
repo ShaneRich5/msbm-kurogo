@@ -1,6 +1,0 @@
-<strong>Module logout not found</strong><br><br><strong>Fatal error</strong>:  Uncaught exception 'KurogoModuleNotFound' with message 'Module logout not found' in C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\Module.php:130
-Stack trace:
-#0 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\WebModule.php(576): factory(string, string)
-#1 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\www\index.php(321): factory(string, string, array)
-#2 {main}
-  thrown in <strong>C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\Module.php</strong> on line <strong>130</strong>

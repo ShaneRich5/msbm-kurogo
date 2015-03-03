@@ -1,23 +1,23 @@
-<?php /* Smarty version Smarty-3.0.7, created on 2015-02-28 23:32:08
+<?php /* Smarty version Smarty-3.0.7, created on 2015-03-03 13:37:12
          compiled from "findInclude:common/templates/listItem.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2523154f29648443ca3-88381972%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:191745849154f5ff5821ae09-12162984%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '37c57ab8c133702532ca3c38b3610bed894f43c8' => 
     array (
       0 => 'findInclude:common/templates/listItem.tpl',
-      1 => 1425171103,
+      1 => 1425407566,
       2 => 'findInclude',
     ),
   ),
-  'nocache_hash' => '2523154f29648443ca3-88381972',
+  'nocache_hash' => '191745849154f5ff5821ae09-12162984',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
 )); /*/%%SmartyHeaderCode%%*/?>
-<?php if (!is_callable('smarty_modifier_truncate')) include 'C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\smarty\plugins\modifier.truncate.php';
+<?php if (!is_callable('smarty_modifier_truncate')) include '/home/fearon/msbm-kurogo/Kurogo-Mobile-Web/lib/smarty/plugins/modifier.truncate.php';
 ?><?php ob_start(); ?>
   <?php if (isset($_smarty_tpl->getVariable('item',null,true,false)->value['label'])){?>
     <?php if ($_smarty_tpl->getVariable('boldLabels')->value){?>

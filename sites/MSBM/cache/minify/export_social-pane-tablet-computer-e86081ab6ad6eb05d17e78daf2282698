@@ -1,18 +1,18 @@
-a:3:{s:10:"properties";a:7:{s:15:"inlineCSSBlocks";a:0:{}s:7:"cssURLs";a:0:{}s:22:"inlineJavascriptBlocks";a:0:{}s:28:"inlineJavascriptFooterBlocks";a:0:{}s:25:"onOrientationChangeBlocks";a:0:{}s:12:"onLoadBlocks";a:1:{i:0;s:14:"scrollToTop();";}s:14:"javascriptURLs";a:3:{i:0;s:72:"/min/?g=file-/common/javascript/lib/iscroll-4.2.js&debug=1&config=social";i:1;s:71:"/min/?g=file-/common/javascript/lib/ellipsizer.js&debug=1&config=social";i:2;s:72:"/min/?g=file-/common/javascript/lib/paneStories.js&debug=1&config=social";}}s:9:"minifyCSS";s:2474:"/* Adding url prefix '/device/tablet-computer-unknown/' */
+a:3:{s:10:"properties";a:7:{s:15:"inlineCSSBlocks";a:0:{}s:7:"cssURLs";a:0:{}s:22:"inlineJavascriptBlocks";a:0:{}s:28:"inlineJavascriptFooterBlocks";a:0:{}s:25:"onOrientationChangeBlocks";a:0:{}s:12:"onLoadBlocks";a:1:{i:0;s:14:"scrollToTop();";}s:14:"javascriptURLs";a:3:{i:0;s:72:"/min/?g=file-/common/javascript/lib/iscroll-4.2.js&debug=1&config=social";i:1;s:71:"/min/?g=file-/common/javascript/lib/ellipsizer.js&debug=1&config=social";i:2;s:72:"/min/?g=file-/common/javascript/lib/paneStories.js&debug=1&config=social";}}s:9:"minifyCSS";s:2538:"/* Adding url prefix '/device/tablet-computer-unknown/' */
 
 /* Minify_CSS_UriRewriter::$debugText
 
-docRoot    : C:\MAMP\htdocs\msbm\kurogo\www
-currentDir : C:\MAMP\htdocs\msbm\kurogo\app\modules\social\css
+docRoot    : /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/www
+currentDir : /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/app/modules/social/css
 
 file-relative URI  : common/images/button-twitter-24.png
-path prepended     : C:\MAMP\htdocs\msbm\kurogo\app\modules\social\css\common\images\button-twitter-24.png
-docroot stripped   : \modules\social\css\common\images\button-twitter-24.png
+path prepended     : /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/app/modules/social/css/common/images/button-twitter-24.png
+docroot stripped   : /modules/social/css/common/images/button-twitter-24.png
 traversals removed : /modules/social/css/common/images/button-twitter-24.png
 
 file-relative URI  : common/images/button-facebook-24.png
-path prepended     : C:\MAMP\htdocs\msbm\kurogo\app\modules\social\css\common\images\button-facebook-24.png
-docroot stripped   : \modules\social\css\common\images\button-facebook-24.png
+path prepended     : /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/app/modules/social/css/common/images/button-facebook-24.png
+docroot stripped   : /modules/social/css/common/images/button-facebook-24.png
 traversals removed : /modules/social/css/common/images/button-facebook-24.png
 
 */

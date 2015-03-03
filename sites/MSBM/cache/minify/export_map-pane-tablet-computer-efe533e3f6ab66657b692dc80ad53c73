@@ -1,7 +1,7 @@
 a:3:{s:10:"properties";a:7:{s:15:"inlineCSSBlocks";a:0:{}s:7:"cssURLs";a:0:{}s:22:"inlineJavascriptBlocks";a:0:{}s:28:"inlineJavascriptFooterBlocks";a:3:{i:0;s:146:"var CONFIG_MODULE = 'map';
 var MIN_LAT_SPAN = 5.3644180297852E-6;
 var MIN_LON_SPAN = 1.072883605957E-5;
-var NO_RESULTS_FOUND = "No results found";";i:1;s:1149:"
+var NO_RESULTS_FOUND = "No results found";";i:1;s:1105:"
 /*
  * Copyright © 2010 - 2013 Modo Labs Inc. All rights reserved.
  *
@@ -25,26 +25,26 @@ mapLoader.loadMap();
 
 
 mapLoader.addPlacemark(
-    "http://localhost:8888/map/index?group=campus&_b=%5B%7B%22t%22%3A%22Map%22%2C%22lt%22%3A%22Map%22%2C%22p%22%3A%22index%22%2C%22a%22%3A%22%22%7D%5D",
+    "http://localhost/map/index?group=campus&_b=%5B%7B%22t%22%3A%22Map%22%2C%22lt%22%3A%22Map%22%2C%22p%22%3A%22index%22%2C%22a%22%3A%22%22%7D%5D",
     new google.maps.Marker({position: new google.maps.LatLng(18.005303,-76.746568),
 map: map,
 title: "Main Campus"}),
     {
         title: "Main Campus",
         subtitle: null,
-        url: "http://localhost:8888/map/index?group=campus&_b=%5B%7B%22t%22%3A%22Map%22%2C%22lt%22%3A%22Map%22%2C%22p%22%3A%22index%22%2C%22a%22%3A%22%22%7D%5D",
+        url: "http://localhost/map/index?group=campus&_b=%5B%7B%22t%22%3A%22Map%22%2C%22lt%22%3A%22Map%22%2C%22p%22%3A%22index%22%2C%22a%22%3A%22%22%7D%5D",
         lat: 18.005303,
         lon: -76.746568
     }
 );
 
 mapLoader.showDefaultCallout();
-";i:2;s:24:"showUserLocation = true;";}s:25:"onOrientationChangeBlocks";a:1:{i:0;s:28:"updateContainerDimensions();";}s:12:"onLoadBlocks";a:2:{i:0;s:14:"scrollToTop();";i:1;s:22:"setModuleFillScreen();";}s:14:"javascriptURLs";a:4:{i:0;s:69:"/min/?g=file-/common/javascript/lib/iscroll-4.2.js&debug=1&config=map";i:1;s:46:"http://maps.google.com/maps/api/js?sensor=true";i:2;s:58:"/min/?g=file-/common/javascript/maps.js&debug=1&config=map";i:3;s:72:"/min/?g=file-/common/javascript/lib/infobox-1.1.11.js&debug=1&config=map";}}s:9:"minifyCSS";s:1903:"/* Adding url prefix '/device/tablet-computer-unknown/' */
+";i:2;s:24:"showUserLocation = true;";}s:25:"onOrientationChangeBlocks";a:1:{i:0;s:28:"updateContainerDimensions();";}s:12:"onLoadBlocks";a:2:{i:0;s:14:"scrollToTop();";i:1;s:22:"setModuleFillScreen();";}s:14:"javascriptURLs";a:4:{i:0;s:69:"/min/?g=file-/common/javascript/lib/iscroll-4.2.js&debug=1&config=map";i:1;s:46:"http://maps.google.com/maps/api/js?sensor=true";i:2;s:58:"/min/?g=file-/common/javascript/maps.js&debug=1&config=map";i:3;s:72:"/min/?g=file-/common/javascript/lib/infobox-1.1.11.js&debug=1&config=map";}}s:9:"minifyCSS";s:1935:"/* Adding url prefix '/device/tablet-computer-unknown/' */
 
 /* Minify_CSS_UriRewriter::$debugText
 
-docRoot    : C:\MAMP\htdocs\msbm\kurogo\www
-currentDir : C:\MAMP\htdocs\msbm\kurogo\app\modules\map\css
+docRoot    : /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/www
+currentDir : /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/app/modules/map/css
 
 */
 

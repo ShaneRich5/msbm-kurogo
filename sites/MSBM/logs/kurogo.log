@@ -771,3 +771,5 @@
 [Sat 02 28 23:32:11 2015]	exception:Critical	Module::factory@130	/logout/	A KurogoModuleNotFound has occured: Module logout not found
 [Sat 02 28 23:33:00 2015]	exception:Critical	Module::factory@130	/logout/index	A KurogoModuleNotFound has occured: Module logout not found
 [Sat 02 28 23:33:05 2015]	exception:Critical	Module::factory@130	/logout/	A KurogoModuleNotFound has occured: Module logout not found
+[Tue 03 03 14:50:21 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Tue 03 03 14:50:29 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml

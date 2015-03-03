@@ -1,6 +1,7 @@
 <?php
 
-require_once('/home/fearon/msbm-kurogo/sites/MSBM/app/modules/bookings/google-api-php-client/src/Google/autoload.php');
+session_start();
+require_once('google-api-php-client/src/Google/autoload.php');
 /**
  * Class BookingsWebModule
  * @package Modules
@@ -29,11 +30,17 @@ class BookingsWebModule extends WebModule
         # erase key when finished
         $this->client->setClientId('987849558796-5a1oa8h6la31s7l8ve5vsisjlhsahfrj.apps.googleusercontent.com');
         $this->client->setClientSecret('onkohzxipY8Rm-XTeouk8nyV');
-        $this->client->setRedirectUri('urn:ietf:wg:oauth:2.0:oob');
+        $this->client->setRedirectUri('localhost:8888/bookings/index');
+//        $this->client->setRedirectUri('http://kurogo.artuvic.com:8010/bookings/index');
+        $this->client->setApplicationName('MSBM');
+//        $this->client->setAccessType()
         $this->client->addScope('https://www.googleapis.com/auth/calendar');
+        $this->client->addScope('shane.richards121@gmail.com');
 //        $this->client->addScope('email');
-
+//        41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com
         $this->service = new Google_Service_Calendar($this->client);
+
+
     }
 
     protected function initializeForPage()
@@ -42,32 +49,38 @@ class BookingsWebModule extends WebModule
         switch($this->page)
         {
             case 'index':
-                #
+                if (!isset($_SESSION['google_token']))
+                {
+//                    $authUrl = $this->client->createAuthUrl();
+//                    $this->assign('logi', $authUrl);
+
+                    $scope = 'https://www.googleapis.com/auth/calendar';
+                    $client_id = '987849558796-5a1oa8h6la31s7l8ve5vsisjlhsahfrj.apps.googleusercontent.com';
+                    $redirect_uri = 'http://kurogo.artuvic.com:8010/bookings/index';
+
+                    $params = [
+                        'response_type' =>  'code',
+                        'client_id'     =>  $client_id,
+                        'redirect_uri'  =>  $redirect_uri,
+                        'scope'         =>  $scope,
+                    ];
+
+                    $url = 'https://accounts.google.com/o/oauth2/auth?' . http_build_query($params);
+
+                    $this->assign('logi', $url);
+                }
 
                 break;
             case 'create':
-                $this->assign('text', 'New Reservation');
-                $formFields = $this->loadPageConfigArea($this->page, false);
-                foreach ($formFields as $i => $formField) {
-                    if (isset($formField['option_keys'])) {
-                        $options = array();
-                        foreach ($formField['option_keys'] as $j => $optionKey) {
-                            $options[$optionKey] = $formField['option_values'][$j];
-                        }
-                        $formFields[$i]['options'] = $options;
-                        unset($formFields[$i]['option_keys']);
-                        unset($formFields[$i]['option_values']);
-                    }
-                }
-                $this->assign('formFields', $formFields);
+                $this->isAccessSet();
+
                 break;
             case 'list':
-
+                $this->isAccessSet();
 
                 break;
             case 'day';
-
-                $this->redirectTo('/index');
+                $this->isAccessSet();
 
                 break;
             case 'week':
@@ -79,6 +92,9 @@ class BookingsWebModule extends WebModule
             case 'logout':
                 # if token is set, unset it
                 # redirect to index
+                if (isset($_SESSION['google_token']))
+                    unset($_SESSION['google_token']);
+
                 $this->redirectTo('/index');
 
                 break;
@@ -86,5 +102,11 @@ class BookingsWebModule extends WebModule
                 parent::initializeForPage();
                 break;
         }
+    }
+
+    public function isAccessSet()
+    {
+        if (!isset($_SESSION['google_token']))
+            $this->redirectTo('/index');
     }
 }

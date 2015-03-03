@@ -15,5 +15,8 @@
             <input id="password" type="password" name="password">
         </p>
     </form>
+    <h1>
+        {$logi}
+    </h1>
 </div>
 {include file="findInclude:common/templates/footer.tpl"}

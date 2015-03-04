@@ -1,4 +1,5 @@
 {include file="findInclude:common/templates/header.tpl"}
+<<<<<<< HEAD
 <h2>Login</h2>
 <div class="focal">
     <form action="all" method="POST">
@@ -19,4 +20,10 @@
         {$logi}
     </h1>
 </div>
+=======
+
+<h1 class="focal">Faculty Room Booking</h1>
+{include file="findInclude:common/templates/navlist.tpl" navlistItems=$links}
+
+>>>>>>> 25b343a13fc716e7260d91bef4a131e352775f1e
 {include file="findInclude:common/templates/footer.tpl"}

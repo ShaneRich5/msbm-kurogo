@@ -1,29 +1,15 @@
 {include file="findInclude:common/templates/header.tpl"}
-<<<<<<< HEAD
-<h2>Login</h2>
-<div class="focal">
-    <form action="all" method="POST">
-        <p>
-            <label for="email">Email: </label>
-            <input id="email" type="email" name="email">
-        </p>
-        <p>
-            <label for="moodle_id">Moodle ID:</label>
-            <input id="moodle_id" type="text" name="moodle_id">
-        </p>
-        <p>
-            <label for="password">Password: </label>
-            <input id="password" type="password" name="password">
-        </p>
-    </form>
-    <h1>
-        {$logi}
-    </h1>
+
+<h1 class="focal">Room Booking</h1>
+
+<div class="nonfocal">
+    <h3>Login {$token}</h3>
 </div>
-=======
+<form method="get" id="advancedSearchForm" action="/{$configModule}/search">
+    {include file="findInclude:common/templates/formList.tpl" advancedFields=$formFields}
+    <div class="formbuttons">
+        {include file="findInclude:common/templates/formButtonSubmit.tpl" buttonTitle="Login"}
+    </div>
+</form>
 
-<h1 class="focal">Faculty Room Booking</h1>
-{include file="findInclude:common/templates/navlist.tpl" navlistItems=$links}
-
->>>>>>> 25b343a13fc716e7260d91bef4a131e352775f1e
 {include file="findInclude:common/templates/footer.tpl"}

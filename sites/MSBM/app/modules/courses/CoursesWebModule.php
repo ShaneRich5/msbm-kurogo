@@ -31,11 +31,10 @@ class CoursesWebModule extends WebModule
                      *
                      * TODO
                      */
-                    $credentials = array(
+                    $credentials = [
                         'username' => $_POST['username'],
                         'password' => $_POST['password'],
-                        'service' => 'moodle_mobile_app'
-                    );
+                    ];
 
                     $loginResult = $this->controller->getToken($credentials); // retrieves the token
 

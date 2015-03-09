@@ -24,36 +24,39 @@ class BookingsWebModule extends WebModule
     private $password;
     protected $client;
 
-/*    function __construct()
-//    {
-//        $this->client = new Google_Client();
+    function __construct()
+    {
+        $this->client = new Google_Client();
         // OAuth2 client ID and secret can be found in the Google Developers Console.
 
         # test values hard coded
-//        $this->client->setClientId('987849558796-5a1oa8h6la31s7l8ve5vsisjlhsahfrj.apps.googleusercontent.com');
-//        $this->client->setClientSecret('onkohzxipY8Rm-XTeouk8nyV');
-//
-//        $this->client->setRedirectUri('localhost:8888/bookings/index');
-//        $this->client->setRedirectUri('http://kurogo.artuvic.com:8010/bookings/index');
-//        $this->client->setApplicationName('MSBM');
-//        $this->client->setAccessType()
-//        $this->client->addScope('https://www.googleapis.com/auth/calendar');
-//        $this->client->addScope('shane.richards121@gmail.com');
-//        $this->client->addScope('email');
-//        41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com
-//        $this->service = new Google_Service_Calendar($this->client);
-//
-//        $this->client->setRedirectUri('http://www.kurogo.artuvic.com/oauth2callback');
-//        $this->client->addScope('email');
+        $this->client->setClientId('987849558796-5a1oa8h6la31s7l8ve5vsisjlhsahfrj.apps.googleusercontent.com');
+        $this->client->setClientSecret('onkohzxipY8Rm-XTeouk8nyV');
 
-//        $this->service = new Google_Service_Calendar($this->client);
-    }*/
+        $this->client->setRedirectUri('localhost:8888/bookings/index');
+        $this->client->setRedirectUri('http://kurogo.artuvic.com:8010/bookings/index');
+        $this->client->setApplicationName('MSBM');
+
+        $this->client->addScope('https://www.googleapis.com/auth/calendar');
+        $this->client->addScope('shane.richards121@gmail.com');
+
+        $this->service = new Google_Service_Calendar($this->client);
+    }
 
 
-    protected function initializeForPage() {
+    protected function initializeForPage()
+    {
+
+        $this->controller = DataRetriever::factory('MoodleDataRetriever', array());
 
         switch($this->page) {
             case 'index':
+                $this->isMoodleTokenSet(); // checks if user is logged in
+
+//                if (!isset($_COOKIE['moodle_token']))
+//                    $this->redirectTo('login');
+
+                $this->assign('token', $_COOKIE['moodle_token']);
                 if (!isset($_SESSION['google_token']))
                 {
 //                    $authUrl = $this->client->createAuthUrl();
@@ -77,14 +80,20 @@ class BookingsWebModule extends WebModule
 
                 break;
             case 'create':
+                $this->isMoodleTokenSet(); // checks if user is logged in
+
                 $this->isAccessSet();
 
                 break;
             case 'list':
+                $this->isMoodleTokenSet();
+
                 $this->isAccessSet();
 
                 break;
             case 'day';
+                $this->isMoodleTokenSet(); // checks if user is logged in
+
                 $this->isAccessSet();
                 $links = array(
                     array(
@@ -96,19 +105,49 @@ class BookingsWebModule extends WebModule
                 break;
 
             case 'login':
-                $formFields = $this->loadPageConfigArea($this->page, false);
-                foreach ($formFields as $i => $formField) {
-                    if (isset($formField['option_keys'])) {
-                        $options = array();
-                        foreach ($formField['option_keys'] as $j => $optionKey) {
-                            $options[$optionKey] = $formField['option_values'][$j];
-                        }
-                        $formFields[$i]['options'] = $options;
-                        unset($formFields[$i]['option_keys']);
-                        unset($formFields[$i]['option_values']);
-                    }
+
+                if (isset($_COOKIE['moodle_token']))
+                {
+                    $this->redirectTo('index');
                 }
-                $this->assign('formFields', $formFields);
+                else if (!empty($_POST)) // if a post was sent to this page
+                {
+                    $credentials = [
+                        'username'  =>  $_POST['username'],
+                        'password'  =>  $_POST['password'],
+                    ];
+
+                    $result = $this->controller->getToken($credentials);
+
+                    if (array_key_exists('error', $result))
+                        $this->assign('error', 'Incorrect login credentials');
+                    else
+                    {
+                        setcookie('moodle_token', $result['token'], time() + (60 *60 *24 * 30));
+                        Kurogo::redirectToURL('index');
+                    }
+
+                }
+                else // kenneth you need to explain this
+                {
+
+
+//                    $formFields = $this->loadPageConfigArea($this->page, false);
+//                    foreach ($formFields as $i => $formField) {
+//                        if (isset($formField['option_keys'])) {
+//                            $options = array();
+//                            foreach ($formField['option_keys'] as $j => $optionKey) {
+//                                $options[$optionKey] = $formField['option_values'][$j];
+//                            }
+//                            $formFields[$i]['options'] = $options;
+//                            unset($formFields[$i]['option_keys']);
+//                            unset($formFields[$i]['option_values']);
+//                        }
+//                    }
+//                    $this->assign('formFields', $formFields);
+                }
+
+
                 break;
 
             case 'logout':
@@ -117,14 +156,24 @@ class BookingsWebModule extends WebModule
                 if (isset($_SESSION['google_token']))
                     unset($_SESSION['google_token']);
 
-                $this->redirectTo('/index');
-        }//END-- of switch
+                if (isset($_COOKIE['moodle_token']))
+                    setcookie('moodle_token', '', time() - 3600);
+
+                $this->redirectTo('login');
+        }
     }
 
     public function isAccessSet()
     {
         if (!isset($_SESSION['google_token']))
-            $this->redirectTo('/index');
+            $this->redirectTo('index');
+    }
+
+    public function isMoodleTokenSet()
+    {
+        if (!isset($_COOKIE['moodle_token']))
+            $this->redirectTo('login');
+
     }
 }
 

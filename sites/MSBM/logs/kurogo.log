@@ -773,3 +773,13 @@
 [Sat 02 28 23:33:05 2015]	exception:Critical	Module::factory@130	/logout/	A KurogoModuleNotFound has occured: Module logout not found
 [Tue 03 03 14:50:21 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
 [Tue 03 03 14:50:29 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Sun 03 08 18:43:00 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Sun 03 08 18:48:51 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Mon 03 09 10:04:24 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Mon 03 09 10:04:43 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Mon 03 09 11:25:18 2015]	exception:Critical	WebModule->loadPageConfig@1517	/bookings/search?_type%5Bemail%5D=text&email=&_type%5Bid%5D=text&id=620065739&_type%5Bpassword%5D=text&password=19941206&Login=Login	A KurogoPageNotFoundException has occured: Page search not found
+[Mon 03 09 11:41:16 2015]	exception:Critical	WebModule->setPage@1576	/bookings//index	A KurogoPageNotFoundException has occured: Invalid Page Name
+[Mon 03 09 11:41:30 2015]	exception:Critical	WebModule->setPage@1576	/bookings//index	A KurogoPageNotFoundException has occured: Invalid Page Name
+[Mon 03 09 11:42:43 2015]	exception:Critical	WebModule->setPage@1576	/bookings//index	A KurogoPageNotFoundException has occured: Invalid Page Name
+[Mon 03 09 11:43:20 2015]	exception:Critical	WebModule->loadPageConfig@1517	/bookings/search?Login=Login	A KurogoPageNotFoundException has occured: Page search not found
+[Mon 03 09 12:06:49 2015]	exception:Critical	ConfigFileStore->loadConfig@42	/bookings/login	A KurogoConfigurationException has occured: ConfigFile: cannot load bookings configuration file page-login

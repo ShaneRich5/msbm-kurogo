@@ -22,7 +22,7 @@ class MoodleDataRetriever extends URLDataRetriever
         $this->setBaseURL('http://ourvle.mona.uwi.edu/login/token.php');
         $this->addParameter('username', $user['username']);
         $this->addParameter('password', $user['password']);
-        $this->addParameter('service', $user['service']);
+        $this->addParameter('service', 'moodle_mobile_app');
         $this->setMethod('GET');
 //        $this->addParameter($this->format['service'], $this->format['type']);
         $token = $this->getData($response);

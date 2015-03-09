@@ -1,7 +1,7 @@
 <?php
 $scope = 'https://www.googleapis.com/auth/calendar';
 $client_id = '987849558796-5a1oa8h6la31s7l8ve5vsisjlhsahfrj.apps.googleusercontent.com';
-$redirect_uri = 'http://kurogo.artuvic.com:8010/bookings/index';
+$redirect_uri = 'http://kurogo.artuvic.com:8010/courses/index';
 
 
 $params = array(

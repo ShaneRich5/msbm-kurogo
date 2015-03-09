@@ -20,9 +20,10 @@ class BookingsWebModule extends WebModule
     protected $id = 'bookings';
 
     private $service;
-    private $email;
     private $password;
     protected $client;
+
+    protected $service_account_name = 'shane.richards121@gmail.com';
 
     function __construct()
     {
@@ -82,19 +83,19 @@ class BookingsWebModule extends WebModule
             case 'create':
                 $this->isMoodleTokenSet(); // checks if user is logged in
 
-                $this->isAccessSet();
+                $this->isAccessTokenSet();
 
                 break;
             case 'list':
                 $this->isMoodleTokenSet();
 
-                $this->isAccessSet();
+                $this->isAccessTokenSet();
 
                 break;
             case 'day';
                 $this->isMoodleTokenSet(); // checks if user is logged in
 
-                $this->isAccessSet();
+                $this->isAccessTokenSet();
                 $links = array(
                     array(
                         'title' => 'Login',
@@ -163,10 +164,14 @@ class BookingsWebModule extends WebModule
         }
     }
 
-    public function isAccessSet()
+    public function isAccessTokenSet()
     {
         if (!isset($_SESSION['google_token']))
-            $this->redirectTo('index');
+        {
+
+        }
+        $this->client->setAccessToken($_SESSION['google_token']);
+
     }
 
     public function isMoodleTokenSet()

@@ -29,19 +29,28 @@ class BookingsWebModule extends WebModule
     {
         $this->client = new Google_Client();
         // OAuth2 client ID and secret can be found in the Google Developers Console.
-
+	#refresh token	
+	$refreshToken = '1/bTAaKST4WXP1U16FzobZUqsOkKTK36j2G8dYZKMLjq8';
         # test values hard coded
         $this->client->setClientId('987849558796-5a1oa8h6la31s7l8ve5vsisjlhsahfrj.apps.googleusercontent.com');
         $this->client->setClientSecret('onkohzxipY8Rm-XTeouk8nyV');
 
         $this->client->setRedirectUri('localhost:8888/bookings/index');
-        $this->client->setRedirectUri('http://kurogo.artuvic.com:8010/bookings/index');
+        $this->client->setRedirectUri('http://kurogo.artuvic.com:8010/courses/index');
         $this->client->setApplicationName('MSBM');
 
         $this->client->addScope('https://www.googleapis.com/auth/calendar');
         $this->client->addScope('shane.richards121@gmail.com');
+	$this->service = new Google_Service_Calendar($this->client);
+	$this->client->authenticate('4/UJTpCcSpvRQn1bEfT2mhfbncIG-5OC3MNtp6caqVzCE.gq-Um0T2p7ESaDn_6y0ZQNhgUaoAmAI');
+	$access_token = $this->client->getAccessToken();
 
-        $this->service = new Google_Service_Calendar($this->client);
+	//$this->client->setAccessToken($refreshToken); 
+	//if ($this->client->isAccessTokenExpired()) {
+	//    $this->client->refreshToken($refreshToken);
+	//  }
+
+        
     }
 
 

@@ -783,3 +783,27 @@
 [Mon 03 09 11:42:43 2015]	exception:Critical	WebModule->setPage@1576	/bookings//index	A KurogoPageNotFoundException has occured: Invalid Page Name
 [Mon 03 09 11:43:20 2015]	exception:Critical	WebModule->loadPageConfig@1517	/bookings/search?Login=Login	A KurogoPageNotFoundException has occured: Page search not found
 [Mon 03 09 12:06:49 2015]	exception:Critical	ConfigFileStore->loadConfig@42	/bookings/login	A KurogoConfigurationException has occured: ConfigFile: cannot load bookings configuration file page-login
+[Tue 03 10 21:00:11 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Tue 03 10 21:02:23 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Tue 03 10 21:02:27 2015]	exception:Critical	Google_Auth_OAuth2->authenticate@119	/bookings/	A Google_Auth_Exception has occured: Error fetching OAuth2 access token, message: 'invalid_grant'
+[Tue 03 10 21:02:28 2015]	exception:Critical	Google_Auth_OAuth2->authenticate@119	/bookings/	A Google_Auth_Exception has occured: Error fetching OAuth2 access token, message: 'invalid_grant: Code was already redeemed.'
+[Tue 03 10 21:02:29 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Tue 03 10 21:02:29 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Tue 03 10 21:02:30 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Tue 03 10 21:02:31 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Tue 03 10 21:02:32 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Tue 03 10 21:02:33 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Tue 03 10 21:02:33 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Tue 03 10 21:02:34 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Tue 03 10 21:02:35 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Tue 03 10 21:02:36 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Tue 03 10 21:02:36 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Tue 03 10 21:02:37 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Tue 03 10 21:02:38 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Tue 03 10 21:02:39 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Tue 03 10 21:02:39 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Tue 03 10 21:02:49 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Tue 03 10 21:02:49 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Tue 03 10 21:02:50 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Tue 03 10 21:02:51 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
+[Tue 03 10 21:02:52 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/

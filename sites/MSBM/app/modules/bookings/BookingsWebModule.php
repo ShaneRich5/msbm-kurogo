@@ -3,6 +3,12 @@
 session_start();
 require_once('google-api-php-client/src/Google/autoload.php');
 
+//$conn = mysqli_connect('localhost', 'root', 'kurogo', 'kurogo');
+//if(!$conn){
+//	 die('Connect Error: ' . mysqli_connect_error());
+//}
+
+
 
 //require_once('google-api-php-client/autoload.php');
 /**
@@ -27,10 +33,17 @@ class BookingsWebModule extends WebModule
 
     function __construct()
     {
+
+	$conn = mysqli_connect('localhost', 'root', 'kurogo', 'kurogo');
+	if(!$conn){
+		 die('Connect Error: ' . mysqli_connect_error());
+	}
+
+
         $this->client = new Google_Client();
         // OAuth2 client ID and secret can be found in the Google Developers Console.
 	#refresh token	
-	$refreshToken = '1/bTAaKST4WXP1U16FzobZUqsOkKTK36j2G8dYZKMLjq8';
+	//$refreshToken = '1/bTAaKST4WXP1U16FzobZUqsOkKTK36j2G8dYZKMLjq8';
         # test values hard coded
         $this->client->setClientId('987849558796-5a1oa8h6la31s7l8ve5vsisjlhsahfrj.apps.googleusercontent.com');
         $this->client->setClientSecret('onkohzxipY8Rm-XTeouk8nyV');
@@ -42,9 +55,38 @@ class BookingsWebModule extends WebModule
         $this->client->addScope('https://www.googleapis.com/auth/calendar');
         $this->client->addScope('shane.richards121@gmail.com');
 	$this->service = new Google_Service_Calendar($this->client);
-	$this->client->authenticate('4/UJTpCcSpvRQn1bEfT2mhfbncIG-5OC3MNtp6caqVzCE.gq-Um0T2p7ESaDn_6y0ZQNhgUaoAmAI');
-	$access_token = $this->client->getAccessToken();
+	//$this->client->authenticate('4/egQcISXQMD-Tv8PggVgTEb3KVkqf1AkikeEbcBOaNds.cjXCnwZzA4MdaDn_6y0ZQNgmzL4TmAI');
+	//$access_token = $this->client->getAccessToken();
+	//$tokens_decoded = json_decode($access_token);
+	//$refresh_token = $tokens_decoded->refresh_token;
 
+	//$sql = "INSERT INTO google_cal (access_token, refresh_token) VALUES ( '$access_token', '$refresh_token')";
+
+	$get = "SELECT * FROM google_cal";
+	$result = mysqli_query($conn, $get);
+	//if (mysqli_query($conn, $get)) {
+	if (mysqli_num_rows($result) > 0){
+		$tokens = mysqli_fetch_assoc($result);
+    		echo "New record created successfully" . $tokens['refresh_token'];
+	} else {
+   		echo "Error: " . $get . "<br>" . $conn->error;
+	}
+	$access_token = $this->client->setAccessToken($tokens['access_token']);
+	if ($this->client->isAccessTokenExpired()) {
+		$refresh_token = $tokens['refresh_token'];
+    		$this->client->refreshToken($refresh_token);
+		$access_token = $this->client->getAccessToken();
+		$tokens_decoded = json_decode($access_token);
+		$refresh_token = $tokens_decoded->refresh_token;
+		echo "Got new access token" . $print_tok; 
+		$update = "UPDATE google_cal SET access_token='$access_token', refresh_token='$refresh_token' WHERE id=0";
+		//$result = mysqli_query($conn, $get);
+		if (mysqli_query($conn, $update)) {
+		    echo "Record updated successfully";
+		} else {
+		    echo "Error updating record: " . mysqli_error($conn);
+		}  	
+	}
 	//$this->client->setAccessToken($refreshToken); 
 	//if ($this->client->isAccessTokenExpired()) {
 	//    $this->client->refreshToken($refreshToken);

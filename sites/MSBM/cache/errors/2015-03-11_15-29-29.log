@@ -1,0 +1,16 @@
+<strong>Error refreshing the OAuth2 token, message: '{
+  "error" : "invalid_request",
+  "error_description" : "Missing required parameter: refresh_token"
+}'</strong><br><br><strong>Fatal error</strong>:  Uncaught exception 'Google_Auth_Exception' with message 'Error refreshing the OAuth2 token, message: '{
+  "error" : "invalid_request",
+  "error_description" : "Missing required parameter: refresh_token"
+}'' in /home/fearon/msbm-kurogo/sites/MSBM/app/modules/bookings/google-api-php-client/src/Google/Auth/OAuth2.php:357
+Stack trace:
+#0 /home/fearon/msbm-kurogo/sites/MSBM/app/modules/bookings/google-api-php-client/src/Google/Auth/OAuth2.php(272): refreshTokenRequest(array)
+#1 /home/fearon/msbm-kurogo/sites/MSBM/app/modules/bookings/google-api-php-client/src/Google/Client.php(427): refreshToken(NULL)
+#2 /home/fearon/msbm-kurogo/sites/MSBM/app/modules/bookings/BookingsWebModule.php(76): refreshToken(NULL)
+#3 /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/lib/Module.php(197): __construct()
+#4 /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/lib/WebModule.php(576): factory(string, string)
+#5 /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/www/index.php(321): factory(string, string, array)
+#6 {main}
+  thrown in <strong>/home/fearon/msbm-kurogo/sites/MSBM/app/modules/bookings/google-api-php-client/src/Google/Auth/OAuth2.php</strong> on line <strong>357</strong>

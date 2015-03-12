@@ -67,32 +67,32 @@ class BookingsWebModule extends WebModule
 	//if (mysqli_query($conn, $get)) {
 	if (mysqli_num_rows($result) > 0){
 		$tokens = mysqli_fetch_assoc($result);
-    		echo "New record created successfully" . $tokens['refresh_token'];
+    		echo "successfully gotten from database refresh token" . $tokens['refresh_token'];
 	} else {
    		echo "Error: " . $get . "<br>" . $conn->error;
 	}
 	$access_token = $this->client->setAccessToken($tokens['access_token']);
 	if ($this->client->isAccessTokenExpired()) {
+		//echo "\n This is cray cray my nigga";
 		$refresh_token = $tokens['refresh_token'];
     		$this->client->refreshToken($refresh_token);
 		$access_token = $this->client->getAccessToken();
 		$tokens_decoded = json_decode($access_token);
 		$refresh_token = $tokens_decoded->refresh_token;
-		echo "Got new access token" . $print_tok; 
+		echo "Got new access token" . $refresh_token; 
 		$update = "UPDATE google_cal SET access_token='$access_token', refresh_token='$refresh_token' WHERE id=0";
 		//$result = mysqli_query($conn, $get);
 		if (mysqli_query($conn, $update)) {
 		    echo "Record updated successfully";
 		} else {
 		    echo "Error updating record: " . mysqli_error($conn);
-		}  	
+		} 
 	}
+	//$this->client->authenticate($access_token);
 	//$this->client->setAccessToken($refreshToken); 
 	//if ($this->client->isAccessTokenExpired()) {
 	//    $this->client->refreshToken($refreshToken);
 	//  }
-
-        
     }
 
 

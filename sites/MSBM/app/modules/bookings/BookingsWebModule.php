@@ -128,14 +128,20 @@ class BookingsWebModule extends WebModule
 
 //                $events = json_encode($events); # converts received json to array
 
-                $this->assign("lol", $events);
+                $eventsList = [];
+
                 while (true)
                 {
                     foreach ($events->getItems() as $event)
                     {
-                        $event = json_encode($event);
+                        $event = [
+                            'title'     => $event->getSummary(),
+                            'subtitle'  => $event->getId()
+                        ];
+                        $eventsList[] = $event;
 //                        echo $event;
-                        var_dump($event);
+//
+//                        var_dump($event->getId());
 //                        $this->assign('sum',$event->getSummary());
 //                        $this->assign("lol", $event);
                     }
@@ -153,65 +159,34 @@ class BookingsWebModule extends WebModule
                         break;
                     }
                 }
-
-                //$this->assign("lol", json_decode($events));
-//                var_dump($events);
-                // $this->isMoodleTokenSet(); // checks if user is logged in
-
-//                if (!isset($_COOKIE['moodle_token']))
-//                    $this->redirectTo('login');
-
-                $this->assign('token', $_COOKIE['moodle_token']);
-                if (!isset($_SESSION['google_token']))
-                {
-//                    $authUrl = $this->client->createAuthUrl();
-//                    $this->assign('logi', $authUrl);
-
-                    $scope = 'https://www.googleapis.com/auth/calendar';
-                    $client_id = '987849558796-5a1oa8h6la31s7l8ve5vsisjlhsahfrj.apps.googleusercontent.com';
-                    $redirect_uri = 'http://kurogo.artuvic.com:8010/bookings/index';
-
-                    $params = [
-                        'response_type' =>  'code',
-                        'client_id'     =>  $client_id,
-                        'redirect_uri'  =>  $redirect_uri,
-                        'scope'         =>  $scope,
-                    ];
-
-                    $url = 'https://accounts.google.com/o/oauth2/auth?' . http_build_query($params);
-
-                    $this->assign('logi', $url);
-
-                }
+                $this->assign('eventsList', $eventsList);
 
                 break;
             case 'create':
-                $this->isMoodleTokenSet(); // checks if user is logged in
+                $event = new Google_Service_Calendar_Event();
+                $event->setSummary('Example'); # name of event
+                $event->setLocation('Gazzebo1'); # make a predefined list
 
-                $this->isAccessTokenSet();
+                $start = new Google_Service_Calendar_EventDateTime();
+                $start->setDateTime(time());
+
+                $event->setStart($start);
+
+                $end = new Google_Service_Calendar_EventDateTime();
+                $end->setDateTime(time() + (60 * 60 * 2));
+
+                $event->setEnd($end)
+
+
 
                 break;
 
             case 'list':
-                // $this->isMoodleTokenSet();
-
-                $this->isAccessTokenSet();
 
                 break;
 
             case 'day';
-                // $this->isMoodleTokenSet(); // checks if user is logged in
 
-                $this->isAccessTokenSet();
-
-                $links = [
-                    [
-                        'title' => 'Login',
-                        'url' => $this->buildBreadcrumbURL('login', [])
-                    ],
-                ];
-
-                $this->assign('links', $links);
                 break;
 
             case 'login':

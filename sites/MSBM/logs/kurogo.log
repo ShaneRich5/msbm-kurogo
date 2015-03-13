@@ -906,3 +906,8 @@
 [Thu 03 12 18:49:44 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=social&ajax=1	Forbidden for https://graph.facebook.com/MSBM.UWIMONA/
 [Thu 03 12 19:33:41 2015]	exception:Critical	Google_Auth_OAuth2->authenticate@119	/bookings/	A Google_Auth_Exception has occured: Error fetching OAuth2 access token, message: 'invalid_grant'
 [Fri 03 13 00:33:08 2015]	exception:Critical	Google_Auth_OAuth2->authenticate@119	/bookings/index	A Google_Auth_Exception has occured: Error fetching OAuth2 access token, message: 'invalid_grant'
+[Fri 03 13 01:37:21 2015]	exception:Critical	Google_Auth_OAuth2->authenticate@119	/bookings/index	A Google_Auth_Exception has occured: Error fetching OAuth2 access token, message: 'invalid_grant'
+[Fri 03 13 01:41:52 2015]	exception:Critical	Google_IO_Curl->executeRequest@116	/bookings/index	A Google_IO_Exception has occured: Could not resolve host: www.googleapis.com
+[Fri 03 13 02:07:24 2015]	exception:Critical	Smarty_Internal_Template->isExisting@163	/hello/	A SmartyException has occured: Unable to load template file 'modules/hello/templates/index'
+[Fri 03 13 02:07:28 2015]	exception:Critical	Smarty_Internal_Template->isExisting@163	/hello/index	A SmartyException has occured: Unable to load template file 'modules/hello/templates/index'
+[Fri 03 13 02:07:34 2015]	exception:Critical	Smarty_Internal_Template->isExisting@163	/hello/index	A SmartyException has occured: Unable to load template file 'modules/hello/templates/index'

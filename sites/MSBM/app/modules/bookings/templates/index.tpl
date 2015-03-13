@@ -2,11 +2,10 @@
 
 <h1 class="focal">Room Booking</h1>
 
-<div class="nonfocal">
-    <h3>Login {$token}</h3>
-    <h2>sum {$sum}</h2>
-    <h2>Access {$acc}</h2>
-</div>
+{include file="findInclude:common/templates/results.tpl" results=$eventsList}
+
+
+
 <form method="get" id="advancedSearchForm" action="/{$configModule}/search">
     {include file="findInclude:common/templates/formList.tpl" advancedFields=$formFields}
     <div class="formbuttons">

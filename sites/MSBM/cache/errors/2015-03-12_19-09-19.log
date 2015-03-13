@@ -1,9 +1,0 @@
-<strong>Invalid code</strong><br><br><strong>Fatal error</strong>:  Uncaught exception 'Google_Auth_Exception' with message 'Invalid code' in /home/fearon/msbm-kurogo/sites/MSBM/app/modules/bookings/google-api-php-client/src/Google/Auth/OAuth2.php:87
-Stack trace:
-#0 /home/fearon/msbm-kurogo/sites/MSBM/app/modules/bookings/google-api-php-client/src/Google/Client.php(125): authenticate(NULL)
-#1 /home/fearon/msbm-kurogo/sites/MSBM/app/modules/bookings/BookingsWebModule.php(90): authenticate(NULL)
-#2 /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/lib/Module.php(197): __construct()
-#3 /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/lib/WebModule.php(576): factory(string, string)
-#4 /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/www/index.php(321): factory(string, string, array)
-#5 {main}
-  thrown in <strong>/home/fearon/msbm-kurogo/sites/MSBM/app/modules/bookings/google-api-php-client/src/Google/Auth/OAuth2.php</strong> on line <strong>87</strong>

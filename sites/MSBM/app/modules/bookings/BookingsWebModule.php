@@ -112,6 +112,7 @@ class BookingsWebModule extends WebModule
     protected function initializeForPage()
     {
 
+
         $this->controller = DataRetriever::factory('MoodleDataRetriever', array());
 
         switch($this->page) {
@@ -174,8 +175,10 @@ class BookingsWebModule extends WebModule
                     $start_time = $_POST['start-date'];
 //                    var_dump($start_date);
 
+
                     $start_time = $start_time . "T" . $_POST['start-time'] . ":00.000";
 //                    var_dump($start_time);
+
 
                     var_dump($start_time);
 

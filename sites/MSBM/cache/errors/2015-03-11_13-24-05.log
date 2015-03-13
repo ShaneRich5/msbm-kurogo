@@ -1,0 +1,6 @@
+<strong>Module phpmyadmin not found</strong><br><br><strong>Fatal error</strong>:  Uncaught exception 'KurogoModuleNotFound' with message 'Module phpmyadmin not found' in /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/lib/Module.php:130
+Stack trace:
+#0 /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/lib/WebModule.php(576): factory(string, string)
+#1 /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/www/index.php(321): factory(string, string, array)
+#2 {main}
+  thrown in <strong>/home/fearon/msbm-kurogo/Kurogo-Mobile-Web/lib/Module.php</strong> on line <strong>130</strong>

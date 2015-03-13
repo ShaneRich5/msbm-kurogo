@@ -12,13 +12,13 @@ class CoursesWebModule extends WebModule
     protected function initializeForPage()
     {
         $this->controller = DataRetriever::factory('MoodleDataRetriever', array()); // interacts with moodle's api
-
+        session_start();
 //        var_dump($this->issset($_COOKIE['moodle_token']));
         switch ($this->page)
         {
             // login validation
             case 'index':
-
+                $_SESSION['moodle_token'];
                 # if the user's token has been saved in memory, skip this page,
                 # else, display login page
                 if (isset($_COOKIE['moodle_token']))
@@ -45,12 +45,14 @@ class CoursesWebModule extends WebModule
                     else
                     {
                         setcookie('moodle_token', $loginResult['token'], time() + (60 *60 *24 * 30));
+                        $_SESSION['moodle_token'] = $loginResult['token'];
                         Kurogo::redirectToURL('all');
                     }
                 }
 
                 break;
             case 'all':
+                echo $_SESSION['moodle_token'];
                 if (!isset($_COOKIE['moodle_token']))
                     $this->redirectTo('index');
 
@@ -179,6 +181,7 @@ class CoursesWebModule extends WebModule
             case 'logout':
                 if (isset($_COOKIE['moodle_token']))
                     setcookie('moodle_token', '', time() - 3600);
+                    session_destroy();
                 $this->redirectTo('index');
                 break;
 

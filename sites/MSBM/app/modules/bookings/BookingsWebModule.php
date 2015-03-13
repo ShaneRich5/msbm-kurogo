@@ -117,7 +117,9 @@ class BookingsWebModule extends WebModule
 
         switch($this->page) {
             case 'index':
-                var_dump($_COOKIE['moodle_token']);
+                echo $_SESSION['moodle_token'];
+                //$this->isMoodleTokenSet();
+                //var_dump($_COOKIE['moodle_token']);
                 $this->retrieveAccessToken();
 
                 $events = $this->service
@@ -163,7 +165,7 @@ class BookingsWebModule extends WebModule
 
                 break;
             case 'create':
-
+                echo $_SESSION['moodle_token'];
                 $this->isMoodleTokenSet();
 
                 $this->retrieveAccessToken();
@@ -208,8 +210,9 @@ class BookingsWebModule extends WebModule
                     $end->setDateTime($end_time);
 
                     $event->setEnd($end);
-
-                    $createdEvent = $this->service->events->insert('primary', $event);
+                    //41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com
+                    //mine  k1tphoccb98nsglm123se5aoa4@group.calendar.google.com
+                    $createdEvent = $this->service->events->insert('41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com', $event);
 
                     $this->assign('id', $createdEvent->getId());
                 }
@@ -256,8 +259,8 @@ class BookingsWebModule extends WebModule
 
             case 'login':
 
-                if (isset($_COOKIE['moodle_token']))
-                    $this->redirectTo('all');
+                if (isset($_SESSION['moodle_token']))
+                    $this->redirectTo('create');
                 else if (!empty($_POST))
                 {
                     # NEEDS
@@ -277,7 +280,7 @@ class BookingsWebModule extends WebModule
                     else
                     {
                         setcookie('moodle_token', $result['token'], time() + (60 *60 *24 * 30));
-                        Kurogo::redirectToURL('all');
+                        Kurogo::redirectToURL('create');
                     }
                 }
 
@@ -308,14 +311,14 @@ class BookingsWebModule extends WebModule
 
     public function isMoodleTokenSet()
     {
-        if (!isset($_COOKIE['moodle_token']))
+        if (!isset($_SESSION['moodle_token']))
             $this->redirectTo('login');
 
     }
 
     public function retrieveAccessToken()
     {
-        $conn = mysqli_connect('localhost', 'root', 'root', 'kurogo');
+        $conn = mysqli_connect('localhost', 'root', 'kurogo', 'kurogo');
         if(!$conn){
             die('Connect Error: ' . mysqli_connect_error());
         }

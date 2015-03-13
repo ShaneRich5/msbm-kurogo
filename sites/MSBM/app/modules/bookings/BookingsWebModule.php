@@ -180,7 +180,7 @@ class BookingsWebModule extends WebModule
 //                    var_dump($start_time);
 
 
-                    var_dump($start_time);
+//                    var_dump($start_time);
 
                     $end_time = $_POST['end-date'];
                     $end_time = $end_time . "T" . $_POST['end-time'] . ":00.000";
@@ -213,43 +213,32 @@ class BookingsWebModule extends WebModule
                     $this->assign('id', $createdEvent->getId());
                 }
 
-
-//                $t = time();
-
-//                $date = date("'Y-m-d\TH:i:s'", $t);
-
-//                var_dump($date);
-
-                $event = new Google_Service_Calendar_Event();
-
-                $creator = new Google_Service_Calendar_EventCreator();
-//                $creator->setEmail(); # pull this from moodle
-//
-//                $event->setSummary('Example'); # name of event
-//                $event->setLocation('Gazzebo1'); # make a predefined list
-//
-//                $start = new Google_Service_Calendar_EventDateTime();
-//                $start->setDateTime(time());
-//
-//                $event->setStart($start);
-//
-//                $end = new Google_Service_Calendar_EventDateTime();
-//                $end->setDateTime(time() + (60 * 60 * 2));
-//
-//
-//                $event->setEnd($end);
-//
-//                $createdEvent = $this->service->events->insert('primary', $event);
-//
-//                $this->assign('id', $createdEvent->getId());
-
                 break;
+            case 'details':
 
-            case 'list':
+                $this->isMoodleTokenSet();
 
+                $this->retrieveAccessToken();
+
+                $calendar_id = $this->getArg('calendarid');
+                $event_id = $this->getArg('eventid');
+
+                $this->assign('cal', $calendar_id);
+                $this->assign('event', $event_id);
+
+
+                $event = $this->service->events->get($calendar_id, $event_id);
+                $creator = $event->getCreator();
+
+
+                $this->assign('event_name', $event->getSummary());
+
+                $this->assign('creator_name', $creator->displayName);
+                $this->assign('creator_email', $creator->email);
+
+                var_dump($event);
                 break;
-
-            case 'delete';
+            case 'delete':
 
                 break;
 

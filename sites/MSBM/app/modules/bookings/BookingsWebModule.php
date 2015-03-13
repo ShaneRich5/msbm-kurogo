@@ -236,12 +236,26 @@ class BookingsWebModule extends WebModule
                 $this->assign('creator_name', $creator->displayName);
                 $this->assign('creator_email', $creator->email);
 
+                $delete_url = $this->buildBreadcrumbURL('delete', [
+                    'calendarid'    => '41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com',
+                    'eventid'       => $event->getId()
+                ]);
+
+                $this->assign('delete_url', $delete_url);
                 var_dump($event);
                 break;
             case 'delete':
+                $this->retrieveAccessToken();
+
+                $calendar_id = $this->getArg('calendarid');
+                $event_id = $this->getArg('eventid');
+
+                $this->service->events->delete($calendar_id, $event_id);
 
                 break;
+            case 'update':
 
+                break;
             case 'login':
 
                 if (isset($_COOKIE['moodle_token']))

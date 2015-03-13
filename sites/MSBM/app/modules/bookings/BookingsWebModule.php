@@ -138,14 +138,13 @@ class BookingsWebModule extends WebModule
                     {
                         $event = [
                             'title'     => $event->getSummary(),
-                            'subtitle'  => $event->getId()
+                            'subtitle'  => $event->getId(),
+                            'url'       => $this->buildBreadcrumbURL('details', [
+                                'calendarid'    => '41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com',
+                                'eventid'       => $event->getId(),
+                            ])
                         ];
                         $eventsList[] = $event;
-//                        echo $event;
-//
-//                        var_dump($event->getId());
-//                        $this->assign('sum',$event->getSummary());
-//                        $this->assign("lol", $event);
                     }
                     $pageToken = $events->getNextPageToken();
                     if ($pageToken)
@@ -153,7 +152,7 @@ class BookingsWebModule extends WebModule
                         $optParams = [
                             'pageToken' => $pageToken
                         ];
-                        $events = $this->service->events->listEvents('primary', $optParams);
+                        $events = $this->service->events->listEvents('41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com', $optParams);
 
                     }
                     else
@@ -183,7 +182,7 @@ class BookingsWebModule extends WebModule
 //                    var_dump($start_time);
 
 
-                    var_dump($start_time);
+//                    var_dump($start_time);
 
                     $end_time = $_POST['end-date'];
                     $end_time = $end_time . "T" . $_POST['end-time'] . ":00.000";
@@ -217,46 +216,49 @@ class BookingsWebModule extends WebModule
                     $this->assign('id', $createdEvent->getId());
                 }
 
+                break;
+            case 'details':
 
-//                $t = time();
+                $this->isMoodleTokenSet();
 
-//                $date = date("'Y-m-d\TH:i:s'", $t);
+                $this->retrieveAccessToken();
 
-//                var_dump($date);
+                $calendar_id = $this->getArg('calendarid');
+                $event_id = $this->getArg('eventid');
 
-                $event = new Google_Service_Calendar_Event();
+                $this->assign('cal', $calendar_id);
+                $this->assign('event', $event_id);
 
-                $creator = new Google_Service_Calendar_EventCreator();
-//                $creator->setEmail(); # pull this from moodle
-//
-//                $event->setSummary('Example'); # name of event
-//                $event->setLocation('Gazzebo1'); # make a predefined list
-//
-//                $start = new Google_Service_Calendar_EventDateTime();
-//                $start->setDateTime(time());
-//
-//                $event->setStart($start);
-//
-//                $end = new Google_Service_Calendar_EventDateTime();
-//                $end->setDateTime(time() + (60 * 60 * 2));
-//
-//
-//                $event->setEnd($end);
-//
-//                $createdEvent = $this->service->events->insert('primary', $event);
-//
-//                $this->assign('id', $createdEvent->getId());
+
+                $event = $this->service->events->get($calendar_id, $event_id);
+                $creator = $event->getCreator();
+
+
+                $this->assign('event_name', $event->getSummary());
+
+                $this->assign('creator_name', $creator->displayName);
+                $this->assign('creator_email', $creator->email);
+
+                $delete_url = $this->buildBreadcrumbURL('delete', [
+                    'calendarid'    => '41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com',
+                    'eventid'       => $event->getId()
+                ]);
+
+                $this->assign('delete_url', $delete_url);
+                var_dump($event);
+                break;
+            case 'delete':
+                $this->retrieveAccessToken();
+
+                $calendar_id = $this->getArg('calendarid');
+                $event_id = $this->getArg('eventid');
+
+                $this->service->events->delete($calendar_id, $event_id);
 
                 break;
-
-            case 'list':
-
-                break;
-
-            case 'delete';
+            case 'update':
 
                 break;
-
             case 'login':
 
                 if (isset($_SESSION['moodle_token']))

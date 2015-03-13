@@ -4,6 +4,8 @@
 
 <div class="nonfocal">
     <h3>Login {$token}</h3>
+    <h2>Refresh {$refresh}</h2>
+    <h2>Access {$acc}</h2>
 </div>
 <form method="get" id="advancedSearchForm" action="/{$configModule}/search">
     {include file="findInclude:common/templates/formList.tpl" advancedFields=$formFields}

@@ -83,7 +83,7 @@ class CoursesWebModule extends WebModule
                         'subtitle' => $courseData['shortname'],
                         'title' => $courseData['fullname'],
                         'url' => $this->buildBreadcrumbURL('details', array(
-                            'wstoken' => '47aae912ad404c743d7b66ad0c6c0742',
+                            'wstoken' => $_COOKIE['moodle_token'],
                             'courseid' => $courseData['id'])
                         )
                     );

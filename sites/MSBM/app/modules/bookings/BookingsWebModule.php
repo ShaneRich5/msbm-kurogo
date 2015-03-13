@@ -78,7 +78,7 @@ class BookingsWebModule extends WebModule
         //if (mysqli_query($conn, $get)) {
         if (mysqli_num_rows($result) > 0){
             $tokens = mysqli_fetch_assoc($result);
-                echo "New record created successfully" . $tokens['refresh_token'];
+//                echo "New record created successfully" . $tokens['refresh_token'];
         } else {
             echo "Error: " . $get . "<br>" . $conn->error;
         }
@@ -123,12 +123,21 @@ class BookingsWebModule extends WebModule
                 $events = $this->service
                     ->events
                     ->listEvents('41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com');
+//                var_dump(json_encode($events, true));
+//                var_dump(json_encode($events));
 
+//                $events = json_encode($events); # converts received json to array
+
+                $this->assign("lol", $events);
                 while (true)
                 {
                     foreach ($events->getItems() as $event)
                     {
-                        echo $event->getSummary();
+                        $event = json_encode($event);
+//                        echo $event;
+                        var_dump($event);
+//                        $this->assign('sum',$event->getSummary());
+//                        $this->assign("lol", $event);
                     }
                     $pageToken = $events->getNextPageToken();
                     if ($pageToken)
@@ -145,8 +154,8 @@ class BookingsWebModule extends WebModule
                     }
                 }
 
-                $this->assign("lol", json_decode($events));
-                var_dump($events);
+                //$this->assign("lol", json_decode($events));
+//                var_dump($events);
                 // $this->isMoodleTokenSet(); // checks if user is logged in
 
 //                if (!isset($_COOKIE['moodle_token']))
@@ -328,7 +337,7 @@ class BookingsWebModule extends WebModule
         //if (mysqli_query($conn, $get)) {
         if (mysqli_num_rows($result) > 0){
             $tokens = mysqli_fetch_assoc($result);
-            echo "New record created successfully" . $tokens['refresh_token'];
+//            echo "New record created successfully" . $tokens['refresh_token'];
         } else {
             echo "Error: " . $get . "<br>" . $conn->error;
         }
@@ -344,7 +353,7 @@ class BookingsWebModule extends WebModule
             $update = "UPDATE google_cal SET access_token='$this->access_token', refresh_token='$this->refresh_token' WHERE id=0";
             //$result = mysqli_query($conn, $get);
             if (mysqli_query($conn, $update)) {
-                echo "Record updated successfully";
+//                echo "Record updated successfully";
             } else {
                 echo "Error updating record: " . mysqli_error($conn);
             }

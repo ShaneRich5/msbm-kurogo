@@ -4,7 +4,7 @@
 
 <div class="nonfocal">
     <h3>Login {$token}</h3>
-    <h2>Events {$lol}</h2>
+    <h2>sum {$sum}</h2>
     <h2>Access {$acc}</h2>
 </div>
 <form method="get" id="advancedSearchForm" action="/{$configModule}/search">

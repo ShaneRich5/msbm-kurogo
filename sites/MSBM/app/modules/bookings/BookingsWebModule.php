@@ -135,14 +135,13 @@ class BookingsWebModule extends WebModule
                     {
                         $event = [
                             'title'     => $event->getSummary(),
-                            'subtitle'  => $event->getId()
+                            'subtitle'  => $event->getId(),
+                            'url'       => $this->buildBreadcrumbURL('details', [
+                                'calendarid'    => '41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com',
+                                'eventid'       => $event->getId(),
+                            ])
                         ];
                         $eventsList[] = $event;
-//                        echo $event;
-//
-//                        var_dump($event->getId());
-//                        $this->assign('sum',$event->getSummary());
-//                        $this->assign("lol", $event);
                     }
                     $pageToken = $events->getNextPageToken();
                     if ($pageToken)
@@ -150,7 +149,7 @@ class BookingsWebModule extends WebModule
                         $optParams = [
                             'pageToken' => $pageToken
                         ];
-                        $events = $this->service->events->listEvents('primary', $optParams);
+                        $events = $this->service->events->listEvents('41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com', $optParams);
 
                     }
                     else

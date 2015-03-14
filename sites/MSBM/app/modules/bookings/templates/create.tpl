@@ -35,7 +35,7 @@
             <label for="event-location">Location: </label>
             <select id="event-location" name="event-location">
                 {foreach $locations as $location}
-                    <option value="{$name}">{$name}</option>
+                    <option value="{$location['name']}">{$location['name']}</option>
                 {/foreach}
             </select>
         </p>

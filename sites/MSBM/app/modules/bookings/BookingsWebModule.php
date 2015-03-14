@@ -231,6 +231,7 @@ class BookingsWebModule extends WebModule
                 $end = $event->getEnd();
 
                 $this->assign('event_name', $event->getSummary());
+                $this->assign('event_location', $event->location);
 
                 $this->assign('creator_name', $creator->displayName);
                 $this->assign('creator_email', $creator->email);

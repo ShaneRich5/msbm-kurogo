@@ -38,6 +38,7 @@ class BookingsWebModule extends WebModule
 //        if(!$conn){
 //             die('Connect Error: ' . mysqli_connect_error());
 //        }
+
 //
 //
 //            $this->client = new Google_Client();
@@ -160,8 +161,9 @@ class BookingsWebModule extends WebModule
                         break;
                     }
                 }
-                $this->assign('eventsList', $eventsList);
+                $this->assign('create_url', $this->createLinkToCreate());
 
+                $this->assign('eventsList', $eventsList);
                 break;
             case 'create':
                 echo $_SESSION['moodle_token'];
@@ -169,20 +171,19 @@ class BookingsWebModule extends WebModule
 
                 $this->retrieveAccessToken();
 
+                $locations = $this->getLocations();
+
+                $this->assign('locations', $locations);
+
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') # if data was posted
                 {
                     $event_name = $_POST['event-name'];
-//                    var_dump($name);
+
+                    $event_location = $_POST['event-location'];
 
                     $start_time = $_POST['start-date'];
-//                    var_dump($start_date);
-
 
                     $start_time = $start_time . "T" . $_POST['start-time'] . ":00.000";
-//                    var_dump($start_time);
-
-
-//                    var_dump($start_time);
 
                     $end_time = $_POST['end-date'];
                     $end_time = $end_time . "T" . $_POST['end-time'] . ":00.000";
@@ -194,9 +195,9 @@ class BookingsWebModule extends WebModule
 
                     $creator->setEmail($created_by); # pull this from moodle
 
-
                     $event->setSummary($event_name); # name of event
-                    $event->setLocation('Gazzebo_1'); # make a predefined list
+
+                    $event->setLocation($event_location); # make a predefined list
 
                     $start = new Google_Service_Calendar_EventDateTime();
                     $start->setTimeZone('America/Jamaica');
@@ -209,6 +210,7 @@ class BookingsWebModule extends WebModule
                     $end->setDateTime($end_time);
 
                     $event->setEnd($end);
+
                     //41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com
                     //mine  k1tphoccb98nsglm123se5aoa4@group.calendar.google.com
                     $createdEvent = $this->service->events->insert('41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com', $event);
@@ -218,7 +220,6 @@ class BookingsWebModule extends WebModule
 
                 break;
             case 'details':
-
                 $this->isMoodleTokenSet();
 
                 $this->retrieveAccessToken();
@@ -229,10 +230,8 @@ class BookingsWebModule extends WebModule
                 $this->assign('cal', $calendar_id);
                 $this->assign('event', $event_id);
 
-
                 $event = $this->service->events->get($calendar_id, $event_id);
                 $creator = $event->getCreator();
-
 
                 $this->assign('event_name', $event->getSummary());
 
@@ -245,7 +244,9 @@ class BookingsWebModule extends WebModule
                 ]);
 
                 $this->assign('delete_url', $delete_url);
-                var_dump($event);
+                $this->assign('create_url', $this->createLinkToIndex());
+                $this->assign('index_url', $this->createLinkToIndex());
+
                 break;
             case 'delete':
                 $this->retrieveAccessToken();
@@ -255,14 +256,17 @@ class BookingsWebModule extends WebModule
 
                 $this->service->events->delete($calendar_id, $event_id);
 
+                $this->assign('create_url', $this->createLinkToCreate());
+
+                $this->assign('index_url', $this->createLinkToIndex());
+
                 break;
             case 'update':
 
                 break;
             case 'login':
-
                 if (isset($_SESSION['moodle_token']))
-                    $this->redirectTo('create');
+                    $this->redirectTo('index');
                 else if (!empty($_POST))
                 {
                     # NEEDS
@@ -316,6 +320,53 @@ class BookingsWebModule extends WebModule
         if (!isset($_SESSION['moodle_token']))
             $this->redirectTo('login');
 
+    }
+
+    public function getLocations()
+    {
+        return $locations = [
+            [
+                'name'          =>  'gazebo_1',
+                'colour'        =>  'blue',
+                'description'   => ''
+            ],
+            [
+                'name'          =>  'gazebo_2',
+                'colour'        =>  'red',
+                'description'   => ''
+            ],
+            [
+                'name'          =>  'gazebo_3',
+                'colour'        =>  'orange',
+                'description'   => ''
+            ],
+            [
+                'name'          =>  'gazebo_4',
+                'colour'        =>  'purple',
+                'description'   => ''
+            ],
+            [
+                'name'          =>  'gazebo_5',
+                'colour'        =>  'yellow',
+                'description'   => ''
+            ],
+            [
+                'name'          =>  'gazebo_6',
+                'colour'        =>  'blue',
+                'description'   => ''
+            ]
+        ];
+    }
+
+    public function createLinkToCreate()
+    {
+        return $this->buildBreadcrumbURL('create', []);
+    }
+
+
+    private function createLinkToIndex()
+    {
+        return $this->buildBreadcrumbURL('index', []);
     }
 
     public function retrieveAccessToken()

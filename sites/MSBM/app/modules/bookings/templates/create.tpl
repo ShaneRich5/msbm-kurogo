@@ -32,8 +32,18 @@
             <input id="event-creator" type="text" name="event-creator">
         </p>
         <p>
-            <input type="submit" value="Book">
+            <label for="event-location">Location: </label>
+            <select id="event-location" name="event-location">
+                {foreach $locations as $location}
+                    <option value="{$name}">{$name}</option>
+                {/foreach}
+            </select>
         </p>
+        <p>
+            <input type="submit" value="Book">
+            <input type="reset" value="Clear">
+        </p>
+
     </form>
 
 </div>

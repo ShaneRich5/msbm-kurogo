@@ -116,7 +116,6 @@ class BookingsWebModule extends WebModule
 
         switch($this->page) {
             case 'index':
-                echo $_SESSION['moodle_token'];
                 //$this->isMoodleTokenSet();
                 //var_dump($_COOKIE['moodle_token']);
                 $this->retrieveAccessToken();
@@ -369,7 +368,7 @@ class BookingsWebModule extends WebModule
 
     public function retrieveAccessToken()
     {
-        $conn = mysqli_connect('localhost', 'root', 'kurogo', 'kurogo');
+        $conn = mysqli_connect('localhost', 'root', 'root', 'kurogo');
         if(!$conn){
             die('Connect Error: ' . mysqli_connect_error());
         }

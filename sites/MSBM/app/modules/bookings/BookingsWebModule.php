@@ -112,8 +112,6 @@ class BookingsWebModule extends WebModule
 
     protected function initializeForPage()
     {
-
-
         $this->controller = DataRetriever::factory('MoodleDataRetriever', array());
 
         switch($this->page) {

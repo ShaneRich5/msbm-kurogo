@@ -314,9 +314,9 @@ class BookingsWebModule extends WebModule
 
     public function isMoodleTokenSet()
     {
-        if (!isset($_SESSION['moodle_token']))
-            $this->redirectTo('login');
-
+        if (!isset($_SESSION['moodle_token'])) {
+            $this->redirectToModule('courses', 'login', []);
+        }
     }
 
     public function getLocations()

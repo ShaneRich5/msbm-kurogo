@@ -18,7 +18,7 @@ class CoursesWebModule extends WebModule
         {
             // login validation
             case 'index':
-                $_SESSION['moodle_token'];
+//                $_SESSION['moodle_token'];
                 # if the user's token has been saved in memory, skip this page,
                 # else, display login page
                 if (isset($_COOKIE['moodle_token']))
@@ -183,6 +183,41 @@ class CoursesWebModule extends WebModule
                     setcookie('moodle_token', '', time() - 3600);
                     session_destroy();
                 $this->redirectTo('index');
+                break;
+
+            /*
+             * Used from bookings
+             */
+            case 'login':
+                if (isset($_SESSION['moodle_token']))
+                {
+                    $this->redirectToModule('bookings', 'index', []);
+                }
+                else if (!empty($_POST)){
+                    /**
+                     * ADD VALIDATION
+                     *
+                     * TODO
+                     */
+                    $credentials = [
+                        'username' => $_POST['username'],
+                        'password' => $_POST['password'],
+                    ];
+
+                    $loginResult = $this->controller->getToken($credentials); // retrieves the token
+
+                    # if unsuccessful, present user with error
+                    # else, save the data to a cookie and proceed
+                    if (array_key_exists('error', $loginResult))
+                        $this->assign('error', 'Incorrect username or password');
+                    else
+                    {
+                        setcookie('moodle_token', $loginResult['token'], time() + (60 *60 *24 * 30));
+                        $_SESSION['moodle_token'] = $loginResult['token'];
+                        $this->redirectToModule('bookings', 'index', []);
+                    }
+                }
+
                 break;
 
             default:

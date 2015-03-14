@@ -992,3 +992,11 @@
 [Sat 03 14 13:24:48 2015]	exception:Critical	Google_Auth_OAuth2->setAccessToken@179	/bookings/index	A Google_Auth_Exception has occured: Could not json decode the token
 [Sat 03 14 13:25:17 2015]	exception:Critical	WebModule->loadPageConfig@1517	/bookings/create	A KurogoPageNotFoundException has occured: Page create not found
 [Sat 03 14 13:25:19 2015]	exception:Critical	WebModule->loadPageConfig@1517	/bookings/create	A KurogoPageNotFoundException has occured: Page create not found
+[Sat 03 14 13:29:33 2015]	exception:Critical	Google_Auth_OAuth2->setAccessToken@179	/bookings/	A Google_Auth_Exception has occured: Could not json decode the token
+[Sat 03 14 13:30:15 2015]	exception:Critical	Google_Auth_OAuth2->setAccessToken@179	/bookings/index	A Google_Auth_Exception has occured: Could not json decode the token
+[Sat 03 14 13:30:33 2015]	exception:Critical	Google_Auth_OAuth2->setAccessToken@179	/bookings/index	A Google_Auth_Exception has occured: Could not json decode the token
+[Sat 03 14 14:19:32 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Sat 03 14 14:19:57 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Sat 03 14 14:21:12 2015]	exception:Critical	Google_Auth_OAuth2->setAccessToken@179	/bookings/	A Google_Auth_Exception has occured: Could not json decode the token
+[Sat 03 14 14:21:31 2015]	exception:Critical	WebModule->setPage@1576	/bookings//courses/login?_b=%5B%7B%22t%22%3A%22Booking%22%2C%22lt%22%3A%22Booking%22%2C%22p%22%3A%22index%22%2C%22a%22%3A%22%22%7D%2C%7B%22t%22%3A%22Booking%22%2C%22lt%22%3A%22Booking%22%2C%22p%22%3A%22create%22%2C%22a%22%3A%22%22%7D%5D	A KurogoPageNotFoundException has occured: Invalid Page Name
+[Sat 03 14 14:21:34 2015]	exception:Critical	WebModule->setPage@1576	/bookings//courses/login?_b=%5B%7B%22t%22%3A%22Booking%22%2C%22lt%22%3A%22Booking%22%2C%22p%22%3A%22index%22%2C%22a%22%3A%22%22%7D%2C%7B%22t%22%3A%22Booking%22%2C%22lt%22%3A%22Booking%22%2C%22p%22%3A%22create%22%2C%22a%22%3A%22%22%7D%5D	A KurogoPageNotFoundException has occured: Invalid Page Name

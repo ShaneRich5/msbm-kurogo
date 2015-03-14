@@ -21,7 +21,7 @@ class CoursesWebModule extends WebModule
 //                $_SESSION['moodle_token'];
                 # if the user's token has been saved in memory, skip this page,
                 # else, display login page
-                if (isset($_COOKIE['moodle_token']))
+                if (isset($_SESSION['moodle_token']))
                 {
                     $this->redirectTo('all');
                 }
@@ -44,16 +44,14 @@ class CoursesWebModule extends WebModule
                         $this->assign('error', 'Incorrect username or password');
                     else
                     {
-                        setcookie('moodle_token', $loginResult['token'], time() + (60 *60 *24 * 30));
                         $_SESSION['moodle_token'] = $loginResult['token'];
-                        Kurogo::redirectToURL('all');
+                        $this->redirectTo('all');
                     }
                 }
 
                 break;
             case 'all':
-                echo $_SESSION['moodle_token'];
-                if (!isset($_COOKIE['moodle_token']))
+                if (!isset($_SESSION['moodle_token']))
                     $this->redirectTo('index');
 
 
@@ -98,7 +96,7 @@ class CoursesWebModule extends WebModule
             # 'url' => $this->buildBreadcrumbURL('details', array('wstoken' => '47aae912ad404c743d7b66ad0c6c0742','wsfunction' => 'core_course_get_contents', 'courseid' => $courseData['id']), false)
 
             case 'details':
-                if (!isset($_COOKIE['moodle_token']))
+                if (!isset($_SESSION['moodle_token']))
                     $this->redirectTo('index');
 
                 $id = $this->getArg('courseid');
@@ -179,8 +177,7 @@ class CoursesWebModule extends WebModule
                 }
                 break;
             case 'logout':
-                if (isset($_COOKIE['moodle_token']))
-                    setcookie('moodle_token', '', time() - 3600);
+                if (isset($_SESSION['moodle_token']))
                     session_destroy();
                 $this->redirectTo('index');
                 break;
@@ -212,7 +209,6 @@ class CoursesWebModule extends WebModule
                         $this->assign('error', 'Incorrect username or password');
                     else
                     {
-                        setcookie('moodle_token', $loginResult['token'], time() + (60 *60 *24 * 30));
                         $_SESSION['moodle_token'] = $loginResult['token'];
                         $this->redirectToModule('bookings', 'index', []);
                     }

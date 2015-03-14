@@ -1,8 +1,20 @@
 {include file="findInclude:common/templates/header.tpl"}
 
-<h2>Cal Id {$cal}</h2>
-<h3>Event Id {$event}</h3>
+<div class="focal">
+    <h1>
+        Event Name: {$event_name} <small>by {$creator_name}, {$creator_email}</small>
+    </h1>
 
+    <div>
+        <h2>Starts</h2>
+        <p>at {$start_time} on {$start_date}</p>
+    </div>
+    <div>
+        <h2>Ends</h2>
+        <p>at {$end_time} on {$end_date}</p>
+    </div>
+
+</div>
 
 <form action="{$delete_url}" method="post">
     <input type="submit" value="Delete">

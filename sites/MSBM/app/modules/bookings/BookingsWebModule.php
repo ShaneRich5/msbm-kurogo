@@ -224,16 +224,22 @@ class BookingsWebModule extends WebModule
                 $calendar_id = $this->getArg('calendarid');
                 $event_id = $this->getArg('eventid');
 
-                $this->assign('cal', $calendar_id);
-                $this->assign('event', $event_id);
 
                 $event = $this->service->events->get($calendar_id, $event_id);
                 $creator = $event->getCreator();
+                $start = $event->getStart();
+                $end = $event->getEnd();
 
                 $this->assign('event_name', $event->getSummary());
 
                 $this->assign('creator_name', $creator->displayName);
                 $this->assign('creator_email', $creator->email);
+
+                $this->assign('start_time', $start->dateTime);
+                $this->assign('start_date', $start->date);
+
+                $this->assign('end_time', $end->dateTime);
+                $this->assign('end_date', $end->date);
 
                 $delete_url = $this->buildBreadcrumbURL('delete', [
                     'calendarid'    => '41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com',

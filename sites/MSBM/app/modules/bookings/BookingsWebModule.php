@@ -183,61 +183,68 @@ class BookingsWebModule extends WebModule
 
                     $errors = $this->createEventValidation();
 
+                    if (!empty($errors)) {
+                        $event_name = $_POST['event-name'];
 
-                    $event_name = $_POST['event-name'];
+                        $event_location = $_POST['event-location'];
 
-                    $event_location = $_POST['event-location'];
+                        if ('PM' === $_POST['start-date-am-pm'])
+                            $_POST['start-date-am-pm'] += 12;
 
-                    if ('PM' === $_POST['start-date-am-pm'])
-                        $_POST['start-date-am-pm'] += 12;
+                        $start_time = $_POST['start-date-year']
+                            . "-" . $_POST['start-date-month']
+                            . "-" . $_POST['start-date-day'];
 
-                    $start_time = $_POST['start-date-year']
-                        . "-" . $_POST['start-date-month']
-                        . "-" . $_POST['start-date-day'];
+                        $start_time .= "T" . $_POST['start-date-hour']
+                            . ":" . $_POST['start-date-hour']
+                            . $_POST['start-date-minute'] . ":00.000";
 
-                    $start_time .= "T" . $_POST['start-date-hour']
-                        . ":" . $_POST['start-date-hour']
-                        . $_POST['start-date-minute'] . ":00.000";
+                        if ('PM' === $_POST['start-date-am-pm'])
+                            $_POST['end-date-am-pm'] += 12;
 
-                    if ('PM' === $_POST['start-date-am-pm'])
-                        $_POST['end-date-am-pm'] += 12;
+                        $end_time = $_POST['end-date-year']
+                            . "-" . $_POST['end-date-month']
+                            . "-" . $_POST['end-date-day'];
 
-                    $end_time = $_POST['end-date-year']
-                        . "-" . $_POST['end-date-month']
-                        . "-" . $_POST['end-date-day'];
+                        $end_time .= "T" . $_POST['end-date-hour']
+                            . ":" . $_POST['end-date-hour']
+                            . $_POST['end-date-minute'] . ":00.000";
 
-                    $end_time .= "T" . $_POST['end-date-hour']
-                        . ":" . $_POST['end-date-hour']
-                        . $_POST['end-date-minute'] . ":00.000";
+                        $created_by = $_POST['event-creator']; # pull this from moodle
 
-                    $created_by = $_POST['event-creator']; # pull this from moodle
+                        $event = new Google_Service_Calendar_Event();
+                        $creator = new Google_Service_Calendar_EventCreator();
 
-                    $event = new Google_Service_Calendar_Event();
-                    $creator = new Google_Service_Calendar_EventCreator();
+                        $creator->setEmail($created_by); # pull this from moodle
 
-                    $creator->setEmail($created_by); # pull this from moodle
+                        $event->setSummary($event_name); # name of event
 
-                    $event->setSummary($event_name); # name of event
+                        $event->setLocation($event_location); # make a predefined list
 
-                    $event->setLocation($event_location); # make a predefined list
+                        $start = new Google_Service_Calendar_EventDateTime();
+                        $start->setTimeZone('America/Jamaica');
+                        $start->setDateTime($start_time);
 
-                    $start = new Google_Service_Calendar_EventDateTime();
-                    $start->setTimeZone('America/Jamaica');
-                    $start->setDateTime($start_time);
+                        $event->setStart($start);
 
-                    $event->setStart($start);
+                        $end = new Google_Service_Calendar_EventDateTime();
+                        $end->setTimeZone('America/Jamaica');
+                        $end->setDateTime($end_time);
 
-                    $end = new Google_Service_Calendar_EventDateTime();
-                    $end->setTimeZone('America/Jamaica');
-                    $end->setDateTime($end_time);
+                        $event->setEnd($end);
 
-                    $event->setEnd($end);
+                        //41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com
+                        //mine  k1tphoccb98nsglm123se5aoa4@group.calendar.google.com
+                        $createdEvent = $this->service->events->insert('41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com', $event);
 
-                    //41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com
-                    //mine  k1tphoccb98nsglm123se5aoa4@group.calendar.google.com
-                    $createdEvent = $this->service->events->insert('41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com', $event);
+                        $this->assign('id', $createdEvent->getId());
 
-                    $this->assign('id', $createdEvent->getId());
+                        $this->redirectTo('index');
+                    }
+                    else
+                    {
+                        $this->assign('errors', $errors);
+                    }
                 }
 
                 break;
@@ -315,7 +322,7 @@ class BookingsWebModule extends WebModule
                     else
                     {
                         setcookie('moodle_token', $result['token'], time() + (60 *60 *24 * 30));
-                        Kurogo::redirectToURL('create');
+                        $this->redirectTo('create');
                     }
                 }
 
@@ -329,7 +336,6 @@ class BookingsWebModule extends WebModule
 
                 if (isset($_COOKIE['moodle_token']))
                     setcookie('moodle_token', '', time() - 3600);
-
                 $this->redirectTo('login');
         }
     }
@@ -474,6 +480,12 @@ class BookingsWebModule extends WebModule
         $validationErrors = [];
         $time = time();
 
+        if (!isset($_POST['event-name']))
+            $validationErrors[] = 'No event name given';
+
+        /*
+         * Start section validation
+         */
         if (!isset($_POST['start-date-year']))
             $_POST['start-date-year'] = date('YYYY', $time);
         if (!isset($_POST['start-date-month']))
@@ -481,19 +493,40 @@ class BookingsWebModule extends WebModule
         if (!isset($_POST['start-date-day']))
             $_POST['start-date-day'] = date('DD', $time);
 
-        if (!isset($_POST['event-name']))
-            $validationErrors[] = 'No event name given';
         if ((!isset($_POST['start-date-year'])) || (3000 > $_POST['start-date-year']) || (2000 < $_POST['start-date-year']))
-            $validationErrors[] = 'Invalid year';
+            $validationErrors[] = 'Invalid start year';
         if ((!isset($_POST['start-date-month'])) || (1 > $_POST['start-date-month']) || (12 < $_POST['start-date-month']))
-            $validationErrors[] = 'Invalid month';
+            $validationErrors[] = 'Invalid start month';
         if ((!isset($_POST['start-date-day'])) || (1 > $_POST['start-date-day']) || (31 < $_POST['start-date-day']))
-            $validationErrors[] = 'Invalid month';
+            $validationErrors[] = 'Invalid start month';
 
         if ((!isset($_POST['start-date-hour'])) || (1 > $_POST['start-date-hour']) || (12 < $_POST['start-date-hour']))
-            $validationErrors[] = 'Invalid hour';
+            $validationErrors[] = 'Invalid start hour';
         if ((!isset($_POST['start-date-minute'])) || (1 > $_POST['start-date-minute']) || (12 < $_POST['start-date-minute']))
-            $validationErrors[] = 'Invalid minutes';
+            $validationErrors[] = 'Invalid start minutes';
+
+        /*
+         * End section validation
+         */
+
+        if (!isset($_POST['end-date-year']))
+            $_POST['end-date-year'] = date('YYYY', $time);
+        if (!isset($_POST['end-date-month']))
+            $_POST['end-date-day'] = date('MM', $time);
+        if (!isset($_POST['end-date-day']))
+            $_POST['end-date-day'] = date('DD', $time);
+
+        if ((!isset($_POST['end-date-year'])) || (3000 > $_POST['end-date-year']) || (2000 < $_POST['end-date-year']))
+            $validationErrors[] = 'Invalid end year';
+        if ((!isset($_POST['end-date-month'])) || (1 > $_POST['end-date-month']) || (12 < $_POST['end-date-month']))
+            $validationErrors[] = 'Invalid end month';
+        if ((!isset($_POST['end-date-day'])) || (1 > $_POST['end-date-day']) || (31 < $_POST['end-date-day']))
+            $validationErrors[] = 'Invalid end month';
+
+        if ((!isset($_POST['end-date-hour'])) || (1 > $_POST['end-date-hour']) || (12 < $_POST['end-date-hour']))
+            $validationErrors[] = 'Invalid end hour';
+        if ((!isset($_POST['end-date-minute'])) || (1 > $_POST['end-date-minute']) || (12 < $_POST['end-date-minute']))
+            $validationErrors[] = 'Invalid end minutes';
 
         return $validationErrors;
     }

@@ -163,7 +163,7 @@ class BookingsWebModule extends WebModule
                 $this->assign('eventsList', $eventsList);
                 break;
             case 'create':
-                echo $_SESSION['moodle_token'];
+//                echo $_SESSION['moodle_token'];
                 $this->isMoodleTokenSet();
 
                 $this->retrieveAccessToken();
@@ -178,6 +178,9 @@ class BookingsWebModule extends WebModule
 
                     $event_location = $_POST['event-location'];
 
+                    if ('PM' === $_POST['start-date-am-pm'])
+                        $_POST['start-date-am-pm'] += 12;
+
                     $start_time = $_POST['start-date-year']
                         . "-" . $_POST['start-date-month']
                         . "-" . $_POST['start-date-day'];
@@ -185,6 +188,9 @@ class BookingsWebModule extends WebModule
                     $start_time .= "T" . $_POST['start-date-hour']
                         . ":" . $_POST['start-date-hour']
                         . $_POST['start-date-minute'] . ":00.000";
+
+                    if ('PM' === $_POST['start-date-am-pm'])
+                        $_POST['end-date-am-pm'] += 12;
 
                     $end_time = $_POST['end-date-year']
                         . "-" . $_POST['end-date-month']

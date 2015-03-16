@@ -178,12 +178,21 @@ class BookingsWebModule extends WebModule
 
                     $event_location = $_POST['event-location'];
 
-                    $start_time = $_POST['start-date'];
+                    $start_time = $_POST['start-date-year']
+                        . "-" . $_POST['start-date-month']
+                        . "-" . $_POST['start-date-day'];
 
-                    $start_time = $start_time . "T" . $_POST['start-time'] . ":00.000";
+                    $start_time .= "T" . $_POST['start-date-hour']
+                        . ":" . $_POST['start-date-hour']
+                        . $_POST['start-date-minute'] . ":00.000";
 
-                    $end_time = $_POST['end-date'];
-                    $end_time = $end_time . "T" . $_POST['end-time'] . ":00.000";
+                    $end_time = $_POST['end-date-year']
+                        . "-" . $_POST['end-date-month']
+                        . "-" . $_POST['end-date-day'];
+
+                    $end_time .= "T" . $_POST['end-date-hour']
+                        . ":" . $_POST['end-date-hour']
+                        . $_POST['end-date-minute'] . ":00.000";
 
                     $created_by = $_POST['event-creator']; # pull this from moodle
 

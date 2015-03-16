@@ -168,12 +168,22 @@ class BookingsWebModule extends WebModule
 
                 $this->retrieveAccessToken();
 
-                $locations = $this->getLocations();
+                $locations = $this->getLocations(); # available locations
 
                 $this->assign('locations', $locations);
 
+
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') # if data was posted
                 {
+                    $errors = []; # validation errors
+
+                    /*
+                     * Validation
+                     */
+
+                    $errors = $this->createEventValidation();
+
+
                     $event_name = $_POST['event-name'];
 
                     $event_location = $_POST['event-location'];
@@ -346,32 +356,26 @@ class BookingsWebModule extends WebModule
         return $locations = [
             [
                 'name'          =>  'gazebo_1',
-                'colour'        =>  'blue',
                 'description'   => ''
             ],
             [
                 'name'          =>  'gazebo_2',
-                'colour'        =>  'red',
                 'description'   => ''
             ],
             [
                 'name'          =>  'gazebo_3',
-                'colour'        =>  'orange',
                 'description'   => ''
             ],
             [
                 'name'          =>  'gazebo_4',
-                'colour'        =>  'purple',
                 'description'   => ''
             ],
             [
                 'name'          =>  'gazebo_5',
-                'colour'        =>  'yellow',
                 'description'   => ''
             ],
             [
                 'name'          =>  'gazebo_6',
-                'colour'        =>  'blue',
                 'description'   => ''
             ]
         ];
@@ -394,7 +398,6 @@ class BookingsWebModule extends WebModule
         if(!$conn){
             die('Connect Error: ' . mysqli_connect_error());
         }
-
 
         $this->client = new Google_Client();
         // OAuth2 client ID and secret can be found in the Google Developers Console.
@@ -464,5 +467,34 @@ class BookingsWebModule extends WebModule
             }
             $this->client->authenticate($this->access_token);
         }
+    }
+
+    private function createEventValidation()
+    {
+        $validationErrors = [];
+        $time = time();
+
+        if (!isset($_POST['start-date-year']))
+            $_POST['start-date-year'] = date('YYYY', $time);
+        if (!isset($_POST['start-date-month']))
+            $_POST['start-date-day'] = date('MM', $time);
+        if (!isset($_POST['start-date-day']))
+            $_POST['start-date-day'] = date('DD', $time);
+
+        if (!isset($_POST['event-name']))
+            $validationErrors[] = 'No event name given';
+        if ((!isset($_POST['start-date-year'])) || (3000 > $_POST['start-date-year']) || (2000 < $_POST['start-date-year']))
+            $validationErrors[] = 'Invalid year';
+        if ((!isset($_POST['start-date-month'])) || (1 > $_POST['start-date-month']) || (12 < $_POST['start-date-month']))
+            $validationErrors[] = 'Invalid month';
+        if ((!isset($_POST['start-date-day'])) || (1 > $_POST['start-date-day']) || (31 < $_POST['start-date-day']))
+            $validationErrors[] = 'Invalid month';
+
+        if ((!isset($_POST['start-date-hour'])) || (1 > $_POST['start-date-hour']) || (12 < $_POST['start-date-hour']))
+            $validationErrors[] = 'Invalid hour';
+        if ((!isset($_POST['start-date-minute'])) || (1 > $_POST['start-date-minute']) || (12 < $_POST['start-date-minute']))
+            $validationErrors[] = 'Invalid minutes';
+
+        return $validationErrors;
     }
 }

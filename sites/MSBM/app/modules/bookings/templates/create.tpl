@@ -12,14 +12,6 @@
 
         <div>
             <h2>Start</h2>
-            {*<p>*}
-                {*<label for="start-date">Date: </label>*}
-                {*<input id="start-date" type="date" name="start-date">*}
-            {*</p>*}
-            {*<p>*}
-                {*<label for="start-time">Time: </label>*}
-                {*<input id="start-time" type="time" name="start-time">*}
-            {*</p>*}
             <h3>Date</h3>
             <p>
                 <label for="start-date-year">Year: </label>

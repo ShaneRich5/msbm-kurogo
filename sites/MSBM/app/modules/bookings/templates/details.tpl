@@ -21,9 +21,12 @@
 
 </div>
 
-<form action="{$delete_url}" method="post">
-    <input type="submit" value="Delete">
-</form>
+{if isset($delete_url)}
+    <form action="{$delete_url}" method="post">
+        <input type="submit" value="Delete">
+    </form>
+
+{/if}
 <form action="{$create_url}" method="get">
     <input type="submit" value="Create Event">
 </form>

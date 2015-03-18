@@ -15,6 +15,9 @@
 
     </div>
 {/foreach}
+<form action="details" method="post">
+    <input type="submit" value="Participate">
+</form>
 <form action="logout" method="post">
     <input type="submit" value="Logout">
 </form>

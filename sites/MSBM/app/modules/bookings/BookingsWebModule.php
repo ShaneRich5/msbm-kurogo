@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 require_once('google-api-php-client/src/Google/autoload.php');
 
 //$conn = mysqli_connect('localhost', 'root', 'kurogo', 'kurogo');
@@ -112,6 +111,7 @@ class BookingsWebModule extends WebModule
 
     protected function initializeForPage()
     {
+        session_start();
         $this->controller = DataRetriever::factory('MoodleDataRetriever', array());
 
         switch($this->page) {
@@ -259,7 +259,6 @@ class BookingsWebModule extends WebModule
                 $calendar_id = $this->getArg('calendarid');
                 $event_id = $this->getArg('eventid');
 
-
                 $event = $this->service->events->get($calendar_id, $event_id);
                 $creator = $event->getCreator();
                 $start = $event->getStart();
@@ -282,7 +281,11 @@ class BookingsWebModule extends WebModule
                     'eventid'       => $event->getId()
                 ]);
 
-                $this->assign('delete_url', $delete_url);
+                if ($this->isCreator($creator->email))
+                {
+                    $this->assign('delete_url', $delete_url);
+                }
+
                 $this->assign('create_url', $this->createLinkToIndex());
                 $this->assign('index_url', $this->createLinkToIndex());
 
@@ -330,7 +333,7 @@ class BookingsWebModule extends WebModule
 
                         $userBooking = $this->controller->getUserId($_SESSION['moodle_token']);
                         $_SESSION['user_id'] = $userBooking['userid'];
-
+                        var_dump($_SESSION['user_id']);
                         $this->redirectTo('index');
                     }
                 }
@@ -343,8 +346,6 @@ class BookingsWebModule extends WebModule
                 if (isset($_SESSION['google_token']))
                     unset($_SESSION['google_token']);
 
-                if (isset($_COOKIE['moodle_token']))
-                    setcookie('moodle_token', '', time() - 3600);
                 $this->redirectTo('login');
         }
     }
@@ -538,5 +539,12 @@ class BookingsWebModule extends WebModule
             $validationErrors[] = 'Invalid end minutes';
 
         return $validationErrors;
+    }
+
+    private function isCreator($email)
+    {
+        $userDetails = $this->controller->getUserDetails($_SESSION['user_id'], $_SESSION['moodle_token']);
+
+        return $email == $userDetails[0]['email'];
     }
 }

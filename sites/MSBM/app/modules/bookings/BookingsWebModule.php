@@ -122,7 +122,7 @@ class BookingsWebModule extends WebModule
 
                 $events = $this->service
                     ->events
-                    ->listEvents('41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com');
+                    ->listEvents('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com');
 //                var_dump(json_encode($events, true));
 //                var_dump(json_encode($events));
 
@@ -138,7 +138,7 @@ class BookingsWebModule extends WebModule
                             'title'     => $event->getSummary(),
                             'subtitle'  => $event->getId(),
                             'url'       => $this->buildBreadcrumbURL('details', [
-                                'calendarid'    => '41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com',
+                                'calendarid'    => 'vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com',
                                 'eventid'       => $event->getId(),
                             ])
                         ];
@@ -150,7 +150,7 @@ class BookingsWebModule extends WebModule
                         $optParams = [
                             'pageToken' => $pageToken
                         ];
-                        $events = $this->service->events->listEvents('41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com', $optParams);
+                        $events = $this->service->events->listEvents('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com', $optParams);
 
                     }
                     else
@@ -210,7 +210,7 @@ class BookingsWebModule extends WebModule
 
                     //41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com
                     //mine  k1tphoccb98nsglm123se5aoa4@group.calendar.google.com
-                    $createdEvent = $this->service->events->insert('41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com', $event);
+                    $createdEvent = $this->service->events->insert('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com', $event);
 
                     $this->assign('id', $createdEvent->getId());
                 }
@@ -242,7 +242,7 @@ class BookingsWebModule extends WebModule
                 $this->assign('end_date', $end->date);
 
                 $delete_url = $this->buildBreadcrumbURL('delete', [
-                    'calendarid'    => '41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com',
+                    'calendarid'    => 'vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com',
                     'eventid'       => $event->getId()
                 ]);
 
@@ -374,7 +374,7 @@ class BookingsWebModule extends WebModule
 
     public function retrieveAccessToken()
     {
-        $conn = mysqli_connect('localhost', 'root', 'root', 'kurogo');
+        $conn = mysqli_connect('localhost', 'root', 'kurogo', 'kurogo');
         if(!$conn){
             die('Connect Error: ' . mysqli_connect_error());
         }
@@ -385,15 +385,15 @@ class BookingsWebModule extends WebModule
         #refresh token
         //$refreshToken = '1/bTAaKST4WXP1U16FzobZUqsOkKTK36j2G8dYZKMLjq8';
         # test values hard coded
-        $this->client->setClientId('987849558796-5a1oa8h6la31s7l8ve5vsisjlhsahfrj.apps.googleusercontent.com');
-        $this->client->setClientSecret('onkohzxipY8Rm-XTeouk8nyV');
+        $this->client->setClientId('893211488768-c8lcurkricsfrpsc1qnptauqn5dbviud.apps.googleusercontent.com');
+        $this->client->setClientSecret('F24HBb8OiwFh1VM7zPZDJ8mz');
 
         $this->client->setRedirectUri('localhost:8888/bookings/index');
         $this->client->setRedirectUri('http://kurogo.artuvic.com:8010/courses/index');
-        $this->client->setApplicationName('MSBM');
+        $this->client->setApplicationName('MSBM Mobile');
 
         $this->client->addScope('https://www.googleapis.com/auth/calendar');
-        $this->client->addScope('shane.richards121@gmail.com');
+        $this->client->addScope('msbm.mobile@gmail.com');
 
         $this->service = new Google_Service_Calendar($this->client);
         //$this->client->authenticate('4/UJTpCcSpvRQn1bEfT2mhfbncIG-5OC3MNtp6caqVzCE.gq-Um0T2p7ESaDn_6y0ZQNhgUaoAmAI');

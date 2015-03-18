@@ -1,0 +1,19 @@
+/* Adding url prefix '/device/tablet/' */
+
+/* Minify_CSS_UriRewriter::$debugText
+
+docRoot    : /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/www
+currentDir : /home/fearon/msbm-kurogo/Kurogo-Mobile-Web/app/modules/calendar/css
+
+*/
+
+/* pane-tablet.css */
+
+/* 1 */ .calendar .results li .smallprint {
+/* 2 */   display: inline-block;
+/* 3 */ }
+/* 4 */ 
+
+/* id::themeConfigModTimeChecker */
+
+/* 1 */ 

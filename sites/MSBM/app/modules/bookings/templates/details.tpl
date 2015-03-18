@@ -6,6 +6,11 @@
     </h1>
 
     <div>
+        <h2>
+            Location: {$event_location}
+        </h2>
+    </div>
+    <div>
         <h2>Starts</h2>
         <p>at {$start_time} on {$start_date}</p>
     </div>

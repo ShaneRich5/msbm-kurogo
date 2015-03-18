@@ -163,61 +163,97 @@ class BookingsWebModule extends WebModule
                 $this->assign('eventsList', $eventsList);
                 break;
             case 'create':
-                echo $_SESSION['moodle_token'];
-                $this->isMoodleTokenSet();
+                $this->isMoodleDataSet();
 
                 $this->retrieveAccessToken();
 
-                $locations = $this->getLocations();
+                $locations = $this->getLocations(); # available locations
+
+                $userDetails = $this->controller->getUserDetails($_SESSION['user_id'], $_SESSION['moodle_token']);
+                $userEmail = $userDetails[0]['email'];
 
                 $this->assign('locations', $locations);
+                $this->assign('email', $userEmail);
 
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') # if data was posted
                 {
-                    $event_name = $_POST['event-name'];
+                    $errors = []; # validation errors
 
-                    $event_location = $_POST['event-location'];
+                    /*
+                     * Validation
+                     */
 
-                    $start_time = $_POST['start-date'];
+                    $errors = $this->createEventValidation();
 
-                    $start_time = $start_time . "T" . $_POST['start-time'] . ":00.000";
+                    if (!empty($errors)) {
+                        $event_name = $_POST['event-name'];
 
-                    $end_time = $_POST['end-date'];
-                    $end_time = $end_time . "T" . $_POST['end-time'] . ":00.000";
+                        $event_location = $_POST['event-location'];
 
-                    $created_by = $_POST['event-creator']; # pull this from moodle
+                        if ('PM' === $_POST['start-date-am-pm'])
+                            $_POST['start-date-am-pm'] += 12;
 
-                    $event = new Google_Service_Calendar_Event();
-                    $creator = new Google_Service_Calendar_EventCreator();
+                        $start_time = $_POST['start-date-year']
+                            . "-" . $_POST['start-date-month']
+                            . "-" . $_POST['start-date-day'];
 
-                    $creator->setEmail($created_by); # pull this from moodle
+                        $start_time .= "T" . $_POST['start-date-hour']
+                            . ":" . $_POST['start-date-hour']
+                            . $_POST['start-date-minute'] . ":00.000";
 
-                    $event->setSummary($event_name); # name of event
+                        if ('PM' === $_POST['start-date-am-pm'])
+                            $_POST['end-date-am-pm'] += 12;
 
-                    $event->setLocation($event_location); # make a predefined list
+                        $end_time = $_POST['end-date-year']
+                            . "-" . $_POST['end-date-month']
+                            . "-" . $_POST['end-date-day'];
 
-                    $start = new Google_Service_Calendar_EventDateTime();
-                    $start->setTimeZone('America/Jamaica');
-                    $start->setDateTime($start_time);
+                        $end_time .= "T" . $_POST['end-date-hour']
+                            . ":" . $_POST['end-date-hour']
+                            . $_POST['end-date-minute'] . ":00.000";
 
-                    $event->setStart($start);
+//                        $created_by = $_POST['event-creator']; # pull this from moodle
+                        $created_by = $userDetails[0]['email'];
 
-                    $end = new Google_Service_Calendar_EventDateTime();
-                    $end->setTimeZone('America/Jamaica');
-                    $end->setDateTime($end_time);
+                        $event = new Google_Service_Calendar_Event();
+                        $creator = new Google_Service_Calendar_EventCreator();
 
-                    $event->setEnd($end);
+                        $creator->setEmail($userEmail); # pull this from moodle
 
-                    //41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com
-                    //mine  k1tphoccb98nsglm123se5aoa4@group.calendar.google.com
-                    $createdEvent = $this->service->events->insert('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com', $event);
+                        $event->setSummary($event_name); # name of event
 
-                    $this->assign('id', $createdEvent->getId());
+                        $event->setLocation($event_location); # make a predefined list
+
+                        $start = new Google_Service_Calendar_EventDateTime();
+                        $start->setTimeZone('America/Jamaica');
+                        $start->setDateTime($start_time);
+
+                        $event->setStart($start);
+
+                        $end = new Google_Service_Calendar_EventDateTime();
+                        $end->setTimeZone('America/Jamaica');
+                        $end->setDateTime($end_time);
+
+
+                        $event->setEnd($end);
+
+                        //41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com
+                        //mine  k1tphoccb98nsglm123se5aoa4@group.calendar.google.com
+                        $createdEvent = $this->service->events->insert('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com', $event);
+
+                        $this->assign('id', $createdEvent->getId());
+
+                        $this->redirectTo('index');
+                    }
+                    else
+                    {
+                        $this->assign('errors', $errors);
+                    }
                 }
 
                 break;
             case 'details':
-                $this->isMoodleTokenSet();
+                $this->isMoodleDataSet();
 
                 $this->retrieveAccessToken();
 
@@ -231,6 +267,7 @@ class BookingsWebModule extends WebModule
                 $end = $event->getEnd();
 
                 $this->assign('event_name', $event->getSummary());
+                $this->assign('event_location', $event->location);
 
                 $this->assign('creator_name', $creator->displayName);
                 $this->assign('creator_email', $creator->email);
@@ -252,6 +289,8 @@ class BookingsWebModule extends WebModule
 
                 break;
             case 'delete':
+                $this->isMoodleDataSet();
+
                 $this->retrieveAccessToken();
 
                 $calendar_id = $this->getArg('calendarid');
@@ -268,7 +307,7 @@ class BookingsWebModule extends WebModule
 
                 break;
             case 'login':
-                if (isset($_SESSION['moodle_token']))
+                if ((isset($_SESSION['moodle_token'])) && (isset($_SESSION['user_id'])))
                     $this->redirectTo('index');
                 else if (!empty($_POST))
                 {
@@ -289,7 +328,7 @@ class BookingsWebModule extends WebModule
                     else
                     {
                         setcookie('moodle_token', $result['token'], time() + (60 *60 *24 * 30));
-                        Kurogo::redirectToURL('create');
+                        $this->redirectTo('create');
                     }
                 }
 
@@ -303,7 +342,6 @@ class BookingsWebModule extends WebModule
 
                 if (isset($_COOKIE['moodle_token']))
                     setcookie('moodle_token', '', time() - 3600);
-
                 $this->redirectTo('login');
         }
     }
@@ -318,9 +356,10 @@ class BookingsWebModule extends WebModule
 
     }
 
-    public function isMoodleTokenSet()
+    public function isMoodleDataSet()
     {
-        if (!isset($_SESSION['moodle_token'])) {
+        if ((!isset($_SESSION['moodle_token'])) && (!isset($_SESSION['user_id'])))
+        {
             $this->redirectToModule('courses', 'login', []);
         }
     }
@@ -330,32 +369,26 @@ class BookingsWebModule extends WebModule
         return $locations = [
             [
                 'name'          =>  'gazebo_1',
-                'colour'        =>  'blue',
                 'description'   => ''
             ],
             [
                 'name'          =>  'gazebo_2',
-                'colour'        =>  'red',
                 'description'   => ''
             ],
             [
                 'name'          =>  'gazebo_3',
-                'colour'        =>  'orange',
                 'description'   => ''
             ],
             [
                 'name'          =>  'gazebo_4',
-                'colour'        =>  'purple',
                 'description'   => ''
             ],
             [
                 'name'          =>  'gazebo_5',
-                'colour'        =>  'yellow',
                 'description'   => ''
             ],
             [
                 'name'          =>  'gazebo_6',
-                'colour'        =>  'blue',
                 'description'   => ''
             ]
         ];
@@ -378,7 +411,6 @@ class BookingsWebModule extends WebModule
         if(!$conn){
             die('Connect Error: ' . mysqli_connect_error());
         }
-
 
         $this->client = new Google_Client();
         // OAuth2 client ID and secret can be found in the Google Developers Console.
@@ -448,5 +480,61 @@ class BookingsWebModule extends WebModule
             }
             $this->client->authenticate($this->access_token);
         }
+    }
+
+    private function createEventValidation()
+    {
+        $validationErrors = [];
+        $time = time();
+
+        if (!isset($_POST['event-name']))
+            $validationErrors[] = 'No event name given';
+
+        /*
+         * Start section validation
+         */
+        if (!isset($_POST['start-date-year']))
+            $_POST['start-date-year'] = date('YYYY', $time);
+        if (!isset($_POST['start-date-month']))
+            $_POST['start-date-day'] = date('MM', $time);
+        if (!isset($_POST['start-date-day']))
+            $_POST['start-date-day'] = date('DD', $time);
+
+        if ((!isset($_POST['start-date-year'])) || (3000 > $_POST['start-date-year']) || (2000 < $_POST['start-date-year']))
+            $validationErrors[] = 'Invalid start year';
+        if ((!isset($_POST['start-date-month'])) || (1 > $_POST['start-date-month']) || (12 < $_POST['start-date-month']))
+            $validationErrors[] = 'Invalid start month';
+        if ((!isset($_POST['start-date-day'])) || (1 > $_POST['start-date-day']) || (31 < $_POST['start-date-day']))
+            $validationErrors[] = 'Invalid start month';
+
+        if ((!isset($_POST['start-date-hour'])) || (1 > $_POST['start-date-hour']) || (12 < $_POST['start-date-hour']))
+            $validationErrors[] = 'Invalid start hour';
+        if ((!isset($_POST['start-date-minute'])) || (1 > $_POST['start-date-minute']) || (12 < $_POST['start-date-minute']))
+            $validationErrors[] = 'Invalid start minutes';
+
+        /*
+         * End section validation
+         */
+
+        if (!isset($_POST['end-date-year']))
+            $_POST['end-date-year'] = date('YYYY', $time);
+        if (!isset($_POST['end-date-month']))
+            $_POST['end-date-day'] = date('MM', $time);
+        if (!isset($_POST['end-date-day']))
+            $_POST['end-date-day'] = date('DD', $time);
+
+        if ((!isset($_POST['end-date-year'])) || (3000 > $_POST['end-date-year']) || (2000 < $_POST['end-date-year']))
+            $validationErrors[] = 'Invalid end year';
+        if ((!isset($_POST['end-date-month'])) || (1 > $_POST['end-date-month']) || (12 < $_POST['end-date-month']))
+            $validationErrors[] = 'Invalid end month';
+        if ((!isset($_POST['end-date-day'])) || (1 > $_POST['end-date-day']) || (31 < $_POST['end-date-day']))
+            $validationErrors[] = 'Invalid end month';
+
+        if ((!isset($_POST['end-date-hour'])) || (1 > $_POST['end-date-hour']) || (12 < $_POST['end-date-hour']))
+            $validationErrors[] = 'Invalid end hour';
+        if ((!isset($_POST['end-date-minute'])) || (1 > $_POST['end-date-minute']) || (12 < $_POST['end-date-minute']))
+            $validationErrors[] = 'Invalid end minutes';
+
+        return $validationErrors;
     }
 }

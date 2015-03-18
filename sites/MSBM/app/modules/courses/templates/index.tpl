@@ -1,7 +1,7 @@
 {include file = "findInclude:common/templates/header.tpl"}
 <h2 class="focal">Login</h2>
 <div class="focal">
-    <form action="index" method="post">
+    <form action="index" method="POST">
         <p>
             <label for="username">Username: </label>
             <input id="username" type="text" name="username">

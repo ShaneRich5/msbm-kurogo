@@ -54,12 +54,18 @@ class CoursesWebModule extends WebModule
                 if (!isset($_SESSION['moodle_token']))
                     $this->redirectTo('index');
 
+//                $user = $this->controller->getUserDetails('6150', '47aae912ad404c743d7b66ad0c6c0742');
+//                var_dump($user);
 
                 # Retrieve user info, using stored cookie
                 $userInfo = $this->controller->getUserId($_COOKIE['moodle_token']);
 
                 $_SESSION['userid'] = $userInfo['userid'];
                 $this->assign('info', $userInfo['userid']);
+
+                $user = $this->controller->getUserDetails($_SESSION['userid'], $_SESSION['moodle_token']);
+
+                var_dump($user);
 
                 # Retrieve json list of courses
                 $coursesParam = array(
@@ -74,8 +80,6 @@ class CoursesWebModule extends WebModule
 //                print_r($userCourses);
                 # prep list for courses
                 $coursesList = array();
-
-
 
                 foreach ($userCourses as $courseData)
                 {

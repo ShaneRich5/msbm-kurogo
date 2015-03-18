@@ -326,8 +326,12 @@ class BookingsWebModule extends WebModule
                         $this->assign('error', 'Incorrect username or password');
                     else
                     {
-                        setcookie('moodle_token', $result['token'], time() + (60 *60 *24 * 30));
-                        $this->redirectTo('create');
+                        $_SESSION['moodle_token'] = $result['token'];
+
+                        $userBooking = $this->controller->getUserId($_SESSION['moodle_token']);
+                        $_SESSION['user_id'] = $userBooking['userid'];
+
+                        $this->redirectTo('index');
                     }
                 }
 
@@ -368,27 +372,27 @@ class BookingsWebModule extends WebModule
         return $locations = [
             [
                 'name'          =>  'gazebo_1',
-                'description'   => ''
+                'description'   =>  ''
             ],
             [
                 'name'          =>  'gazebo_2',
-                'description'   => ''
+                'description'   =>  ''
             ],
             [
                 'name'          =>  'gazebo_3',
-                'description'   => ''
+                'description'   =>  ''
             ],
             [
                 'name'          =>  'gazebo_4',
-                'description'   => ''
+                'description'   =>  ''
             ],
             [
                 'name'          =>  'gazebo_5',
-                'description'   => ''
+                'description'   =>  ''
             ],
             [
                 'name'          =>  'gazebo_6',
-                'description'   => ''
+                'description'   =>  ''
             ]
         ];
     }
@@ -397,7 +401,6 @@ class BookingsWebModule extends WebModule
     {
         return $this->buildBreadcrumbURL('create', []);
     }
-
 
     private function createLinkToIndex()
     {

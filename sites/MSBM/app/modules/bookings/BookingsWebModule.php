@@ -163,15 +163,17 @@ class BookingsWebModule extends WebModule
                 $this->assign('eventsList', $eventsList);
                 break;
             case 'create':
-//                echo $_SESSION['moodle_token'];
-                $this->isMoodleTokenSet();
+                $this->isMoodleDataSet();
 
                 $this->retrieveAccessToken();
 
                 $locations = $this->getLocations(); # available locations
 
-                $this->assign('locations', $locations);
+                $userDetails = $this->controller->getUserDetails($_SESSION['user_id'], $_SESSION['moodle_token']);
+                $userEmail = $userDetails[0]['email'];
 
+                $this->assign('locations', $locations);
+                $this->assign('email', $userEmail);
 
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') # if data was posted
                 {
@@ -210,12 +212,13 @@ class BookingsWebModule extends WebModule
                             . ":" . $_POST['end-date-hour']
                             . $_POST['end-date-minute'] . ":00.000";
 
-                        $created_by = $_POST['event-creator']; # pull this from moodle
+//                        $created_by = $_POST['event-creator']; # pull this from moodle
+                        $created_by = $userDetails[0]['email'];
 
                         $event = new Google_Service_Calendar_Event();
                         $creator = new Google_Service_Calendar_EventCreator();
 
-                        $creator->setEmail($created_by); # pull this from moodle
+                        $creator->setEmail($userEmail); # pull this from moodle
 
                         $event->setSummary($event_name); # name of event
 
@@ -249,7 +252,7 @@ class BookingsWebModule extends WebModule
 
                 break;
             case 'details':
-                $this->isMoodleTokenSet();
+                $this->isMoodleDataSet();
 
                 $this->retrieveAccessToken();
 
@@ -285,6 +288,8 @@ class BookingsWebModule extends WebModule
 
                 break;
             case 'delete':
+                $this->isMoodleDataSet();
+
                 $this->retrieveAccessToken();
 
                 $calendar_id = $this->getArg('calendarid');
@@ -301,7 +306,7 @@ class BookingsWebModule extends WebModule
 
                 break;
             case 'login':
-                if (isset($_SESSION['moodle_token']))
+                if ((isset($_SESSION['moodle_token'])) && (isset($_SESSION['user_id'])))
                     $this->redirectTo('index');
                 else if (!empty($_POST))
                 {
@@ -350,9 +355,10 @@ class BookingsWebModule extends WebModule
 
     }
 
-    public function isMoodleTokenSet()
+    public function isMoodleDataSet()
     {
-        if (!isset($_SESSION['moodle_token'])) {
+        if ((!isset($_SESSION['moodle_token'])) && (!isset($_SESSION['user_id'])))
+        {
             $this->redirectToModule('courses', 'login', []);
         }
     }

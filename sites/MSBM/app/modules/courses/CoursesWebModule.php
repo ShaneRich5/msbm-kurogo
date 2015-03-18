@@ -21,7 +21,7 @@ class CoursesWebModule extends WebModule
 //                $_SESSION['moodle_token'];
                 # if the user's token has been saved in memory, skip this page,
                 # else, display login page
-                if (isset($_SESSION['moodle_token']))
+                if (isset($_SESSION['moodle_token']) && isset($_SESSION['user_id']))
                 {
                     $this->redirectTo('all');
                 }
@@ -38,6 +38,7 @@ class CoursesWebModule extends WebModule
 
                     $loginResult = $this->controller->getToken($credentials); // retrieves the token
 
+//                    $userData = $this->controller->getUserId($_COOKIE['moodle_token']);
                     # if unsuccessful, present user with error
                     # else, save the data to a cookie and proceed
                     if (array_key_exists('error', $loginResult))
@@ -45,33 +46,36 @@ class CoursesWebModule extends WebModule
                     else
                     {
                         $_SESSION['moodle_token'] = $loginResult['token'];
+
+                        $userData = $this->controller->getUserId($_SESSION['moodle_token']);
+                        $_SESSION['user_id'] = $userData['userid'];
+
                         $this->redirectTo('all');
                     }
                 }
 
                 break;
             case 'all':
-                if (!isset($_SESSION['moodle_token']))
+                if ((!isset($_SESSION['moodle_token'])) && (!isset($_SESSION['user_id'])))
                     $this->redirectTo('index');
 
 //                $user = $this->controller->getUserDetails('6150', '47aae912ad404c743d7b66ad0c6c0742');
 //                var_dump($user);
 
                 # Retrieve user info, using stored cookie
-                $userInfo = $this->controller->getUserId($_COOKIE['moodle_token']);
+//                $userInfo = $this->controller->getUserId($_COOKIE['moodle_token']);
 
-                $_SESSION['userid'] = $userInfo['userid'];
-                $this->assign('info', $userInfo['userid']);
+//                $_SESSION['userid'] = $userInfo['userid'];
+//                $this->assign('info', $userInfo['userid']);
 
-                $user = $this->controller->getUserDetails($_SESSION['userid'], $_SESSION['moodle_token']);
-
-                var_dump($user);
+                $userInfo = $this->controller->getUserDetails($_SESSION['user_id'], $_SESSION['moodle_token']);
+                var_dump($userInfo[0]['email']);
 
                 # Retrieve json list of courses
                 $coursesParam = array(
-                    'wstoken' => $_COOKIE['moodle_token'],
+                    'wstoken' => $_SESSION['moodle_token'],
                     'wsfunction' => 'core_enrol_get_users_courses',
-                    'userid' => $userInfo['userid'],
+                    'userid' => $_SESSION['user_id'],
                 );
 
                 # Retrieve user courses and converts json to php array
@@ -79,18 +83,18 @@ class CoursesWebModule extends WebModule
 
 //                print_r($userCourses);
                 # prep list for courses
-                $coursesList = array();
+                $coursesList = [];
 
                 foreach ($userCourses as $courseData)
                 {
-                    $course = array(
+                    $course = [
                         'subtitle' => $courseData['shortname'],
                         'title' => $courseData['fullname'],
-                        'url' => $this->buildBreadcrumbURL('details', array(
-                            'wstoken' => $_COOKIE['moodle_token'],
-                            'courseid' => $courseData['id'])
+                        'url' => $this->buildBreadcrumbURL('details', [
+                            'wstoken' => $_SESSION['moodle_token'],
+                            'courseid' => $courseData['id']]
                         )
-                    );
+                    ];
                     $coursesList[] = $course;
                 }
 
@@ -190,7 +194,7 @@ class CoursesWebModule extends WebModule
              * Used from bookings
              */
             case 'login':
-                if (isset($_SESSION['moodle_token']))
+                if (isset($_SESSION['moodle_token']) && isset($_SESSION['user_id']))
                 {
                     $this->redirectToModule('bookings', 'index', []);
                 }
@@ -214,6 +218,10 @@ class CoursesWebModule extends WebModule
                     else
                     {
                         $_SESSION['moodle_token'] = $loginResult['token'];
+
+                        $userBooking = $this->controller->getUserId($_SESSION['moodle_token']);
+                        $_SESSION['user_id'] = $userBooking['userid'];
+
                         $this->redirectToModule('bookings', 'index', []);
                     }
                 }

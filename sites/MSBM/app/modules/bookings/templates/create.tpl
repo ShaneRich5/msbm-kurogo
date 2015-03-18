@@ -58,8 +58,8 @@
             </p>
         </div>
         <p>
-            <label for="event-creator">Created by: </label>
-            <input id="event-creator" type="text" name="event-creator">
+            <label for="moodle-email">Created by: </label>
+            <input type="email" id="moodle-email" name="moodle-email" value="{$email}" readonly>
         </p>
         <p>
             <label for="event-location">Location: </label>

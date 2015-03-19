@@ -1,0 +1,15 @@
+<strong>Error refreshing the OAuth2 token, message: '{
+  "error" : "unauthorized_client"
+}'</strong><br><br><strong>Fatal error</strong>:  Uncaught exception 'Google_Auth_Exception' with message 'Error refreshing the OAuth2 token, message: '{
+  "error" : "unauthorized_client"
+}'' in C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\Auth\OAuth2.php:357
+Stack trace:
+#0 C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\Auth\OAuth2.php(272): refreshTokenRequest(array)
+#1 C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\Client.php(427): refreshToken(string)
+#2 C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\BookingsWebModule.php(466): refreshToken(string)
+#3 C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\BookingsWebModule.php(121): retrieveAccessToken()
+#4 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\WebModule.php(1784): initializeForPage()
+#5 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\WebModule.php(1990): setPageVariables()
+#6 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\www\index.php(323): displayPage()
+#7 {main}
+  thrown in <strong>C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\Auth\OAuth2.php</strong> on line <strong>357</strong>

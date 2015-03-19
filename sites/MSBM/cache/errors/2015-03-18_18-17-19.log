@@ -1,0 +1,16 @@
+<strong>Unknown SSL protocol error in connection to www.googleapis.com:443 </strong><br><br><strong>Fatal error</strong>:  Uncaught exception 'Google_IO_Exception' with message 'Unknown SSL protocol error in connection to www.googleapis.com:443 ' in C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\IO\Curl.php:116
+Stack trace:
+#0 C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\IO\Abstract.php(135): executeRequest(object)
+#1 C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\Http\REST.php(60): makeRequest(object)
+#2 Unknown(Unknown): doExecute(object, object)
+#3 C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\Task\Runner.php(174): call_user_func_array(array, array)
+#4 C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\Http\REST.php(46): run()
+#5 C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\Client.php(563): execute(object, object)
+#6 C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\Service\Resource.php(231): execute(object)
+#7 C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\Service\Calendar.php(1561): call(string, array, string)
+#8 C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\BookingsWebModule.php(125): listEvents(string)
+#9 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\WebModule.php(1784): initializeForPage()
+#10 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\WebModule.php(1990): setPageVariables()
+#11 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\www\index.php(323): displayPage()
+#12 {main}
+  thrown in <strong>C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\IO\Curl.php</strong> on line <strong>116</strong>

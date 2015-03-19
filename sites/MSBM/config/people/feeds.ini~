@@ -1,9 +1,0 @@
-
-
-
-
-[ldap]
-TITLE = "DataPR"
-#HOST                    = "ldap.mit.edu"
-#SEARCH_BASE             = "dc=mit,dc=edu"
-RETRIEVER_CLASS         = "DatabasePeopleRetriever"

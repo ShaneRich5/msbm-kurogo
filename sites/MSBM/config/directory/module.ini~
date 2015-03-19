@@ -1,9 +1,0 @@
-[module]
-
-title="Directory"
-
-icon="people"
-
-SHOW_FEDERATED_SEARCH = 1
-
-search = 1

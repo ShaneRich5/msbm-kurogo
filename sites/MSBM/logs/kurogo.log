@@ -1040,3 +1040,37 @@
 [Wed 03 18 18:19:58 2015]	home:Warning	DataParser->parseResponse@51	/home/pane?id=calendar&ajax=1	Something other than BEGIN at the start of the calendar: 
 [Wed 03 18 19:20:08 2015]	exception:Critical	Google_Auth_OAuth2->authenticate@119	/bookings/	A Google_Auth_Exception has occured: Error fetching OAuth2 access token, message: 'invalid_grant'
 [Wed 03 18 19:20:32 2015]	exception:Critical	Google_Http_REST::decodeHttpResponse@110	/bookings/delete?calendarid=41hloqnqe4a9pl0ngpocc2t92g%40group.calendar.google.com&eventid=ltvndovb4ujvbggtrdme6rtcis&_b=%5B%7B%22t%22%3A%22Booking%22%2C%22lt%22%3A%22Booking%22%2C%22p%22%3A%22index%22%2C%22a%22%3A%22%22%7D%2C%7B%22t%22%3A%22Booking%22%2C%22lt%22%3A%22Booking%22%2C%22p%22%3A%22details%22%2C%22a%22%3A%22calendarid%3D41hloqnqe4a9pl0ngpocc2t92g%2540group.calendar.google.com%26eventid%3Dltvndovb4ujvbggtrdme6rtcis%22%7D%5D	A Google_Service_Exception has occured: Error calling DELETE https://www.googleapis.com/calendar/v3/calendars/41hloqnqe4a9pl0ngpocc2t92g%40group.calendar.google.com/events/ltvndovb4ujvbggtrdme6rtcis: (403) Forbidden
+[Thu 03 19 18:22:29 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Thu 03 19 18:22:55 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Thu 03 19 18:27:13 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Thu 03 19 18:27:21 2015]	exception:Critical	Google_Auth_OAuth2->authenticate@119	/bookings/	A Google_Auth_Exception has occured: Error fetching OAuth2 access token, message: 'invalid_grant'
+[Thu 03 19 18:32:01 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Thu 03 19 18:33:55 2015]	exception:Critical	Google_Http_REST::decodeHttpResponse@110	/bookings/create	A Google_Service_Exception has occured: Error calling POST https://www.googleapis.com/calendar/v3/calendars/41hloqnqe4a9pl0ngpocc2t92g%40group.calendar.google.com/events: (400) Invalid value for: Invalid format: "2015-3-20T5:530:00.000" is malformed at "0:00.000"
+[Thu 03 19 18:37:20 2015]	exception:Critical	Google_Http_REST::decodeHttpResponse@110	/bookings/create	A Google_Service_Exception has occured: Error calling POST https://www.googleapis.com/calendar/v3/calendars/41hloqnqe4a9pl0ngpocc2t92g%40group.calendar.google.com/events: (400) Invalid value for: Invalid format: "2015-3-20T6:610:00.000" is malformed at "0:00.000"
+[Thu 03 19 18:49:34 2015]	exception:Critical	Google_Http_REST::decodeHttpResponse@110	/bookings/create	A Google_Service_Exception has occured: Error calling POST https://www.googleapis.com/calendar/v3/calendars/41hloqnqe4a9pl0ngpocc2t92g%40group.calendar.google.com/events: (400) Invalid value for: Invalid format: "2015-03-20T6:600:00.000" is malformed at "0:00.000"
+[Thu 03 19 18:51:18 2015]	exception:Critical	Google_Http_REST::decodeHttpResponse@110	/bookings/create	A Google_Service_Exception has occured: Error calling POST https://www.googleapis.com/calendar/v3/calendars/41hloqnqe4a9pl0ngpocc2t92g%40group.calendar.google.com/events: (400) Invalid value for: Invalid format: "2015-03-20T6:630:00.000" is malformed at "0:00.000"
+[Thu 03 19 18:54:57 2015]	exception:Critical	Google_Http_REST::decodeHttpResponse@110	/bookings/create	A Google_Service_Exception has occured: Error calling POST https://www.googleapis.com/calendar/v3/calendars/41hloqnqe4a9pl0ngpocc2t92g%40group.calendar.google.com/events: (400) Invalid value for: Invalid format: "2015-03-20T630:00.000" is malformed at "0:00.000"
+[Thu 03 19 18:56:35 2015]	exception:Critical	Google_Http_REST::decodeHttpResponse@110	/bookings/create	A Google_Service_Exception has occured: Error calling POST https://www.googleapis.com/calendar/v3/calendars/41hloqnqe4a9pl0ngpocc2t92g%40group.calendar.google.com/events: (400) Invalid value for: Invalid format: "2015-03-20T7:730:00.000" is malformed at "0:00.000"
+[Thu 03 19 18:57:33 2015]	exception:Critical	Google_Http_REST::decodeHttpResponse@110	/bookings/create	A Google_Service_Exception has occured: Error calling POST https://www.googleapis.com/calendar/v3/calendars/41hloqnqe4a9pl0ngpocc2t92g%40group.calendar.google.com/events: (403) Forbidden
+[Thu 03 19 19:04:56 2015]	exception:Critical	Google_Http_REST::decodeHttpResponse@110	/bookings/create	A Google_Service_Exception has occured: Error calling POST https://www.googleapis.com/calendar/v3/calendars/41hloqnqe4a9pl0ngpocc2t92g%40group.calendar.google.com/events: (403) Forbidden
+[Thu 03 19 19:40:13 2015]	exception:Critical	Google_Auth_OAuth2->refreshTokenRequest@357	/bookings/	A Google_Auth_Exception has occured: Error refreshing the OAuth2 token, message: '{
+  "error" : "unauthorized_client"
+}'
+[Thu 03 19 19:40:14 2015]	exception:Critical	Google_Auth_OAuth2->refreshTokenRequest@357	/bookings/	A Google_Auth_Exception has occured: Error refreshing the OAuth2 token, message: '{
+  "error" : "unauthorized_client"
+}'
+[Thu 03 19 19:42:04 2015]	exception:Critical	Google_Auth_OAuth2->refreshTokenRequest@357	/bookings/	A Google_Auth_Exception has occured: Error refreshing the OAuth2 token, message: '{
+  "error" : "unauthorized_client"
+}'
+[Thu 03 19 19:42:10 2015]	exception:Critical	Google_Auth_OAuth2->refreshTokenRequest@357	/bookings/index	A Google_Auth_Exception has occured: Error refreshing the OAuth2 token, message: '{
+  "error" : "unauthorized_client"
+}'
+[Thu 03 19 19:42:16 2015]	exception:Critical	Google_Auth_OAuth2->refreshTokenRequest@357	/bookings/index	A Google_Auth_Exception has occured: Error refreshing the OAuth2 token, message: '{
+  "error" : "unauthorized_client"
+}'
+[Thu 03 19 19:42:20 2015]	exception:Critical	Google_Auth_OAuth2->refreshTokenRequest@357	/bookings/	A Google_Auth_Exception has occured: Error refreshing the OAuth2 token, message: '{
+  "error" : "unauthorized_client"
+}'
+[Thu 03 19 19:42:34 2015]	exception:Critical	Google_Auth_OAuth2->refreshTokenRequest@357	/bookings/index	A Google_Auth_Exception has occured: Error refreshing the OAuth2 token, message: '{
+  "error" : "unauthorized_client"
+}'

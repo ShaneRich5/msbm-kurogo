@@ -13,7 +13,7 @@ require_once('google-api-php-client/src/Google/autoload.php');
  * @package Modules
  * @subpackage Bookings
  */
-class BookingsWebModule extends WebModule
+class BookingsWebModule extends CalendarWebModule
 {
     /**
      * Specifies the module name
@@ -123,10 +123,6 @@ class BookingsWebModule extends WebModule
                 $events = $this->service
                     ->events
                     ->listEvents('41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com');
-//                var_dump(json_encode($events, true));
-//                var_dump(json_encode($events));
-
-//                $events = json_encode($events); # converts received json to array
 
                 $eventsList = [];
 
@@ -198,8 +194,7 @@ class BookingsWebModule extends WebModule
                             . "-" . $_POST['start-date-day'];
 
                         $start_time .= "T" . $_POST['start-date-hour']
-                            . ":" . $_POST['start-date-hour']
-                            . $_POST['start-date-minute'] . ":00.000";
+                            . ":" . $_POST['start-date-minute'] . ":00.000";
 
                         if ('PM' === $_POST['start-date-am-pm'])
                             $_POST['end-date-am-pm'] += 12;
@@ -209,8 +204,7 @@ class BookingsWebModule extends WebModule
                             . "-" . $_POST['end-date-day'];
 
                         $end_time .= "T" . $_POST['end-date-hour']
-                            . ":" . $_POST['end-date-hour']
-                            . $_POST['end-date-minute'] . ":00.000";
+                            . ":" . $_POST['end-date-minute'] . ":00.000";
 
 //                        $created_by = $_POST['event-creator']; # pull this from moodle
                         $created_by = $userDetails[0]['email'];
@@ -495,6 +489,7 @@ class BookingsWebModule extends WebModule
 
         /*
          * Start section validation
+         * Sets a default start date if none is provided
          */
         if (!isset($_POST['start-date-year']))
             $_POST['start-date-year'] = date('YYYY', $time);
@@ -514,7 +509,7 @@ class BookingsWebModule extends WebModule
             $validationErrors[] = 'Invalid start hour';
         if ((!isset($_POST['start-date-minute'])) || (1 > $_POST['start-date-minute']) || (12 < $_POST['start-date-minute']))
             $validationErrors[] = 'Invalid start minutes';
-
+//        2011-06-03T10:00:00.000-07:00
         /*
          * End section validation
          */

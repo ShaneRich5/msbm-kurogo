@@ -198,7 +198,7 @@ class BookingsWebModule extends WebModule
                             . "-" . $_POST['start-date-day'];
 
                         $start_time .= "T" . $_POST['start-date-hour']
-                            . ":" . $_POST['start-date-hour']
+                            . ":"
                             . $_POST['start-date-minute'] . ":00.000";
 
                         if ('PM' === $_POST['start-date-am-pm'])
@@ -209,7 +209,7 @@ class BookingsWebModule extends WebModule
                             . "-" . $_POST['end-date-day'];
 
                         $end_time .= "T" . $_POST['end-date-hour']
-                            . ":" . $_POST['end-date-hour']
+                            . ":"
                             . $_POST['end-date-minute'] . ":00.000";
 
 //                        $created_by = $_POST['event-creator']; # pull this from moodle

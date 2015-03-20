@@ -1,11 +1,12 @@
 {include file="findInclude:common/templates/header.tpl"}
 
-<h1 class="focal">
-    Room Booking
-    <small>Click for more details</small>
-</h1>
+<div class="nonfocal">
+    <h2>{$today|date_format:$dateFormat}</h2>
+</div>
 
 {include file="findInclude:common/templates/results.tpl" results=$eventsList}
+
+{*{include file="findInclude:modules/calendar/templates/include/eventslist.tpl" title=$eventsList date=$current}*}
 
 <form action="{$create_url}" method="get">
     <input type="submit" value="Create Event">

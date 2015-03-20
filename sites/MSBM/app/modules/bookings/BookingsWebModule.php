@@ -116,15 +116,16 @@ class BookingsWebModule extends CalendarWebModule
 
         switch($this->page) {
             case 'index':
-                //$this->isMoodleTokenSet();
-                //var_dump($_COOKIE['moodle_token']);
+
+                $this->assign('today',         mktime(0,0,0));
+                $this->assign('dateFormat', $this->getLocalizedString("LONG_DATE_FORMAT"));
+
                 $this->retrieveAccessToken();
 
+                $eventsList = [];
                 $events = $this->service
                     ->events
-                    ->listEvents('41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com');
-
-                $eventsList = [];
+                    ->listEvents('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com');
 
                 while (true)
                 {
@@ -134,7 +135,7 @@ class BookingsWebModule extends CalendarWebModule
                             'title'     => $event->getSummary(),
                             'subtitle'  => $event->getId(),
                             'url'       => $this->buildBreadcrumbURL('details', [
-                                'calendarid'    => '41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com',
+                                'calendarid'    => 'vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com',
                                 'eventid'       => $event->getId(),
                             ])
                         ];
@@ -146,7 +147,7 @@ class BookingsWebModule extends CalendarWebModule
                         $optParams = [
                             'pageToken' => $pageToken
                         ];
-                        $events = $this->service->events->listEvents('41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com', $optParams);
+                        $events = $this->service->events->listEvents('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com', $optParams);
 
                     }
                     else
@@ -194,7 +195,8 @@ class BookingsWebModule extends CalendarWebModule
                             . "-" . $_POST['start-date-day'];
 
                         $start_time .= "T" . $_POST['start-date-hour']
-                            . ":" . $_POST['start-date-minute'] . ":00.000";
+                            . ":"
+                            . $_POST['start-date-minute'] . ":00.000";
 
                         if ('PM' === $_POST['start-date-am-pm'])
                             $_POST['end-date-am-pm'] += 12;
@@ -204,7 +206,8 @@ class BookingsWebModule extends CalendarWebModule
                             . "-" . $_POST['end-date-day'];
 
                         $end_time .= "T" . $_POST['end-date-hour']
-                            . ":" . $_POST['end-date-minute'] . ":00.000";
+                            . ":"
+                            . $_POST['end-date-minute'] . ":00.000";
 
 //                        $created_by = $_POST['event-creator']; # pull this from moodle
                         $created_by = $userDetails[0]['email'];
@@ -228,11 +231,12 @@ class BookingsWebModule extends CalendarWebModule
                         $end->setTimeZone('America/Jamaica');
                         $end->setDateTime($end_time);
 
+
                         $event->setEnd($end);
 
                         //41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com
                         //mine  k1tphoccb98nsglm123se5aoa4@group.calendar.google.com
-                        $createdEvent = $this->service->events->insert('41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com', $event);
+                        $createdEvent = $this->service->events->insert('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com', $event);
 
                         $this->assign('id', $createdEvent->getId());
 
@@ -271,7 +275,7 @@ class BookingsWebModule extends CalendarWebModule
                 $this->assign('end_date', $end->date);
 
                 $delete_url = $this->buildBreadcrumbURL('delete', [
-                    'calendarid'    => '41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com',
+                    'calendarid'    => 'vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com',
                     'eventid'       => $event->getId()
                 ]);
 
@@ -300,6 +304,38 @@ class BookingsWebModule extends CalendarWebModule
 
                 break;
             case 'update':
+
+                break;
+            case 'day':
+                $current    = $this->getArg('time', time(), FILTER_VALIDATE_INT);
+                $type       = $this->getArg('type', 'static');
+                $calendar   = $this->getArg('calendar');
+                $next       = strtotime("+1 day", $current);
+                $prev       = strtotime("-1 day", $current);
+
+                $start = new DateTime(date('Y-m-d H:i:s', $current), $this->timezone);
+                $start->setTime(0,0,0);
+                $end = clone $start;
+                $end->setTime(23,59,59);
+
+                $events = [];
+
+                $title = 'Placeholder';
+
+                $dayRange = new DayRange(time());
+
+                $this->assign('feedTitle', $title);
+                $this->assign('type',    $type);
+                $this->assign('calendar',$calendar);
+                $this->assign('current', $current);
+                $this->assign('next',    $next);
+                $this->assign('prev',    $prev);
+                $this->assign('nextURL', $this->dayURL($next, $type, $calendar, false));
+                $this->assign('prevURL', $this->dayURL($prev, $type, $calendar, false));
+                $this->assign('titleDateFormat', $this->getLocalizedString('MEDIUM_DATE_FORMAT'));
+                $this->assign('linkDateFormat', $this->getLocalizedString('SHORT_DATE_FORMAT'));
+                $this->assign('isToday', $dayRange->contains(new TimeRange($current)));
+                $this->assign('events',  $events);
 
                 break;
             case 'login':
@@ -414,15 +450,15 @@ class BookingsWebModule extends CalendarWebModule
         #refresh token
         //$refreshToken = '1/bTAaKST4WXP1U16FzobZUqsOkKTK36j2G8dYZKMLjq8';
         # test values hard coded
-        $this->client->setClientId('987849558796-5a1oa8h6la31s7l8ve5vsisjlhsahfrj.apps.googleusercontent.com');
-        $this->client->setClientSecret('onkohzxipY8Rm-XTeouk8nyV');
+        $this->client->setClientId('893211488768-c8lcurkricsfrpsc1qnptauqn5dbviud.apps.googleusercontent.com');
+        $this->client->setClientSecret('F24HBb8OiwFh1VM7zPZDJ8mz');
 
         $this->client->setRedirectUri('localhost:8888/bookings/index');
         $this->client->setRedirectUri('http://kurogo.artuvic.com:8010/courses/index');
-        $this->client->setApplicationName('MSBM');
+        $this->client->setApplicationName('MSBM Mobile');
 
         $this->client->addScope('https://www.googleapis.com/auth/calendar');
-        $this->client->addScope('shane.richards121@gmail.com');
+        $this->client->addScope('msbm.mobile@gmail.com');
 
         $this->service = new Google_Service_Calendar($this->client);
         //$this->client->authenticate('4/UJTpCcSpvRQn1bEfT2mhfbncIG-5OC3MNtp6caqVzCE.gq-Um0T2p7ESaDn_6y0ZQNhgUaoAmAI');

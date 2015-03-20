@@ -1074,3 +1074,11 @@
 [Thu 03 19 19:42:34 2015]	exception:Critical	Google_Auth_OAuth2->refreshTokenRequest@357	/bookings/index	A Google_Auth_Exception has occured: Error refreshing the OAuth2 token, message: '{
   "error" : "unauthorized_client"
 }'
+[Thu 03 19 20:02:09 2015]	exception:Critical	Google_Auth_OAuth2->authenticate@119	/bookings/index	A Google_Auth_Exception has occured: Error fetching OAuth2 access token, message: 'invalid_grant'
+[Thu 03 19 20:33:20 2015]	exception:Critical	ConfigFileStore->loadConfig@42	/bookings/index	A KurogoConfigurationException has occured: ConfigFile: cannot load bookings configuration file feeds
+[Thu 03 19 23:42:21 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Thu 03 19 23:44:13 2015]	exception:Critical	ConfigFileStore->loadConfig@42	/bookings/	A KurogoConfigurationException has occured: ConfigFile: cannot load bookings configuration file feeds
+[Thu 03 19 23:45:08 2015]	exception:Critical	ConfigFileStore->loadConfig@42	/bookings/index	A KurogoConfigurationException has occured: ConfigFile: cannot load bookings configuration file feeds
+[Thu 03 19 23:45:13 2015]	exception:Critical	ConfigFileStore->loadConfig@42	/bookings/	A KurogoConfigurationException has occured: ConfigFile: cannot load bookings configuration file feeds
+[Thu 03 19 23:45:57 2015]	exception:Critical	Google_Auth_OAuth2->authenticate@119	/bookings/index	A Google_Auth_Exception has occured: Error fetching OAuth2 access token, message: 'invalid_grant'
+[Fri 03 20 00:24:44 2015]	exception:Critical	WebModule->loadPageConfig@1517	/bookings/day	A KurogoPageNotFoundException has occured: Page day not found

@@ -317,8 +317,57 @@ class BookingsWebModule extends CalendarWebModule
                 $start->setTime(0,0,0);
                 $end = clone $start;
                 $end->setTime(23,59,59);
+//                var_dump(date('Y-m-d',$current));
 
-                $events = [];
+                $this->retrieveAccessToken();
+
+                $eventsList = [];
+
+                $events = $this->service
+                    ->events
+                    ->listEvents('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com');
+
+                while (true)
+                {
+                    foreach ($events->getItems() as $event)
+                    {
+//                        var_dump(substr($event['start']['dateTime'], 0, 10));
+                        $startDate = substr($event['start']['dateTime'], 0, 10);
+                        $endDate = substr($event['end']['dateTime'], 0, 10);
+                        $cmpDate = date('Y-m-d', $current);
+
+                        if ((0 == strcmp($startDate, $cmpDate)) || (0 == strcmp($endDate, $cmpDate)))
+                        {
+                            $event = [
+                                'title'     => $event->getSummary(),
+                                'subtitle'  => $event->getId(),
+                                'url'       => $this->buildBreadcrumbURL('details', [
+                                    'calendarid'    => 'vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com',
+                                    'eventid'       => $event->getId(),
+                                ])
+                            ];
+                            $eventsList[] = $event;
+                        }
+                    }
+                    $pageToken = $events->getNextPageToken();
+                    if ($pageToken)
+                    {
+                        $optParams = [
+                            'pageToken' => $pageToken
+                        ];
+                        $events = $this->service->events->listEvents('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com', $optParams);
+
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                $eventsToday = [];
+
+
+
 
                 $title = 'Placeholder';
 
@@ -335,7 +384,7 @@ class BookingsWebModule extends CalendarWebModule
                 $this->assign('titleDateFormat', $this->getLocalizedString('MEDIUM_DATE_FORMAT'));
                 $this->assign('linkDateFormat', $this->getLocalizedString('SHORT_DATE_FORMAT'));
                 $this->assign('isToday', $dayRange->contains(new TimeRange($current)));
-                $this->assign('events',  $events);
+                $this->assign('events',  $eventsList);
 
                 break;
             case 'login':

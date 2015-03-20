@@ -1,4 +1,24 @@
-{include file="findInclude:common/templates/header.tpl"}
+<?php /* Smarty version Smarty-3.0.7, created on 2015-03-20 15:32:53
+         compiled from "C:\\MAMP\\htdocs\\msbm\\sites\\MSBM\\app\\modules\\bookings\\templates\\create.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:5552550c75e56c83e7-59644211%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'e53253d9ea377603a2cc107f0cec186e6d990c77' => 
+    array (
+      0 => 'C:\\\\MAMP\\\\htdocs\\\\msbm\\\\sites\\\\MSBM\\\\app\\\\modules\\\\bookings\\\\templates\\\\create.tpl',
+      1 => 1426879970,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '5552550c75e56c83e7-59644211',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
+<?php $_template = new Smarty_Internal_Template("findInclude:common/templates/header.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php unset($_template);?>
 
 <div class="nonfocal">
     <h1>New Event</h1>
@@ -15,7 +35,8 @@
             <br>
 
             <label for="moodle-email">Created by: </label>
-            <input type="email" id="moodle-email" name="moodle-email" value="{$email}" readonly>
+            <input type="email" id="moodle-email" name="moodle-email" value="<?php echo $_smarty_tpl->getVariable('email')->value;?>
+" readonly>
         </div>
 
         <h1>Date</h1>
@@ -60,15 +81,22 @@
 
         <p>
             <label for="moodle-email">Created by: </label>
-            <input type="email" id="moodle-email" name="moodle-email" value="{$email}" readonly>
+            <input type="email" id="moodle-email" name="moodle-email" value="<?php echo $_smarty_tpl->getVariable('email')->value;?>
+" readonly>
         </p>
 
         <p>
             <label for="event-location">Location: </label>
             <select id="event-location" name="event-location">
-                {foreach $locations as $location}
-                    <option value="{$location['name']}">{$location['name']}</option>
-                {/foreach}
+                <?php  $_smarty_tpl->tpl_vars['location'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('locations')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['location']->key => $_smarty_tpl->tpl_vars['location']->value){
+?>
+                    <option value="<?php echo $_smarty_tpl->tpl_vars['location']->value['name'];?>
+"><?php echo $_smarty_tpl->tpl_vars['location']->value['name'];?>
+</option>
+                <?php }} ?>
             </select>
         </p>
         <p>
@@ -79,4 +107,5 @@
 
 </form>
 
-{include file="findInclude:common/templates/footer.tpl"}
+<?php $_template = new Smarty_Internal_Template("findInclude:common/templates/footer.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php unset($_template);?>

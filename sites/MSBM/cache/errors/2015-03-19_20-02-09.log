@@ -1,0 +1,10 @@
+<strong>Error fetching OAuth2 access token, message: 'invalid_grant'</strong><br><br><strong>Fatal error</strong>:  Uncaught exception 'Google_Auth_Exception' with message 'Error fetching OAuth2 access token, message: 'invalid_grant'' in C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\Auth\OAuth2.php:119
+Stack trace:
+#0 C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\Client.php(125): authenticate(string)
+#1 C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\BookingsWebModule.php(481): authenticate(string)
+#2 C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\BookingsWebModule.php(121): retrieveAccessToken()
+#3 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\WebModule.php(1784): initializeForPage()
+#4 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\WebModule.php(1990): setPageVariables()
+#5 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\www\index.php(323): displayPage()
+#6 {main}
+  thrown in <strong>C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\Auth\OAuth2.php</strong> on line <strong>119</strong>

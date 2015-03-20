@@ -221,6 +221,7 @@ class CoursesWebModule extends WebModule
 
                         $userBooking = $this->controller->getUserId($_SESSION['moodle_token']);
                         $_SESSION['user_id'] = $userBooking['userid'];
+                        $_SESSION['full_name'] = $userBooking['fullname'];
 
                         $this->redirectToModule('bookings', 'index', []);
                     }

@@ -121,7 +121,37 @@ class BookingsWebModule extends CalendarWebModule
 
                 $this->retrieveAccessToken();
 
+                $options = [
+                    [
+                        'title' => 'All Bookings',
+                        'subtitle' => '',
+                        'url' => $this->buildBreadcrumbURL('day', []),
+                    ],
+                ];
+
+                if (isset($_SESSION['moodle_token']))
+                {
+                    $options[] = [
+                        'title' => 'My Bookings',
+                        'subtitle' => '',
+                        'url' => $this->buildBreadcrumbURL('list', [
+                            'feed'  =>   'personal',
+                        ]),
+                    ];
+                }
+
+                $options[] = [
+                        'title' => 'Booking Joined',
+                        'subtitle' => '',
+                        'url' => $this->buildBreadcrumbURL('list', [
+                            'feed'  =>  'participant',
+                        ]),
+                ];
+
+                $this->assign('feeds', $options);
+
                 $eventsList = [];
+
                 $events = $this->service
                     ->events
                     ->listEvents('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com');

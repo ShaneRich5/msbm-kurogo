@@ -1111,3 +1111,4 @@
 [Fri 03 20 15:42:33 2015]	exception:Critical	WebModule->loadPageConfig@1517	/bookings/events	A KurogoPageNotFoundException has occured: Page events not found
 [Fri 03 20 15:48:12 2015]	exception:Critical	Google_IO_Curl->executeRequest@116	/bookings/	A Google_IO_Exception has occured: Could not resolve host: www.googleapis.com
 [Fri 03 20 15:48:27 2015]	exception:Critical	Google_IO_Curl->executeRequest@116	/bookings/index	A Google_IO_Exception has occured: Could not resolve host: www.googleapis.com
+[Fri 03 20 17:19:11 2015]	exception:Critical	Google_Auth_OAuth2->authenticate@119	/bookings/index?	A Google_Auth_Exception has occured: Error fetching OAuth2 access token, message: 'invalid_grant'

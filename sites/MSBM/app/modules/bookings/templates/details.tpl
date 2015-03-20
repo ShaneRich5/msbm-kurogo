@@ -28,7 +28,7 @@
 
 {/if}
 <form action="{$create_url}" method="get">
-    <input type="submit" value="Create Event">
+    <input type="submit" value="Submit Booking">
 </form>
 <form action="{$index_url}" method="get">
     <input type="submit" value="All Bookings">

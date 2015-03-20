@@ -133,7 +133,7 @@ class BookingsWebModule extends CalendarWebModule
                     {
                         $event = [
                             'title'     => $event->getSummary(),
-                            'subtitle'  => $event->getId(),
+                            'subtitle'  => $event->attendees[0]->email,
                             'url'       => $this->buildBreadcrumbURL('details', [
                                 'calendarid'    => 'vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com',
                                 'eventid'       => $event->getId(),
@@ -214,9 +214,17 @@ class BookingsWebModule extends CalendarWebModule
 
                         $event = new Google_Service_Calendar_Event();
                         $creator = new Google_Service_Calendar_EventCreator();
+                        $organizer = new Google_Service_Calendar_EventOrganizer();
 
-                        $creator->setEmail($userEmail); # pull this from moodle
+                        $attendee1 = new Google_Service_Calendar_EventAttendee();
+                        $attendee1->setEmail($userEmail);
+                        $attendees = array($attendee1);
+                        $event->attendees = $attendees;
 
+                        //$creator->setEmail($userEmail); # pull this from moodle.. not writable.. shane (<_< )
+                        $organizer->setEmail($userEmail);
+                        $organizer->setDisplayName("Test-this-hitn");
+                        $event->organizer = $organizer;
                         $event->setSummary($event_name); # name of event
 
                         $event->setLocation($event_location); # make a predefined list
@@ -259,20 +267,29 @@ class BookingsWebModule extends CalendarWebModule
 
                 $event = $this->service->events->get($calendar_id, $event_id);
                 $creator = $event->getCreator();
-                $start = $event->getStart();
-                $end = $event->getEnd();
+                $attendees = $event->getAttendees();
+                $maker = $attendees[0]->email;
+
+                $non_form_start = $event->getStart()->dateTime;
+                $non_form_end = $event->getEnd()->dateTime;
 
                 $this->assign('event_name', $event->getSummary());
                 $this->assign('event_location', $event->location);
 
                 $this->assign('creator_name', $creator->displayName);
-                $this->assign('creator_email', $creator->email);
+                $this->assign('creator_email', $maker);
 
-                $this->assign('start_time', $start->dateTime);
-                $this->assign('start_date', $start->date);
+                $begin_time = date("h:i a", strtotime($non_form_start));
+                $end_time = date("h:i a", strtotime($non_form_end));
 
-                $this->assign('end_time', $end->dateTime);
-                $this->assign('end_date', $end->date);
+                $begin_date = date("Y-m-d", strtotime($non_form_start));
+                $end_date = date("Y-m-d", strtotime($non_form_end));
+
+                $this->assign('start_time', $begin_time);
+                $this->assign('start_date', $begin_date);
+
+                $this->assign('end_time', $end_time);
+                $this->assign('end_date', $end_date);
 
                 $delete_url = $this->buildBreadcrumbURL('delete', [
                     'calendarid'    => 'vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com',
@@ -332,6 +349,13 @@ class BookingsWebModule extends CalendarWebModule
                     foreach ($events->getItems() as $event)
                     {
 //                        var_dump(substr($event['start']['dateTime'], 0, 10));
+                        $startDateTime = $event->getStart()->dateTime;
+                        $endDateTime = $event->getEnd()->dateTime;
+                        $begin = date("h:i a", strtotime($startDateTime));
+                        $end = date("h:i a", strtotime($endDateTime));
+                        //var_dump($event->getSummary());
+                        //var_dump(date("h:i a", strtotime($startDateTime)));
+                        //var_dump(date("h:i a", strtotime($endDateTime))); //date("H:i:s",strtotime($time))
                         $startDate = substr($event['start']['dateTime'], 0, 10);
                         $endDate = substr($event['end']['dateTime'], 0, 10);
                         $cmpDate = date('Y-m-d', $current);
@@ -340,7 +364,7 @@ class BookingsWebModule extends CalendarWebModule
                         {
                             $event = [
                                 'title'     => $event->getSummary(),
-                                'subtitle'  => $event->getId(),
+                                'subtitle'  => $begin . "-" . $end,//$event->getId(),
                                 'url'       => $this->buildBreadcrumbURL('details', [
                                     'calendarid'    => 'vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com',
                                     'eventid'       => $event->getId(),
@@ -369,7 +393,7 @@ class BookingsWebModule extends CalendarWebModule
 
 
 
-                $title = 'Placeholder';
+                $title = 'Gazeebo Bookings';
 
                 $dayRange = new DayRange(time());
 
@@ -386,6 +410,7 @@ class BookingsWebModule extends CalendarWebModule
                 $this->assign('isToday', $dayRange->contains(new TimeRange($current)));
                 $this->assign('events',  $eventsList);
 
+                $this->assign('create_url', $this->createLinkToCreate());
                 break;
             case 'login':
                 if ((isset($_SESSION['moodle_token'])) && (isset($_SESSION['user_id'])))
@@ -489,7 +514,7 @@ class BookingsWebModule extends CalendarWebModule
 
     public function retrieveAccessToken()
     {
-        $conn = mysqli_connect('localhost', 'root', 'root', 'kurogo');
+        $conn = mysqli_connect('localhost', 'root', 'kurogo', 'kurogo');
         if(!$conn){
             die('Connect Error: ' . mysqli_connect_error());
         }

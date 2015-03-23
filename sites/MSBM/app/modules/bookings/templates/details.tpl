@@ -7,7 +7,7 @@
 
     <div>
         <h2>
-            Location: {$event_location}
+            Location: {$event_location}, {$event_confirmation}
         </h2>
     </div>
     <div>

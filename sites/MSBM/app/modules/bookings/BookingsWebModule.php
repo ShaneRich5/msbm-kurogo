@@ -165,13 +165,13 @@ class BookingsWebModule extends CalendarWebModule
 
                         $event->setOrganizer($organizer);
 
-//                        $attendee1 = new Google_Service_Calendar_EventAttendee();
-//                        $attendee1->setEmail($userEmail);
-//                        $attendees = array($attendee1);
-//                        $event->attendees = $attendees;
+                        $attendee1 = new Google_Service_Calendar_EventAttendee();
+                        $attendee1->setEmail($userEmail);
+                        $attendees = array($attendee1);
+                        $event->attendees = $attendees;
 
                         //$event->colorId = "#2952A3";
-                        $event->setColorId("6");
+                        $event->setColorId("10");
 
                         $event->setSummary($event_name); # name of event
 
@@ -232,9 +232,19 @@ class BookingsWebModule extends CalendarWebModule
                 $maker = $attendees[0]->email;
 
 
+                $color_id = $event->getColorId();
+                var_dump($color_id);
+                if($color_id == 10)
+                    $confirmation = "Event Confirmed";
+                elseif ($color_id == 5)
+                    $confirmation = "Confirmation Pending";
+                else
+                    $confirmation = "Event Dinied!";
+                    
+                var_dump($confirmation);
                 //$colors = $service->colors->get();colorId 
-                $col_id = $event->colorId;
-                var_dump($col_id);
+                //$col_id = $event->colorId;
+                //var_dump($maker);
 
                 $non_form_start = $event->getStart()->dateTime;
                 $non_form_end = $event->getEnd()->dateTime;
@@ -242,8 +252,10 @@ class BookingsWebModule extends CalendarWebModule
                 $this->assign('event_name', $event->getSummary());
                 $this->assign('event_location', $event->location);
 
+                $this->assign('event_confirmation', $confirmation);
+
 //                $this->assign('creator_name', $creator->displayName);
-//                $this->assign('creator_email', $maker);
+                $this->assign('creator_email', $maker);
 
                 $begin_time = date("h:i a", strtotime($non_form_start));
                 $end_time = date("h:i a", strtotime($non_form_end));
@@ -325,6 +337,13 @@ class BookingsWebModule extends CalendarWebModule
                         $endDateTime = $event->getEnd()->dateTime;
                         $begin = date("h:i a", strtotime($startDateTime));
                         $end = date("h:i a", strtotime($endDateTime));
+                        $confirmed = $event->getColorId();
+
+                        if($confirmed == 10)
+                            $confirmation = "Event Confirmed";
+                        elseif($confirmed == 5)
+                            $confirmation = "Confirmation Pending";
+
                         //var_dump($event->getSummary());
                         //var_dump(date("h:i a", strtotime($startDateTime)));
                         //var_dump(date("h:i a", strtotime($endDateTime))); //date("H:i:s",strtotime($time))
@@ -334,15 +353,17 @@ class BookingsWebModule extends CalendarWebModule
 
                         if ((0 == strcmp($startDate, $cmpDate)) || (0 == strcmp($endDate, $cmpDate)))
                         {
-                            $event = [
-                                'title'     => $event->getSummary(),
-                                'subtitle'  => $begin . "-" . $end,//$event->getId(),
-                                'url'       => $this->buildBreadcrumbURL('details', [
-                                    'calendarid'    => 'vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com',
-                                    'eventid'       => $event->getId(),
-                                ])
-                            ];
-                            $eventsList[] = $event;
+                            if($confirmed != 11){
+                                $event = [
+                                    'title'     => $event->getSummary() . " (" . $confirmation . ") ",
+                                    'subtitle'  => $begin . "-" . $end,//$event->getId(),
+                                    'url'       => $this->buildBreadcrumbURL('details', [
+                                        'calendarid'    => 'vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com',
+                                        'eventid'       => $event->getId(),
+                                    ])
+                                ];
+                                $eventsList[] = $event;
+                            }
                         }
                     }
                     $pageToken = $events->getNextPageToken();
@@ -487,7 +508,7 @@ class BookingsWebModule extends CalendarWebModule
 
     public function retrieveAccessToken()
     {
-        $conn = mysqli_connect('localhost', 'root', 'root', 'kurogo');
+        $conn = mysqli_connect('localhost', 'root', 'kurogo', 'kurogo');
         if(!$conn){
             die('Connect Error: ' . mysqli_connect_error());
         }

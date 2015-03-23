@@ -1127,3 +1127,4 @@ cf5a&grant_type=client_credentials
 [Mon 03 23 18:11:35 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
 [Mon 03 23 18:11:55 2015]	exception:Critical	Google_Auth_OAuth2->authenticate@119	/bookings/	A Google_Auth_Exception has occured: Error fetching OAuth2 access token, message: 'invalid_grant'
 [Mon 03 23 18:15:08 2015]	exception:Critical	Google_IO_Curl->executeRequest@116	/bookings/	A Google_IO_Exception has occured: Unknown SSL protocol error in connection to www.googleapis.com:443 
+[Mon 03 23 18:21:31 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml

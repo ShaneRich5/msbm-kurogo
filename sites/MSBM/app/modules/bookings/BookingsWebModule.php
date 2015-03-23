@@ -30,84 +30,6 @@ class BookingsWebModule extends CalendarWebModule
 
     protected $service_account_name = 'shane.richards121@gmail.com';
 
-//    function __construct()
-//    {
-//
-//        $conn = mysqli_connect('localhost', 'root', 'root', 'kurogo');
-//        if(!$conn){
-//             die('Connect Error: ' . mysqli_connect_error());
-//        }
-//
-//
-//            $this->client = new Google_Client();
-//            // OAuth2 client ID and secret can be found in the Google Developers Console.
-//        #refresh token
-//        //$refreshToken = '1/bTAaKST4WXP1U16FzobZUqsOkKTK36j2G8dYZKMLjq8';
-//            # test values hard coded
-//            $this->client->setClientId('987849558796-5a1oa8h6la31s7l8ve5vsisjlhsahfrj.apps.googleusercontent.com');
-//            $this->client->setClientSecret('onkohzxipY8Rm-XTeouk8nyV');
-//
-//            $this->client->setRedirectUri('localhost:8888/bookings/index');
-//            $this->client->setRedirectUri('http://kurogo.artuvic.com:8010/courses/index');
-//            $this->client->setApplicationName('MSBM');
-//
-//            $this->client->addScope('https://www.googleapis.com/auth/calendar');
-//            $this->client->addScope('shane.richards121@gmail.com');
-//
-//            $this->service = new Google_Service_Calendar($this->client);
-//            //$this->client->authenticate('4/UJTpCcSpvRQn1bEfT2mhfbncIG-5OC3MNtp6caqVzCE.gq-Um0T2p7ESaDn_6y0ZQNhgUaoAmAI');
-//            //$this->access_token = $this->client->getAccessToken();
-//
-//            //$this->client->setAccessToken($refreshToken);
-//            //if ($this->client->isAccessTokenExpired())
-//            //    $this->client->refreshToken($refreshToken);
-//
-//        $this->service = new Google_Service_Calendar($this->client);
-//        //$this->client->authenticate('4/egQcISXQMD-Tv8PggVgTEb3KVkqf1AkikeEbcBOaNds.cjXCnwZzA4MdaDn_6y0ZQNgmzL4TmAI');
-//        //$access_token = $this->client->getAccessToken();
-//        //$tokens_decoded = json_decode($access_token);
-//        //$refresh_token = $tokens_decoded->refresh_token;
-//
-//        //$sql = "INSERT INTO google_cal (access_token, refresh_token) VALUES ( '$access_token', '$refresh_token')";
-//
-//        $get = "SELECT * FROM google_cal";
-//        $result = mysqli_query($conn, $get);
-//        //if (mysqli_query($conn, $get)) {
-//        if (mysqli_num_rows($result) > 0){
-//            $tokens = mysqli_fetch_assoc($result);
-////                echo "New record created successfully" . $tokens['refresh_token'];
-//        } else {
-//            echo "Error: " . $get . "<br>" . $conn->error;
-//        }
-//        $this->access_token = $this->client->setAccessToken($tokens['access_token']);
-//        if ($this->client->isAccessTokenExpired()) {
-//
-//            $this->refresh_token = $tokens['refresh_token'];
-//            $this->client->refreshToken($this->refresh_token);
-//            $this->access_token = $this->client->getAccessToken();
-//            $tokens_decoded = json_decode($this->access_token);
-//            $this->refresh_token = $tokens_decoded->refresh_token;
-//            echo "Got new access token" . $this->refresh_token;
-//            $update = "UPDATE google_cal SET access_token='$this->access_token', refresh_token='$this->refresh_token' WHERE id=0";
-//            //$result = mysqli_query($conn, $get);
-//            if (mysqli_query($conn, $update)) {
-//                echo "Record updated successfully";
-//            } else {
-//                echo "Error updating record: " . mysqli_error($conn);
-//            }
-//            $this->client->authenticate($this->access_token);
-//        }
-////        var_dump($this->access_token);
-////        $this->client->authenticate($this->access_token);
-//        //$this->client->setAccessToken($refreshToken);
-//        //if ($this->client->isAccessTokenExpired()) {
-//        //    $this->client->refreshToken($refreshToken);
-//        //  }
-//
-//
-//    }
-
-
     protected function initializeForPage()
     {
         session_start();
@@ -243,6 +165,14 @@ class BookingsWebModule extends CalendarWebModule
 
                         $event->setOrganizer($organizer);
 
+//                        $attendee1 = new Google_Service_Calendar_EventAttendee();
+//                        $attendee1->setEmail($userEmail);
+//                        $attendees = array($attendee1);
+//                        $event->attendees = $attendees;
+
+                        //$event->colorId = "#2952A3";
+                        $event->setColorId("6");
+
                         $event->setSummary($event_name); # name of event
 
                         $event->setLocation($event_location); # make a predefined list
@@ -283,35 +213,40 @@ class BookingsWebModule extends CalendarWebModule
 
                 $calendar_id = $this->getArg('calendarid');
                 $event_id = $this->getArg('eventid');
+                
 
+                
                 $event = $this->service->events->get($calendar_id, $event_id);
-//
+
                 $organizer = $event->getOrganizer();
 
                 $start = $event->getStart();
                 $end = $event->getEnd();
-//=======
+
 //                $creator = $event->getCreator();
 //                $attendees = $event->getAttendees();
 //                $maker = $attendees[0]->email;
-//
+
+                $creator = $event->getCreator();
+                $attendees = $event->getAttendees();
+                $maker = $attendees[0]->email;
+
+
+                //$colors = $service->colors->get();colorId 
+                $col_id = $event->colorId;
+                var_dump($col_id);
+
                 $non_form_start = $event->getStart()->dateTime;
                 $non_form_end = $event->getEnd()->dateTime;
-//>>>>>>> 171ccf5809ce5f86e2e59911476a89936960d1c0
 
                 $this->assign('event_name', $event->getSummary());
                 $this->assign('event_location', $event->location);
 
-//<<<<<<< HEAD
-                $this->assign('creator_name', $organizer->displayName);
-//                $this->assign('creator_email', $organizer->email);
-//=======
 //                $this->assign('creator_name', $creator->displayName);
 //                $this->assign('creator_email', $maker);
 
                 $begin_time = date("h:i a", strtotime($non_form_start));
                 $end_time = date("h:i a", strtotime($non_form_end));
-//>>>>>>> 171ccf5809ce5f86e2e59911476a89936960d1c0
 
                 $begin_date = date("Y-m-d", strtotime($non_form_start));
                 $end_date = date("Y-m-d", strtotime($non_form_end));
@@ -428,9 +363,6 @@ class BookingsWebModule extends CalendarWebModule
                 $title = 'Placeholder';
                 $eventsToday = [];
 
-
-
-
                 $title = 'Gazeebo Bookings';
 
                 $dayRange = new DayRange(time());
@@ -487,7 +419,7 @@ class BookingsWebModule extends CalendarWebModule
                 # if token is set, unset it
                 # redirect to index
                 if (isset($_SESSION['google_token']))
-                    unset($_SESSION['google_token']);
+                    session_destroy();
 
                 $this->redirectTo('login');
 
@@ -679,4 +611,83 @@ class BookingsWebModule extends CalendarWebModule
             'eventid'       => $event_id
         ]);
     }
+
+
+//    function __construct()
+//    {
+//
+//        $conn = mysqli_connect('localhost', 'root', 'root', 'kurogo');
+//        if(!$conn){
+//             die('Connect Error: ' . mysqli_connect_error());
+//        }
+//
+//
+//            $this->client = new Google_Client();
+//            // OAuth2 client ID and secret can be found in the Google Developers Console.
+//        #refresh token
+//        //$refreshToken = '1/bTAaKST4WXP1U16FzobZUqsOkKTK36j2G8dYZKMLjq8';
+//            # test values hard coded
+//            $this->client->setClientId('987849558796-5a1oa8h6la31s7l8ve5vsisjlhsahfrj.apps.googleusercontent.com');
+//            $this->client->setClientSecret('onkohzxipY8Rm-XTeouk8nyV');
+//
+//            $this->client->setRedirectUri('localhost:8888/bookings/index');
+//            $this->client->setRedirectUri('http://kurogo.artuvic.com:8010/courses/index');
+//            $this->client->setApplicationName('MSBM');
+//
+//            $this->client->addScope('https://www.googleapis.com/auth/calendar');
+//            $this->client->addScope('shane.richards121@gmail.com');
+//
+//            $this->service = new Google_Service_Calendar($this->client);
+//            //$this->client->authenticate('4/UJTpCcSpvRQn1bEfT2mhfbncIG-5OC3MNtp6caqVzCE.gq-Um0T2p7ESaDn_6y0ZQNhgUaoAmAI');
+//            //$this->access_token = $this->client->getAccessToken();
+//
+//            //$this->client->setAccessToken($refreshToken);
+//            //if ($this->client->isAccessTokenExpired())
+//            //    $this->client->refreshToken($refreshToken);
+//
+//        $this->service = new Google_Service_Calendar($this->client);
+//        //$this->client->authenticate('4/egQcISXQMD-Tv8PggVgTEb3KVkqf1AkikeEbcBOaNds.cjXCnwZzA4MdaDn_6y0ZQNgmzL4TmAI');
+//        //$access_token = $this->client->getAccessToken();
+//        //$tokens_decoded = json_decode($access_token);
+//        //$refresh_token = $tokens_decoded->refresh_token;
+//
+//        //$sql = "INSERT INTO google_cal (access_token, refresh_token) VALUES ( '$access_token', '$refresh_token')";
+//
+//        $get = "SELECT * FROM google_cal";
+//        $result = mysqli_query($conn, $get);
+//        //if (mysqli_query($conn, $get)) {
+//        if (mysqli_num_rows($result) > 0){
+//            $tokens = mysqli_fetch_assoc($result);
+////                echo "New record created successfully" . $tokens['refresh_token'];
+//        } else {
+//            echo "Error: " . $get . "<br>" . $conn->error;
+//        }
+//        $this->access_token = $this->client->setAccessToken($tokens['access_token']);
+//        if ($this->client->isAccessTokenExpired()) {
+//
+//            $this->refresh_token = $tokens['refresh_token'];
+//            $this->client->refreshToken($this->refresh_token);
+//            $this->access_token = $this->client->getAccessToken();
+//            $tokens_decoded = json_decode($this->access_token);
+//            $this->refresh_token = $tokens_decoded->refresh_token;
+//            echo "Got new access token" . $this->refresh_token;
+//            $update = "UPDATE google_cal SET access_token='$this->access_token', refresh_token='$this->refresh_token' WHERE id=0";
+//            //$result = mysqli_query($conn, $get);
+//            if (mysqli_query($conn, $update)) {
+//                echo "Record updated successfully";
+//            } else {
+//                echo "Error updating record: " . mysqli_error($conn);
+//            }
+//            $this->client->authenticate($this->access_token);
+//        }
+////        var_dump($this->access_token);
+////        $this->client->authenticate($this->access_token);
+//        //$this->client->setAccessToken($refreshToken);
+//        //if ($this->client->isAccessTokenExpired()) {
+//        //    $this->client->refreshToken($refreshToken);
+//        //  }
+//
+//
+//    }
+
 }

@@ -162,7 +162,7 @@ class BookingsWebModule extends CalendarWebModule
                     {
                         $event = [
                             'title'     => $event->getSummary(),
-                            'subtitle'  => $event->getId(),
+                            'subtitle'  => $event->attendees[0]->email,
                             'url'       => $this->buildBreadcrumbURL('details', [
                                 'calendarid'    => 'vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com',
                                 'eventid'       => $event->getId(),
@@ -242,6 +242,7 @@ class BookingsWebModule extends CalendarWebModule
                         $organizer->setDisplayName($_SESSION['full_name']);
 
                         $event->setOrganizer($organizer);
+
                         $event->setSummary($event_name); # name of event
 
                         $event->setLocation($event_location); # make a predefined list
@@ -284,22 +285,42 @@ class BookingsWebModule extends CalendarWebModule
                 $event_id = $this->getArg('eventid');
 
                 $event = $this->service->events->get($calendar_id, $event_id);
+//
                 $organizer = $event->getOrganizer();
 
                 $start = $event->getStart();
                 $end = $event->getEnd();
+//=======
+//                $creator = $event->getCreator();
+//                $attendees = $event->getAttendees();
+//                $maker = $attendees[0]->email;
+//
+                $non_form_start = $event->getStart()->dateTime;
+                $non_form_end = $event->getEnd()->dateTime;
+//>>>>>>> 171ccf5809ce5f86e2e59911476a89936960d1c0
 
                 $this->assign('event_name', $event->getSummary());
                 $this->assign('event_location', $event->location);
 
+//<<<<<<< HEAD
                 $this->assign('creator_name', $organizer->displayName);
-                $this->assign('creator_email', $organizer->email);
+//                $this->assign('creator_email', $organizer->email);
+//=======
+//                $this->assign('creator_name', $creator->displayName);
+//                $this->assign('creator_email', $maker);
 
-                $this->assign('start_time', $start->dateTime);
-                $this->assign('start_date', $start->date);
+                $begin_time = date("h:i a", strtotime($non_form_start));
+                $end_time = date("h:i a", strtotime($non_form_end));
+//>>>>>>> 171ccf5809ce5f86e2e59911476a89936960d1c0
 
-                $this->assign('end_time', $end->dateTime);
-                $this->assign('end_date', $end->date);
+                $begin_date = date("Y-m-d", strtotime($non_form_start));
+                $end_date = date("Y-m-d", strtotime($non_form_end));
+
+                $this->assign('start_time', $begin_time);
+                $this->assign('start_date', $begin_date);
+
+                $this->assign('end_time', $end_time);
+                $this->assign('end_date', $end_date);
 
 
                 if ($this->isOrganizer($event->email))
@@ -365,6 +386,13 @@ class BookingsWebModule extends CalendarWebModule
                     foreach ($events->getItems() as $event)
                     {
 //                        var_dump(substr($event['start']['dateTime'], 0, 10));
+                        $startDateTime = $event->getStart()->dateTime;
+                        $endDateTime = $event->getEnd()->dateTime;
+                        $begin = date("h:i a", strtotime($startDateTime));
+                        $end = date("h:i a", strtotime($endDateTime));
+                        //var_dump($event->getSummary());
+                        //var_dump(date("h:i a", strtotime($startDateTime)));
+                        //var_dump(date("h:i a", strtotime($endDateTime))); //date("H:i:s",strtotime($time))
                         $startDate = substr($event['start']['dateTime'], 0, 10);
                         $endDate = substr($event['end']['dateTime'], 0, 10);
                         $cmpDate = date('Y-m-d', $current);
@@ -373,7 +401,7 @@ class BookingsWebModule extends CalendarWebModule
                         {
                             $event = [
                                 'title'     => $event->getSummary(),
-                                'subtitle'  => $event->getId(),
+                                'subtitle'  => $begin . "-" . $end,//$event->getId(),
                                 'url'       => $this->buildBreadcrumbURL('details', [
                                     'calendarid'    => 'vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com',
                                     'eventid'       => $event->getId(),
@@ -398,6 +426,12 @@ class BookingsWebModule extends CalendarWebModule
                 }
 
                 $title = 'Placeholder';
+                $eventsToday = [];
+
+
+
+
+                $title = 'Gazeebo Bookings';
 
                 $dayRange = new DayRange(time());
 
@@ -413,6 +447,8 @@ class BookingsWebModule extends CalendarWebModule
                 $this->assign('linkDateFormat', $this->getLocalizedString('SHORT_DATE_FORMAT'));
                 $this->assign('isToday', $dayRange->contains(new TimeRange($current)));
                 $this->assign('events',  $eventsList);
+
+                $this->assign('create_url', $this->createLinkToCreate());
                 break;
 
             case 'login':

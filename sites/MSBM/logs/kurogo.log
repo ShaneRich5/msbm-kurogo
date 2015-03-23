@@ -1112,3 +1112,18 @@
 [Fri 03 20 15:48:12 2015]	exception:Critical	Google_IO_Curl->executeRequest@116	/bookings/	A Google_IO_Exception has occured: Could not resolve host: www.googleapis.com
 [Fri 03 20 15:48:27 2015]	exception:Critical	Google_IO_Curl->executeRequest@116	/bookings/index	A Google_IO_Exception has occured: Could not resolve host: www.googleapis.com
 [Fri 03 20 17:19:11 2015]	exception:Critical	Google_Auth_OAuth2->authenticate@119	/bookings/index?	A Google_Auth_Exception has occured: Error fetching OAuth2 access token, message: 'invalid_grant'
+[Fri 03 20 17:28:08 2015]	exception:Critical	Google_IO_Curl->executeRequest@116	/bookings/	A Google_IO_Exception has occured: Failed to connect to www.googleapis.com port 443: Timed out
+[Mon 03 23 16:47:28 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=video&ajax=1	Error Retrieving Data for https://gdata.youtube.com/feeds/mobile/videos?alt=jsonc&format=6&v=2&orderby=published&author=MSBMUWIMona&max-results=5&start-index=1
+[Mon 03 23 16:47:28 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=news&ajax=1	Error Retrieving Data for http://news.harvard.edu/gazette/feed/
+l/msbm.mobile%40gmail.com/private-958f40fbb24198ab6cfaf624887c6af5/basic.ics
+cf5a&grant_type=client_credentials
+[Mon 03 23 16:47:28 2015]	data:Warning	ICSDataParser->contentline@73	/home/pane?id=calendar&ajax=1	Found an invalid ICS line: 
+[Mon 03 23 16:47:28 2015]	home:Warning	DataParser->parseResponse@51	/home/pane?id=calendar&ajax=1	Something other than BEGIN at the start of the calendar: 
+[Mon 03 23 16:47:28 2015]	home:Warning	FacebookDataRetriever->getPosts@52	/home/pane?id=social&ajax=1	Unable to retrieve facebook access token
+[Mon 03 23 16:47:28 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Mon 03 23 16:47:35 2015]	exception:Critical	Google_IO_Curl->executeRequest@116	/bookings/	A Google_IO_Exception has occured: Could not resolve host: accounts.google.com
+[Mon 03 23 16:47:40 2015]	exception:Critical	Google_IO_Curl->executeRequest@116	/bookings/index	A Google_IO_Exception has occured: Could not resolve host: accounts.google.com
+[Mon 03 23 18:10:38 2015]	exception:Critical	Module::factory@130	/docs-assets/ico/favicon.png	A KurogoModuleNotFound has occured: Module docs-assets not found
+[Mon 03 23 18:11:35 2015]	url_retriever:Warning	URLDataRetriever->retrieveResponse@508	/home/pane?id=emergency&ajax=1	Error Retrieving Data for C:\MAMP\htdocs\msbm\sites\MSBM\data/emergency/emergency-notice.xml
+[Mon 03 23 18:11:55 2015]	exception:Critical	Google_Auth_OAuth2->authenticate@119	/bookings/	A Google_Auth_Exception has occured: Error fetching OAuth2 access token, message: 'invalid_grant'
+[Mon 03 23 18:15:08 2015]	exception:Critical	Google_IO_Curl->executeRequest@116	/bookings/	A Google_IO_Exception has occured: Unknown SSL protocol error in connection to www.googleapis.com:443 

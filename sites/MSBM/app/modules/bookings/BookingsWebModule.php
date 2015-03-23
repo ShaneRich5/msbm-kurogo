@@ -221,10 +221,12 @@ class BookingsWebModule extends CalendarWebModule
                         $attendees = array($attendee1);
                         $event->attendees = $attendees;
 
+                        //$event->colorId = "#2952A3";
+                        $event->setColorId("6");
                         //$creator->setEmail($userEmail); # pull this from moodle.. not writable.. shane (<_< )
                         $organizer->setEmail($userEmail);
-                        $organizer->setDisplayName("Test-this-hitn");
-                        $event->organizer = $organizer;
+                        //$organizer->setDisplayName("Test-this-hitn");
+                        //$event->organizer = $organizer;
                         $event->setSummary($event_name); # name of event
 
                         $event->setLocation($event_location); # make a predefined list
@@ -264,11 +266,20 @@ class BookingsWebModule extends CalendarWebModule
 
                 $calendar_id = $this->getArg('calendarid');
                 $event_id = $this->getArg('eventid');
+                
 
+                
                 $event = $this->service->events->get($calendar_id, $event_id);
+            
                 $creator = $event->getCreator();
                 $attendees = $event->getAttendees();
                 $maker = $attendees[0]->email;
+
+
+                //$colors = $service->colors->get();colorId 
+                $col_id = $event->colorId;
+                var_dump($col_id);
+
 
                 $non_form_start = $event->getStart()->dateTime;
                 $non_form_end = $event->getEnd()->dateTime;

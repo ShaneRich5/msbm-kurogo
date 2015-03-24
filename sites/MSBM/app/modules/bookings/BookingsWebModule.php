@@ -27,8 +27,7 @@ class BookingsWebModule extends CalendarWebModule
     protected $client;
     protected $access_token;
     protected $refresh_token;
-
-    protected $service_account_name = 'shane.richards121@gmail.com';
+//thing here wasn't being used 
 
     protected function initializeForPage()
     {
@@ -78,7 +77,7 @@ class BookingsWebModule extends CalendarWebModule
                     ->events
                     ->listEvents('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com');
 
-                while (true)
+                while (true) 
                 {
                     foreach ($events->getItems() as $event)
                     {
@@ -143,12 +142,14 @@ class BookingsWebModule extends CalendarWebModule
                     $errors = $this->createEventValidation();
 
                     if (!empty($errors)) {
+                        $next_day = false;
+
                         $event_name = $_POST['event-name'];
 
                         $event_location = $_POST['event-location'];
 
                         if ('PM' === $_POST['start-date-am-pm'])
-                            $_POST['start-date-hour'] += 12;
+                            $_POST['start-date-hour'] += 11; //original was causing an additional hor to be added to times 
 
                         $start_time = $_POST['start-date-year']
                             . "-" . $_POST['start-date-month']
@@ -157,12 +158,9 @@ class BookingsWebModule extends CalendarWebModule
                         $start_time .= "T" . $_POST['start-date-hour']
                             . ":" . $_POST['start-date-minute'] . ":00.000";
 
-                        $end_time = $_POST['start-date-year']
-                            . "-" . $_POST['start-date-month']
-                            . "-" . $_POST['start-date-day'];
-
-                        var_dump(strtotime($end_time));
-                        var_dump(strtotime("+1 day", strtotime($end_time)));
+//                        $end_time = $_POST['start-date-year']
+//                            . "-" . $_POST['start-date-month']
+//                            . "-" . $_POST['start-date-day'];
 
                         if ($_POST['event-duration'] == 2)
                             $_POST['start-date-hour'] += 2;
@@ -172,32 +170,38 @@ class BookingsWebModule extends CalendarWebModule
                         if ($_POST['start-date-hour'] >= 24)
                         {
                             $_POST['start-date-hour'] -= 24;
-
+                            $next_day = true;
                         }
+
+//                        if ('PM' === $_POST['end-date-am-pm'])
+//                            $_POST['end-date-hour'] += 11;  //original was causing an additional hor to be added to times
+
 
                         $end_time = $_POST['start-date-year']
                             . "-" . $_POST['start-date-month']
                             . "-" . $_POST['start-date-day'];
 
+                        if ($next_day)
+                            $end_time = strtotime("+1 day", strtotime($end_time));
 
-                        $end_time .= "T" . $_POST['end-date-hour']
-                            . ":" . $_POST['end-date-minute'] . ":00.000";
+                        $end_time .= "T" . $_POST['start-date-hour']
+                            . ":" . $_POST['start-date-minute'] . ":00.000";
 
                         $event = new Google_Service_Calendar_Event();
-                        $organizer = new Google_Service_Calendar_EventOrganizer();
+//                        $organizer = new Google_Service_Calendar_EventOrganizer();
 
-                        $organizer->setEmail($userEmail);
-                        $organizer->setDisplayName($_SESSION['full_name']);
+                        //$organizer->setEmail($userEmail);
+                        //$organizer->setDisplayName($_SESSION['full_name']);
 
-                        $event->setOrganizer($organizer);
+//                        $event->setOrganizer($organizer);
 
-//                        $attendee1 = new Google_Service_Calendar_EventAttendee();
-//                        $attendee1->setEmail($userEmail);
-//                        $attendees = array($attendee1);
-//                        $event->attendees = $attendees;
+                        $attendee1 = new Google_Service_Calendar_EventAttendee();
+                        $attendee1->setEmail($userEmail);
+                        $attendees = array($attendee1);
+                        $event->attendees = $attendees; //person creating booking added to attendees index 0 as neither creator nor organizer is being wrtitten to when tried.
 
                         //$event->colorId = "#2952A3";
-                        $event->setColorId("6");
+                        $event->setColorId("5");
 
                         $event->setSummary($event_name); # name of event
 
@@ -213,14 +217,11 @@ class BookingsWebModule extends CalendarWebModule
                         $end->setTimeZone('America/Jamaica');
                         $end->setDateTime($end_time);
 
-
                         $event->setEnd($end);
 
                         //41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com
                         //mine  k1tphoccb98nsglm123se5aoa4@group.calendar.google.com
                         $createdEvent = $this->service->events->insert('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com', $event);
-
-                        $this->assign('id', $createdEvent->getId());
 
                         $this->redirectTo('index');
                     }
@@ -256,9 +257,25 @@ class BookingsWebModule extends CalendarWebModule
 //                $maker = $attendees[0]->email;
 
 
-                //$colors = $service->colors->get();colorId 
-                $col_id = $event->colorId;
-                var_dump($col_id);
+                //$creator = $event->getCreator(); //not being used, not writable
+                $attendees = $event->getAttendees(); //get person who made booking
+                $maker = $attendees[0]->email;  //get person who made booking
+
+
+                $color_id = $event->getColorId();
+                //var_dump($color_id);
+                if($color_id == 10)
+                    $confirmation = "Event Confirmed";
+                elseif ($color_id == 5)
+                    $confirmation = "Confirmation Pending";
+                else
+                    $confirmation = "Event Denied!";
+                    
+                //var_dump($confirmation);
+
+                //$colors = $service->colors->get();colorId
+                //$col_id = $event->colorId;
+                //var_dump($maker);
 
                 $non_form_start = $event->getStart()->dateTime;
                 $non_form_end = $event->getEnd()->dateTime;
@@ -266,8 +283,10 @@ class BookingsWebModule extends CalendarWebModule
                 $this->assign('event_name', $event->getSummary());
                 $this->assign('event_location', $event->location);
 
+                $this->assign('event_confirmation', $confirmation);
+
 //                $this->assign('creator_name', $creator->displayName);
-//                $this->assign('creator_email', $maker);
+                $this->assign('creator_email', $maker);
 
                 $begin_time = date("h:i a", strtotime($non_form_start));
                 $end_time = date("h:i a", strtotime($non_form_end));
@@ -348,6 +367,13 @@ class BookingsWebModule extends CalendarWebModule
                         $endDateTime = $event->getEnd()->dateTime;
                         $begin = date("h:i a", strtotime($startDateTime));
                         $end = date("h:i a", strtotime($endDateTime));
+                        $confirmed = $event->getColorId();
+
+                        if($confirmed == 10)
+                            $confirmation = "Event Confirmed";
+                        elseif($confirmed == 5)
+                            $confirmation = "Confirmation Pending";
+
                         //var_dump($event->getSummary());
                         //var_dump(date("h:i a", strtotime($startDateTime)));
                         //var_dump(date("h:i a", strtotime($endDateTime))); //date("H:i:s",strtotime($time))
@@ -357,15 +383,17 @@ class BookingsWebModule extends CalendarWebModule
 
                         if ((0 == strcmp($startDate, $cmpDate)) || (0 == strcmp($endDate, $cmpDate)))
                         {
-                            $event = [
-                                'title'     => $event->getSummary(),
-                                'subtitle'  => $begin . "-" . $end,//$event->getId(),
-                                'url'       => $this->buildBreadcrumbURL('details', [
-                                    'calendarid'    => 'vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com',
-                                    'eventid'       => $event->getId(),
-                                ])
-                            ];
-                            $eventsList[] = $event;
+                            if($confirmed != 11){
+                                $event = [
+                                    'title'     => $event->getSummary() . " (" . $confirmation . ") ",
+                                    'subtitle'  => $begin . "-" . $end,//$event->getId(),
+                                    'url'       => $this->buildBreadcrumbURL('details', [
+                                        'calendarid'    => 'vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com',
+                                        'eventid'       => $event->getId(),
+                                    ])
+                                ];
+                                $eventsList[] = $event;
+                            }
                         }
                     }
                     $pageToken = $events->getNextPageToken();
@@ -435,6 +463,14 @@ class BookingsWebModule extends CalendarWebModule
                         $this->redirectTo('index');
                     }
                 }
+
+                break;
+
+            case 'search':
+                if (!isset($_POST))
+                    $this->redirectTo('index');
+
+                $search = $_POST['search'];
 
                 break;
 

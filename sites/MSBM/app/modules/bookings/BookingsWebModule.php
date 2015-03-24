@@ -83,7 +83,7 @@ class BookingsWebModule extends CalendarWebModule
                     {
                         $event = [
                             'title'     => $event->getSummary(),
-                            'subtitle'  => $event->attendees[0]->email,
+//                            'subtitle'  => $event->attendees[0]->email,
                             'url'       => $this->buildBreadcrumbURL('details', [
                                 'calendarid'    => 'vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com',
                                 'eventid'       => $event->getId(),
@@ -121,6 +121,16 @@ class BookingsWebModule extends CalendarWebModule
 
                 $userEmail = $userDetails[0]['email'];
 
+
+                $today = time();
+                $year = date('Y', $today);
+                $month = date('m', $today);
+                $day = date('d', $today);
+
+                $this->assign('year', $year);
+                $this->assign('month', $month);
+                $this->assign('day', $day);
+
                 $this->assign('locations', $locations);
                 $this->assign('email', $userEmail);
 
@@ -132,6 +142,8 @@ class BookingsWebModule extends CalendarWebModule
                     $errors = $this->createEventValidation();
 
                     if (!empty($errors)) {
+                        $next_day = false;
+
                         $event_name = $_POST['event-name'];
 
                         $event_location = $_POST['event-location'];
@@ -146,23 +158,42 @@ class BookingsWebModule extends CalendarWebModule
                         $start_time .= "T" . $_POST['start-date-hour']
                             . ":" . $_POST['start-date-minute'] . ":00.000";
 
-                        if ('PM' === $_POST['end-date-am-pm'])
-                            $_POST['end-date-hour'] += 11;  //original was causing an additional hor to be added to times 
+//                        $end_time = $_POST['start-date-year']
+//                            . "-" . $_POST['start-date-month']
+//                            . "-" . $_POST['start-date-day'];
+
+                        if ($_POST['event-duration'] == 2)
+                            $_POST['start-date-hour'] += 2;
+                        else
+                            $_POST['start-date-hour'] += 4;
+
+                        if ($_POST['start-date-hour'] >= 24)
+                        {
+                            $_POST['start-date-hour'] -= 24;
+                            $next_day = true;
+                        }
+
+//                        if ('PM' === $_POST['end-date-am-pm'])
+//                            $_POST['end-date-hour'] += 11;  //original was causing an additional hor to be added to times
+
 
                         $end_time = $_POST['start-date-year']
                             . "-" . $_POST['start-date-month']
                             . "-" . $_POST['start-date-day'];
 
-                        $end_time .= "T" . $_POST['end-date-hour']
-                            . ":" . $_POST['end-date-minute'] . ":00.000";
+                        if ($next_day)
+                            $end_time = strtotime("+1 day", strtotime($end_time));
+
+                        $end_time .= "T" . $_POST['start-date-hour']
+                            . ":" . $_POST['start-date-minute'] . ":00.000";
 
                         $event = new Google_Service_Calendar_Event();
-                        //$organizer = new Google_Service_Calendar_EventOrganizer();
+//                        $organizer = new Google_Service_Calendar_EventOrganizer();
 
                         //$organizer->setEmail($userEmail);
                         //$organizer->setDisplayName($_SESSION['full_name']);
 
-                        $event->setOrganizer($organizer);
+//                        $event->setOrganizer($organizer);
 
                         $attendee1 = new Google_Service_Calendar_EventAttendee();
                         $attendee1->setEmail($userEmail);
@@ -186,14 +217,11 @@ class BookingsWebModule extends CalendarWebModule
                         $end->setTimeZone('America/Jamaica');
                         $end->setDateTime($end_time);
 
-
                         $event->setEnd($end);
 
                         //41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com
                         //mine  k1tphoccb98nsglm123se5aoa4@group.calendar.google.com
                         $createdEvent = $this->service->events->insert('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com', $event);
-
-                        $this->assign('id', $createdEvent->getId());
 
                         $this->redirectTo('index');
                     }
@@ -202,7 +230,6 @@ class BookingsWebModule extends CalendarWebModule
                         $this->assign('errors', $errors);
                     }
                 }
-
                 break;
 
             case 'details':
@@ -213,9 +240,8 @@ class BookingsWebModule extends CalendarWebModule
                 $calendar_id = $this->getArg('calendarid');
                 $event_id = $this->getArg('eventid');
                 
-
-                
                 $event = $this->service->events->get($calendar_id, $event_id);
+
 
                 $organizer = $event->getOrganizer();
 
@@ -226,7 +252,12 @@ class BookingsWebModule extends CalendarWebModule
 //                $attendees = $event->getAttendees();
 //                $maker = $attendees[0]->email;
 
-                //$creator = $event->getCreator(); //not being used, not writable 
+//                $creator = $event->getCreator();
+//                $attendees = $event->getAttendees();
+//                $maker = $attendees[0]->email;
+
+
+                //$creator = $event->getCreator(); //not being used, not writable
                 $attendees = $event->getAttendees(); //get person who made booking
                 $maker = $attendees[0]->email;  //get person who made booking
 
@@ -238,10 +269,11 @@ class BookingsWebModule extends CalendarWebModule
                 elseif ($color_id == 5)
                     $confirmation = "Confirmation Pending";
                 else
-                    $confirmation = "Event Dinied!";
+                    $confirmation = "Event Denied!";
                     
                 //var_dump($confirmation);
-                //$colors = $service->colors->get();colorId 
+
+                //$colors = $service->colors->get();colorId
                 //$col_id = $event->colorId;
                 //var_dump($maker);
 
@@ -531,6 +563,14 @@ class BookingsWebModule extends CalendarWebModule
 
                 break;
 
+            case 'search':
+                if (!isset($_POST))
+                    $this->redirectTo('index');
+
+                $search = $_POST['search'];
+
+                break;
+
             case 'logout':
                 # if token is set, unset it
                 # redirect to index
@@ -603,7 +643,7 @@ class BookingsWebModule extends CalendarWebModule
 
     public function retrieveAccessToken()
     {
-        $conn = mysqli_connect('localhost', 'root', 'kurogo', 'kurogo');
+        $conn = mysqli_connect('localhost', 'root', 'root', 'kurogo');
         if(!$conn){
             die('Connect Error: ' . mysqli_connect_error());
         }

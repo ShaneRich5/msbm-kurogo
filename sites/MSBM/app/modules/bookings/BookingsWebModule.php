@@ -28,7 +28,6 @@ class BookingsWebModule extends CalendarWebModule
     protected $access_token;
     protected $refresh_token;
 
-    protected $service_account_name = 'shane.richards121@gmail.com';
 
     protected function initializeForPage()
     {
@@ -138,7 +137,7 @@ class BookingsWebModule extends CalendarWebModule
                         $event_location = $_POST['event-location'];
 
                         if ('PM' === $_POST['start-date-am-pm'])
-                            $_POST['start-date-hour'] += 12;
+                            $_POST['start-date-hour'] += 11;
 
                         $start_time = $_POST['start-date-year']
                             . "-" . $_POST['start-date-month']
@@ -148,7 +147,7 @@ class BookingsWebModule extends CalendarWebModule
                             . ":" . $_POST['start-date-minute'] . ":00.000";
 
                         if ('PM' === $_POST['end-date-am-pm'])
-                            $_POST['end-date-hour'] += 12;
+                            $_POST['end-date-hour'] += 11;
 
                         $end_time = $_POST['start-date-year']
                             . "-" . $_POST['start-date-month']
@@ -171,7 +170,7 @@ class BookingsWebModule extends CalendarWebModule
                         $event->attendees = $attendees;
 
                         //$event->colorId = "#2952A3";
-                        $event->setColorId("10");
+                        $event->setColorId("5");
 
                         $event->setSummary($event_name); # name of event
 
@@ -233,7 +232,7 @@ class BookingsWebModule extends CalendarWebModule
 
 
                 $color_id = $event->getColorId();
-                var_dump($color_id);
+                //var_dump($color_id);
                 if($color_id == 10)
                     $confirmation = "Event Confirmed";
                 elseif ($color_id == 5)
@@ -241,7 +240,7 @@ class BookingsWebModule extends CalendarWebModule
                 else
                     $confirmation = "Event Dinied!";
                     
-                var_dump($confirmation);
+                //var_dump($confirmation);
                 //$colors = $service->colors->get();colorId 
                 //$col_id = $event->colorId;
                 //var_dump($maker);

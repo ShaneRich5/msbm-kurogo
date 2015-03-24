@@ -27,7 +27,7 @@ class BookingsWebModule extends CalendarWebModule
     protected $client;
     protected $access_token;
     protected $refresh_token;
-
+//thing here wasn't being used 
 
     protected function initializeForPage()
     {
@@ -77,7 +77,7 @@ class BookingsWebModule extends CalendarWebModule
                     ->events
                     ->listEvents('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com');
 
-                while (true)
+                while (true) 
                 {
                     foreach ($events->getItems() as $event)
                     {
@@ -137,7 +137,7 @@ class BookingsWebModule extends CalendarWebModule
                         $event_location = $_POST['event-location'];
 
                         if ('PM' === $_POST['start-date-am-pm'])
-                            $_POST['start-date-hour'] += 11;
+                            $_POST['start-date-hour'] += 11; //original was causing an additional hor to be added to times 
 
                         $start_time = $_POST['start-date-year']
                             . "-" . $_POST['start-date-month']
@@ -147,7 +147,7 @@ class BookingsWebModule extends CalendarWebModule
                             . ":" . $_POST['start-date-minute'] . ":00.000";
 
                         if ('PM' === $_POST['end-date-am-pm'])
-                            $_POST['end-date-hour'] += 11;
+                            $_POST['end-date-hour'] += 11;  //original was causing an additional hor to be added to times 
 
                         $end_time = $_POST['start-date-year']
                             . "-" . $_POST['start-date-month']
@@ -157,17 +157,17 @@ class BookingsWebModule extends CalendarWebModule
                             . ":" . $_POST['end-date-minute'] . ":00.000";
 
                         $event = new Google_Service_Calendar_Event();
-                        $organizer = new Google_Service_Calendar_EventOrganizer();
+                        //$organizer = new Google_Service_Calendar_EventOrganizer();
 
-                        $organizer->setEmail($userEmail);
-                        $organizer->setDisplayName($_SESSION['full_name']);
+                        //$organizer->setEmail($userEmail);
+                        //$organizer->setDisplayName($_SESSION['full_name']);
 
                         $event->setOrganizer($organizer);
 
                         $attendee1 = new Google_Service_Calendar_EventAttendee();
                         $attendee1->setEmail($userEmail);
                         $attendees = array($attendee1);
-                        $event->attendees = $attendees;
+                        $event->attendees = $attendees; //person creating booking added to attendees index 0 as neither creator nor organizer is being wrtitten to when tried.
 
                         //$event->colorId = "#2952A3";
                         $event->setColorId("5");
@@ -226,9 +226,9 @@ class BookingsWebModule extends CalendarWebModule
 //                $attendees = $event->getAttendees();
 //                $maker = $attendees[0]->email;
 
-                $creator = $event->getCreator();
-                $attendees = $event->getAttendees();
-                $maker = $attendees[0]->email;
+                //$creator = $event->getCreator(); //not being used, not writable 
+                $attendees = $event->getAttendees(); //get person who made booking
+                $maker = $attendees[0]->email;  //get person who made booking
 
 
                 $color_id = $event->getColorId();

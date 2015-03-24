@@ -84,7 +84,7 @@ class BookingsWebModule extends CalendarWebModule
                     {
                         $event = [
                             'title'     => $event->getSummary(),
-                            'subtitle'  => $event->attendees[0]->email,
+//                            'subtitle'  => $event->attendees[0]->email,
                             'url'       => $this->buildBreadcrumbURL('details', [
                                 'calendarid'    => 'vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com',
                                 'eventid'       => $event->getId(),
@@ -122,6 +122,16 @@ class BookingsWebModule extends CalendarWebModule
 
                 $userEmail = $userDetails[0]['email'];
 
+
+                $today = time();
+                $year = date('Y', $today);
+                $month = date('m', $today);
+                $day = date('d', $today);
+
+                $this->assign('year', $year);
+                $this->assign('month', $month);
+                $this->assign('day', $day);
+
                 $this->assign('locations', $locations);
                 $this->assign('email', $userEmail);
 
@@ -147,12 +157,28 @@ class BookingsWebModule extends CalendarWebModule
                         $start_time .= "T" . $_POST['start-date-hour']
                             . ":" . $_POST['start-date-minute'] . ":00.000";
 
-                        if ('PM' === $_POST['end-date-am-pm'])
-                            $_POST['end-date-hour'] += 12;
+                        $end_time = $_POST['start-date-year']
+                            . "-" . $_POST['start-date-month']
+                            . "-" . $_POST['start-date-day'];
+
+                        var_dump(strtotime($end_time));
+                        var_dump(strtotime("+1 day", strtotime($end_time)));
+
+                        if ($_POST['event-duration'] == 2)
+                            $_POST['start-date-hour'] += 2;
+                        else
+                            $_POST['start-date-hour'] += 4;
+
+                        if ($_POST['start-date-hour'] >= 24)
+                        {
+                            $_POST['start-date-hour'] -= 24;
+
+                        }
 
                         $end_time = $_POST['start-date-year']
                             . "-" . $_POST['start-date-month']
                             . "-" . $_POST['start-date-day'];
+
 
                         $end_time .= "T" . $_POST['end-date-hour']
                             . ":" . $_POST['end-date-minute'] . ":00.000";
@@ -203,7 +229,6 @@ class BookingsWebModule extends CalendarWebModule
                         $this->assign('errors', $errors);
                     }
                 }
-
                 break;
 
             case 'details':
@@ -214,9 +239,8 @@ class BookingsWebModule extends CalendarWebModule
                 $calendar_id = $this->getArg('calendarid');
                 $event_id = $this->getArg('eventid');
                 
-
-                
                 $event = $this->service->events->get($calendar_id, $event_id);
+
 
                 $organizer = $event->getOrganizer();
 
@@ -227,9 +251,9 @@ class BookingsWebModule extends CalendarWebModule
 //                $attendees = $event->getAttendees();
 //                $maker = $attendees[0]->email;
 
-                $creator = $event->getCreator();
-                $attendees = $event->getAttendees();
-                $maker = $attendees[0]->email;
+//                $creator = $event->getCreator();
+//                $attendees = $event->getAttendees();
+//                $maker = $attendees[0]->email;
 
 
                 //$colors = $service->colors->get();colorId 
@@ -256,7 +280,6 @@ class BookingsWebModule extends CalendarWebModule
 
                 $this->assign('end_time', $end_time);
                 $this->assign('end_date', $end_date);
-
 
                 if ($this->isOrganizer($event->email))
                 {

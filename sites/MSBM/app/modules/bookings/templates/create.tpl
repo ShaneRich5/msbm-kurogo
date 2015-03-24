@@ -11,11 +11,6 @@
         <div class="focal">
             <label for="event-name">Name: </label>
             <input id="event-name" type="text" name="event-name">
-
-            <br>
-
-            <label for="moodle-email">Created by: </label>
-            <input type="email" id="moodle-email" name="moodle-email" value="{$email}" readonly>
         </div>
 
         <h1>Date</h1>
@@ -23,11 +18,11 @@
         <div class="focal">
             <label for="start-date-day">On: </label>
             <input id="start-date-day" type="number" name="start-date-day" min="1" max="31"
-                   placeholder="DD"><span> / </span>
+                   value="{$day}"><span> / </span>
             <input id="start-date-month" type="number" name="start-date-month" min="1" max="12"
-                   placeholder="MM"><span> / </span>
+                   value="{$month}"><span> / </span>
             <input id="start-date-year" type="number" name="start-date-year" min="2000" max="3000"
-                   placeholder="YYYY">
+                   value="{$year}">
         </div>
 
         <h1>Start</h1>
@@ -36,31 +31,23 @@
             <label for="start-date-hour">At: </label>
             <input id="start-date-hour" placeholder="HH" type="number" name="start-date-hour" min="1" max="12" width="20px" width="10px">
             <span> : </span>
-            <input id="start-date-minute" placeholder="MM" type="number" name="start-date-minute" min="0" max="59" width="10px">
+            <input id="start-date-minute" value="00" type="number" name="start-date-minute" step="30" min="0" max="30" width="10px">
 
-            <select id="start-date-am-pm" name="start-date-am-pm">
-                <option value="AM">A.M.</option>
-                <option value="PM">P.M.</option>
-            </select>
-
+            <input type="radio" name="start-date-am-pm" value="AM" checked="true">AM
+            <input type="radio" name="start-date-am-pm" value="PM">PM
         </div>
 
-        <h1>End</h1>
+        <h1>Duration</h1>
 
         <div class="focal">
-            <label for="end-date-hour">Hour: </label>
-            <input id="end-date-hour" placeholder="HH" type="number" name="end-date-hour" min="1" max="12" width="10px">
-            <span> : </span>
-            <input id="end-date-minute" placeholder="MM" type="number" name="end-date-minute" min="0" max="59" width="10px">
-            <select id="end-date-am-pm" name="end-date-am-pm">
-                <option value="AM">A.M.</option>
-                <option value="PM">P.M.</option>
-            </select>
+            <input type="radio" name="event-duration" value="2" checked="true">2 hours
+            <input type="radio" name="event-duration" value="4">4 hours
         </div>
 
         <p>
-            <label for="moodle-email">Created by: </label>
-            <input type="email" id="moodle-email" name="moodle-email" value="{$email}" readonly>
+            Created by: {$email}
+            {*<label for="moodle-email">Created by: </label>*}
+            {*<input type="email" id="moodle-email" name="moodle-email" value="{$email}" readonly>*}
         </p>
 
         <p>

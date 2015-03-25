@@ -870,7 +870,7 @@ class CalendarWebModule extends WebModule {
           $this->assign('selectedOption', $timeframe);
           $this->assign('searchOptions' , $this->searchOptions());
           $this->assign('feeds'         , $this->getFeedsByType($totalFeeds));
-          $this->assign('totalFeeds', $totalFeeds);
+          $this->assign('totalFeeds'    , $totalFeeds);
           $this->assign('searchCalendar', $searchCalendar);
 
         } else {

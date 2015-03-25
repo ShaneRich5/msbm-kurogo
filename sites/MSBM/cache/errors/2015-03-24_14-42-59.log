@@ -1,0 +1,15 @@
+<strong>Error calling POST https://www.googleapis.com/calendar/v3/calendars/vu1bq6tvg5ogfmq5f5nlejo45o%40group.calendar.google.com/events: (400) Invalid value for: Invalid format: "2015-03-24T::00.000" is malformed at "::00.000"</strong><br><br><strong>Fatal error</strong>:  Uncaught exception 'Google_Service_Exception' with message 'Error calling POST https://www.googleapis.com/calendar/v3/calendars/vu1bq6tvg5ogfmq5f5nlejo45o%40group.calendar.google.com/events: (400) Invalid value for: Invalid format: "2015-03-24T::00.000" is malformed at "::00.000"' in C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\Http\REST.php:110
+Stack trace:
+#0 C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\Http\REST.php(62): decodeHttpResponse(object, object)
+#1 Unknown(Unknown): doExecute(object, object)
+#2 C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\Task\Runner.php(174): call_user_func_array(array, array)
+#3 C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\Http\REST.php(46): run()
+#4 C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\Client.php(563): execute(object, object)
+#5 C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\Service\Resource.php(231): execute(object)
+#6 C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\Service\Calendar.php(1440): call(string, array, string)
+#7 C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\BookingsWebModule.php(224): insert(string, object)
+#8 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\WebModule.php(1784): initializeForPage()
+#9 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\lib\WebModule.php(1990): setPageVariables()
+#10 C:\MAMP\htdocs\msbm\Kurogo-Mobile-Web\www\index.php(323): displayPage()
+#11 {main}
+  thrown in <strong>C:\MAMP\htdocs\msbm\sites\MSBM\app\modules\bookings\google-api-php-client\src\Google\Http\REST.php</strong> on line <strong>110</strong>

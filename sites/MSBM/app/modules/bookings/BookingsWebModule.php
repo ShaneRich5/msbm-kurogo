@@ -121,7 +121,6 @@ class BookingsWebModule extends CalendarWebModule
 
                 $userEmail = $userDetails[0]['email'];
 
-
                 $today = time();
                 $year = date('Y', $today);
                 $month = date('m', $today);
@@ -176,7 +175,6 @@ class BookingsWebModule extends CalendarWebModule
 //                        if ('PM' === $_POST['end-date-am-pm'])
 //                            $_POST['end-date-hour'] += 11;  //original was causing an additional hor to be added to times
 
-
                         $end_time = $_POST['start-date-year']
                             . "-" . $_POST['start-date-month']
                             . "-" . $_POST['start-date-day'];
@@ -186,6 +184,12 @@ class BookingsWebModule extends CalendarWebModule
 
                         $end_time .= "T" . $_POST['start-date-hour']
                             . ":" . $_POST['start-date-minute'] . ":00.000";
+
+                        if (null == $this->isSlotBooked($start_time, $end_time, $event_location))
+                        {
+                            $this->redirectTo('index');
+                        }
+
 
                         $event = new Google_Service_Calendar_Event();
 //                        $organizer = new Google_Service_Calendar_EventOrganizer();
@@ -197,7 +201,7 @@ class BookingsWebModule extends CalendarWebModule
 
                         $attendee1 = new Google_Service_Calendar_EventAttendee();
                         $attendee1->setEmail($userEmail);
-                        $attendees = array($attendee1);
+                        $attendees = [$attendee1];
                         $event->attendees = $attendees; //person creating booking added to attendees index 0 as neither creator nor organizer is being wrtitten to when tried.
 
                         //$event->colorId = "#2952A3";
@@ -330,6 +334,7 @@ class BookingsWebModule extends CalendarWebModule
             case 'update':
 
                 break;
+
             case 'list':
                 $current = $this->getArg('time', time(), FILTER_VALIDATE_INT);
                 $type     = $this->getArg('type', 'static');
@@ -671,6 +676,47 @@ class BookingsWebModule extends CalendarWebModule
         ]);
     }
 
+    public function isSlotBooked($userStart, $userEnd, $userLocation)
+    {
+        $this->retrieveAccessToken();
+
+        $events = $this->service
+            ->events
+            ->listEvents('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com');
+
+        while (true)
+        {
+            foreach ($events->getItems() as $event)
+            {
+                $start_ts = strtotime($event->getStart()->getDatetime());
+                $end_ts = strtotime($event->getEnd()->getDatetime());
+                $location = $event->getLocation();
+
+                /*
+                 * Checks if the user's time overlaps
+                 */
+                if ((($userStart >= $start_ts) && ($userStart <= $end_ts)) || (($userEnd >= $start_ts) && ($userEnd <= $end_ts)))
+                {
+                    if ($location === $userLocation)
+                        return $event;
+                }
+            }
+            $pageToken = $events->getNextPageToken();
+            if ($pageToken)
+            {
+                $optParams = [
+                    'pageToken' => $pageToken
+                ];
+                $events = $this->service->events->listEvents('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com', $optParams);
+
+            }
+            else
+            {
+                break;
+            }
+        }
+        return null;
+    }
 
 //    function __construct()
 //    {

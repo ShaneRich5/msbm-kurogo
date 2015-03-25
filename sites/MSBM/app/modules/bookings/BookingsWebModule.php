@@ -71,43 +71,10 @@ class BookingsWebModule extends CalendarWebModule
 
                 $this->assign('feeds', $options);
 
-                $eventsList = [];
 
-                $events = $this->service
-                    ->events
-                    ->listEvents('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com');
-
-                while (true) 
-                {
-                    foreach ($events->getItems() as $event)
-                    {
-                        $event = [
-                            'title'     => $event->getSummary(),
-//                            'subtitle'  => $event->attendees[0]->email,
-                            'url'       => $this->buildBreadcrumbURL('details', [
-                                'calendarid'    => 'vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com',
-                                'eventid'       => $event->getId(),
-                            ])
-                        ];
-                        $eventsList[] = $event;
-                    }
-                    $pageToken = $events->getNextPageToken();
-                    if ($pageToken)
-                    {
-                        $optParams = [
-                            'pageToken' => $pageToken
-                        ];
-                        $events = $this->service->events->listEvents('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com', $optParams);
-
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
                 $this->assign('create_url', $this->createLinkToCreate());
 
-                $this->assign('eventsList', $eventsList);
+//                $this->assign('eventsList', $eventsList);
                 break;
 
             case 'create':
@@ -187,47 +154,48 @@ class BookingsWebModule extends CalendarWebModule
 
                         if (null == $this->isSlotBooked($start_time, $end_time, $event_location))
                         {
-                            $this->redirectTo('index');
-                        }
-
-
-                        $event = new Google_Service_Calendar_Event();
+                            $event = new Google_Service_Calendar_Event();
 //                        $organizer = new Google_Service_Calendar_EventOrganizer();
 
-                        //$organizer->setEmail($userEmail);
-                        //$organizer->setDisplayName($_SESSION['full_name']);
+                            //$organizer->setEmail($userEmail);
+                            //$organizer->setDisplayName($_SESSION['full_name']);
 
 //                        $event->setOrganizer($organizer);
 
-                        $attendee1 = new Google_Service_Calendar_EventAttendee();
-                        $attendee1->setEmail($userEmail);
-                        $attendees = [$attendee1];
-                        $event->attendees = $attendees; //person creating booking added to attendees index 0 as neither creator nor organizer is being wrtitten to when tried.
+                            $attendee1 = new Google_Service_Calendar_EventAttendee();
+                            $attendee1->setEmail($userEmail);
+                            $attendees = [$attendee1];
+                            $event->attendees = $attendees; //person creating booking added to attendees index 0 as neither creator nor organizer is being wrtitten to when tried.
 
-                        //$event->colorId = "#2952A3";
-                        $event->setColorId("5");
+                            //$event->colorId = "#2952A3";
+                            $event->setColorId("5");
 
-                        $event->setSummary($event_name); # name of event
+                            $event->setSummary($event_name); # name of event
 
-                        $event->setLocation($event_location); # make a predefined list
+                            $event->setLocation($event_location); # make a predefined list
 
-                        $start = new Google_Service_Calendar_EventDateTime();
-                        $start->setTimeZone('America/Jamaica');
-                        $start->setDateTime($start_time);
+                            $start = new Google_Service_Calendar_EventDateTime();
+                            $start->setTimeZone('America/Jamaica');
+                            $start->setDateTime($start_time);
 
-                        $event->setStart($start);
+                            $event->setStart($start);
 
-                        $end = new Google_Service_Calendar_EventDateTime();
-                        $end->setTimeZone('America/Jamaica');
-                        $end->setDateTime($end_time);
+                            $end = new Google_Service_Calendar_EventDateTime();
+                            $end->setTimeZone('America/Jamaica');
+                            $end->setDateTime($end_time);
 
-                        $event->setEnd($end);
+                            $event->setEnd($end);
 
-                        //41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com
-                        //mine  k1tphoccb98nsglm123se5aoa4@group.calendar.google.com
-                        $createdEvent = $this->service->events->insert('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com', $event);
+                            //41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com
+                            //mine  k1tphoccb98nsglm123se5aoa4@group.calendar.google.com
+                            $createdEvent = $this->service->events->insert('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com', $event);
 
-                        $this->redirectTo('index');
+                            $this->redirectTo('index');
+                        }
+                        else
+                        {
+                            $errors[] = "The selected time is already booked";
+                        }
                     }
                     else
                     {
@@ -304,7 +272,8 @@ class BookingsWebModule extends CalendarWebModule
                 $this->assign('end_time', $end_time);
                 $this->assign('end_date', $end_date);
 
-                if ($this->isOrganizer($event->email))
+
+                if ($this->isOrganizer($maker))
                 {
                     $this->assign('edit_url', $this->linkTo('update', $event_id));
                     $this->assign('delete_url', $this->linkTo('delete', $event_id));
@@ -335,10 +304,107 @@ class BookingsWebModule extends CalendarWebModule
 
                 break;
 
-            case 'list':
-                $current = $this->getArg('time', time(), FILTER_VALIDATE_INT);
-                $type     = $this->getArg('type', 'static');
-                $calendar = $this->getArg('calendar');
+            case 'list': //shows bookings made by user
+
+                $feed = $this->getArg('feed');
+
+                if (($feed != 'personal') && ($feed != 'participant'))
+                    $this->redirectTo('index');
+
+                $userDetails = $this->controller->getUserDetails($_SESSION['user_id'], $_SESSION['moodle_token']); //get the current users email address
+                $userEmail = $userDetails[0]['email']; //get the current users email address
+
+                $this->retrieveAccessToken();
+
+                $eventsList = [];
+
+                $events = $this->service
+                    ->events
+                    ->listEvents('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com');
+
+                while (true)
+                {
+                    foreach ($events->getItems() as $event)
+                    {
+                        $attendees = $event->getAttendees();
+
+                        if ($feed == 'personal') # events created by current user
+                        {
+                            var_dump($event->getAttendees()[0]->email);
+                            if (0 == strcmp($attendees[0]->email, $userEmail))
+                            {
+                                $begin = date("h:i a", strtotime($event->getStart()->dateTime));
+                                $end = date("h:i a", strtotime($event->getEnd()->dateTime));
+                                $confirmed = $event->getColorId();
+
+                                if($confirmed == 10)
+                                    $confirmation = "Event Confirmed";
+                                elseif($confirmed == 5)
+                                    $confirmation = "Confirmation Pending";
+
+                                $event = [
+                                    'title'     => $event->getSummary() . " (". $confirmation . ") ",
+                                    'subtitle'  => $begin . "-" . $end . " | " . sizeof($attendees) . " attending",
+                                    'url'       => $this->buildBreadcrumbURL('details', [
+                                        'calendarid'    => 'vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com',
+                                        'eventid'       => $event->getId(),
+                                    ])
+                                ];
+                                $eventsList[] = $event;
+                            }
+                        }
+                        else
+                        {
+                            if ($this->isAttendee($attendees, $userEmail) )
+                            {
+                                $begin = date("h:i a", strtotime($event->getStart()->dateTime));
+                                $end = date("h:i a", strtotime($event->getEnd()->dateTime));
+                                $confirmed = $event->getColorId();
+
+                                if($confirmed == 10)
+                                    $confirmation = "Event Confirmed";
+                                elseif($confirmed == 5)
+                                    $confirmation = "Confirmation Pending";
+
+                                $event = [
+                                    'title'     => $event->getSummary() . " (". $confirmation . ") ",
+                                    'subtitle'  => $begin . "-" . $end . " | " . sizeof($attendees) . " attending",
+                                    'url'       => $this->buildBreadcrumbURL('details', [
+                                        'calendarid'    => 'vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com',
+                                        'eventid'       => $event->getId(),
+                                    ])
+                                ];
+                                $eventsList[] = $event;
+                            }
+                        }
+
+                    }
+                    $pageToken = $events->getNextPageToken();
+                    if ($pageToken)
+                    {
+                        $optParams = [
+                            'pageToken' => $pageToken
+                        ];
+                        $events = $this->service->events->listEvents('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com', $optParams);
+
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                $this->assign('events', $eventsList);
+
+
+                $title = 'Gazeebo Bookings';
+
+                $dayRange = new DayRange(time());
+
+                $this->assign('feedTitle', $title);
+                $this->assign('events',  $eventsList);
+
+                $this->assign('create_url', $this->createLinkToCreate());
 
                 break;
 
@@ -416,7 +482,6 @@ class BookingsWebModule extends CalendarWebModule
                     }
                 }
 
-                $title = 'Placeholder';
                 $eventsToday = [];
 
                 $title = 'Gazeebo Bookings';
@@ -468,14 +533,6 @@ class BookingsWebModule extends CalendarWebModule
                         $this->redirectTo('index');
                     }
                 }
-
-                break;
-
-            case 'search':
-                if (!isset($_POST))
-                    $this->redirectTo('index');
-
-                $search = $_POST['search'];
 
                 break;
 
@@ -698,7 +755,10 @@ class BookingsWebModule extends CalendarWebModule
                 if ((($userStart >= $start_ts) && ($userStart <= $end_ts)) || (($userEnd >= $start_ts) && ($userEnd <= $end_ts)))
                 {
                     if ($location === $userLocation)
+                    {
+                        var_dump($event);
                         return $event;
+                    }
                 }
             }
             $pageToken = $events->getNextPageToken();
@@ -716,6 +776,16 @@ class BookingsWebModule extends CalendarWebModule
             }
         }
         return null;
+    }
+
+    private function isAttendee($attendee, $email)
+    {
+        for ($i = 1; $i < sizeof($attendee); $i++)
+        {
+            if (0 == strcmp($attendee[$i], $email))
+                return true;
+        }
+        return false;
     }
 
 //    function __construct()

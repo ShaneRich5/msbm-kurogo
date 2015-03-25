@@ -151,6 +151,9 @@ class BookingsWebModule extends CalendarWebModule
                         if ('PM' === $_POST['start-date-am-pm'])
                             $_POST['start-date-hour'] += 11; //original was causing an additional hor to be added to times 
 
+                        if ('AM' === $_POST['start-date-am-pm'])
+                            $_POST['start-date-hour'] -= 1; //original was causing an additional hor to be added to times
+
                         $start_time = $_POST['start-date-year']
                             . "-" . $_POST['start-date-month']
                             . "-" . $_POST['start-date-day'];
@@ -382,12 +385,12 @@ class BookingsWebModule extends CalendarWebModule
                         $endDate = substr($event['end']['dateTime'], 0, 10);
                         $cmpDate = date('Y-m-d', $current);
 
-                        if ((0 == strcmp($startDate, $cmpDate)) || (0 == strcmp($endDate, $cmpDate)))
-                        {
+                        //if ((0 == strcmp($startDate, $cmpDate)) || (0 == strcmp($endDate, $cmpDate)))
+                        //{
                             if($maker == $userEmail){
                                 $event = [
                                     'title'     => $event->getSummary() . " (" . $confirmation . ") ",
-                                    'subtitle'  => $begin . "-" . $end,//$event->getId(),
+                                    'subtitle'  => $startDate . "  " . $begin . "-" . $end,//$event->getId(),
                                     'url'       => $this->buildBreadcrumbURL('details', [
                                         'calendarid'    => 'vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com',
                                         'eventid'       => $event->getId(),
@@ -395,7 +398,7 @@ class BookingsWebModule extends CalendarWebModule
                                 ];
                                 $eventsList[] = $event;
                             }
-                        }
+                        //}
                     }
                     $pageToken = $events->getNextPageToken();
                     if ($pageToken)
@@ -414,7 +417,7 @@ class BookingsWebModule extends CalendarWebModule
 
                 $eventsToday = [];
 
-                $title = 'Gazeebo Bookings';
+                $title = 'All My Bookings';
 
                 $dayRange = new DayRange(time());
 
@@ -643,7 +646,7 @@ class BookingsWebModule extends CalendarWebModule
 
     public function retrieveAccessToken()
     {
-        $conn = mysqli_connect('localhost', 'root', 'root', 'kurogo');
+        $conn = mysqli_connect('localhost', 'root', 'kurogo', 'kurogo');
         if(!$conn){
             die('Connect Error: ' . mysqli_connect_error());
         }

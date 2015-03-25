@@ -117,6 +117,9 @@ class BookingsWebModule extends CalendarWebModule
                         if ('PM' === $_POST['start-date-am-pm'])
                             $_POST['start-date-hour'] += 11; //original was causing an additional hor to be added to times 
 
+                        if ('AM' === $_POST['start-date-am-pm'])
+                            $_POST['start-date-hour'] -= 1; //original was causing an additional hor to be added to times
+
                         $start_time = $_POST['start-date-year']
                             . "-" . $_POST['start-date-month']
                             . "-" . $_POST['start-date-day'];
@@ -377,7 +380,6 @@ class BookingsWebModule extends CalendarWebModule
                                 $eventsList[] = $event;
                             }
                         }
-
                     }
                     $pageToken = $events->getNextPageToken();
                     if ($pageToken)
@@ -397,7 +399,7 @@ class BookingsWebModule extends CalendarWebModule
                 $this->assign('events', $eventsList);
 
 
-                $title = 'Gazeebo Bookings';
+                $title = 'All My Bookings';
 
                 $dayRange = new DayRange(time());
 
@@ -608,7 +610,7 @@ class BookingsWebModule extends CalendarWebModule
 
     public function retrieveAccessToken()
     {
-        $conn = mysqli_connect('localhost', 'root', 'root', 'kurogo');
+        $conn = mysqli_connect('localhost', 'root', 'kurogo', 'kurogo');
         if(!$conn){
             die('Connect Error: ' . mysqli_connect_error());
         }

@@ -1,15 +1,18 @@
 {include file="findInclude:common/templates/header.tpl"}
 
 <div class="nonfocal">
-    <h1>New Event</h1>
+    <h1>Submit Booking Request</h1>
 </div>
 
 
 <form action="create" method="post">
 
     <div class="focal">
+        {if $error}
+            <div class="focal">{$error}</div>
+        {/if}
         <div class="focal">
-            <label for="event-name">Name: </label>
+            <label for="event-name">Booking Title: </label>
             <input id="event-name" type="text" name="event-name">
         </div>
 

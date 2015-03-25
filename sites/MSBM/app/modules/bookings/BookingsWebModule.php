@@ -61,13 +61,13 @@ class BookingsWebModule extends CalendarWebModule
                     ];
                 }
 
-                $options[] = [
-                        'title' => 'Booking Joined',
-                        'subtitle' => '',
-                        'url' => $this->buildBreadcrumbURL('list', [
-                            'feed'  =>  'participant',
-                        ]),
-                ];
+                //$options[] = [
+                //        'title' => 'Booking Joined',
+                //        'subtitle' => '',
+                //        'url' => $this->buildBreadcrumbURL('list', [
+                //            'feed'  =>  'participant',
+                //       ]),
+                //];
 
                 $this->assign('feeds', $options);
 
@@ -149,10 +149,10 @@ class BookingsWebModule extends CalendarWebModule
                         $event_location = $_POST['event-location'];
 
                         if ('PM' === $_POST['start-date-am-pm'])
-                            $_POST['start-date-hour'] += 11; //original was causing an additional hor to be added to times 
+                            $_POST['start-date-hour'] += 11; //original was causing an additional hour to be added to times 
 
                         if ('AM' === $_POST['start-date-am-pm'])
-                            $_POST['start-date-hour'] -= 1; //original was causing an additional hor to be added to times
+                            $_POST['start-date-hour'] -= 1; //original was causing an additional hour to be added to times
 
                         $start_time = $_POST['start-date-year']
                             . "-" . $_POST['start-date-month']
@@ -224,9 +224,13 @@ class BookingsWebModule extends CalendarWebModule
 
                         //41hloqnqe4a9pl0ngpocc2t92g@group.calendar.google.com
                         //mine  k1tphoccb98nsglm123se5aoa4@group.calendar.google.com
-                        $createdEvent = $this->service->events->insert('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com', $event);
-
-                        $this->redirectTo('index');
+                        try{
+                            $createdEvent = $this->service->events->insert('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com', $event);
+                        }catch(Exception $e){
+                            $this->assign('error', 'Please fill out the fields correctly');
+                        }
+                        if($e == NULL)
+                            $this->redirectTo('index');
                     }
                     else
                     {
@@ -608,27 +612,27 @@ class BookingsWebModule extends CalendarWebModule
     {
         return $locations = [
             [
-                'name'          =>  'gazebo_1',
+                'name'          =>  'Gazebo 1',
                 'description'   =>  ''
             ],
             [
-                'name'          =>  'gazebo_2',
+                'name'          =>  'Gazebo 2',
                 'description'   =>  ''
             ],
             [
-                'name'          =>  'gazebo_3',
+                'name'          =>  'Gazebo 3',
                 'description'   =>  ''
             ],
             [
-                'name'          =>  'gazebo_4',
+                'name'          =>  'Gazebo 4',
                 'description'   =>  ''
             ],
             [
-                'name'          =>  'gazebo_5',
+                'name'          =>  'Gazebo 5',
                 'description'   =>  ''
             ],
             [
-                'name'          =>  'gazebo_6',
+                'name'          =>  'Gazebo 6',
                 'description'   =>  ''
             ]
         ];

@@ -633,7 +633,7 @@ class BookingsWebModule extends CalendarWebModule
 
     public function retrieveAccessToken()
     {
-        $conn = mysqli_connect('localhost', 'root', 'root', 'kurogo');
+        $conn = mysqli_connect('localhost', 'root', 'kurogo', 'kurogo');
         if(!$conn){
             die('Connect Error: ' . mysqli_connect_error());
         }

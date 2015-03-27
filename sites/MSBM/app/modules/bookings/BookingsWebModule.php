@@ -37,7 +37,7 @@ class BookingsWebModule extends CalendarWebModule
         switch($this->page) {
             case 'index':
 
-                $this->assign('today',         mktime(0,0,0));
+                $this->assign('today', mktime(0, 0, 0));
                 $this->assign('dateFormat', $this->getLocalizedString("LONG_DATE_FORMAT"));
 
                 $this->retrieveAccessToken();
@@ -50,13 +50,12 @@ class BookingsWebModule extends CalendarWebModule
                     ],
                 ];
 
-                if (isset($_SESSION['moodle_token']))
-                {
+                if (isset($_SESSION['moodle_token'])) {
                     $options[] = [
-                        'title' => 'My Bookings',
-                        'subtitle' => '',
-                        'url' => $this->buildBreadcrumbURL('list', [
-                            'feed'  =>   'personal',
+                        'title'         => 'My Bookings',
+                        'subtitle'      => '',
+                        'url'           => $this->buildBreadcrumbURL('list', [
+                            'feed'          => 'personal',
                         ]),
                     ];
                 }
@@ -84,7 +83,7 @@ class BookingsWebModule extends CalendarWebModule
 
                 $locations = $this->getLocations(); # available locations
 
-                $userDetails = $this->controller->getUserDetails($_SESSION['user_id'], $_SESSION['moodle_token']);
+                $userDetails = $this->controller->getUserDetails($_SESSION['user_type'], $_SESSION['user_id'], $_SESSION['moodle_token']);
 
                 $userEmail = $userDetails[0]['email'];
 
@@ -136,8 +135,7 @@ class BookingsWebModule extends CalendarWebModule
                         else
                             $_POST['start-date-hour'] += 4;
 
-                        if ($_POST['start-date-hour'] >= 24)
-                        {
+                        if ($_POST['start-date-hour'] >= 24) {
                             $_POST['start-date-hour'] -= 24;
                             $next_day = true;
                         }
@@ -155,8 +153,7 @@ class BookingsWebModule extends CalendarWebModule
                         $end_time .= "T" . $_POST['start-date-hour']
                             . ":" . $_POST['start-date-minute'] . ":00.000";
 
-                        if (null == $this->isSlotBooked($start_time, $end_time, $event_location))
-                        {
+                        if (null == $this->isSlotBooked($start_time, $end_time, $event_location)) {
                             $event = new Google_Service_Calendar_Event();
 //                        $organizer = new Google_Service_Calendar_EventOrganizer();
 
@@ -190,23 +187,18 @@ class BookingsWebModule extends CalendarWebModule
                             $event->setEnd($end);
 
 
-                    
-                            try{
+                            try {
                                 $createdEvent = $this->service->events->insert('vu1bq6tvg5ogfmq5f5nlejo45o@group.calendar.google.com', $event);
-                            }catch(Exception $e){
+                            } catch (Exception $e) {
                                 $this->assign('error', 'Please fill out the fields correctly');
                             }
-                            if($e == NULL)
+                            if ($e == NULL)
 
                                 $this->redirectTo('index');
-                        }
-                        else
-                        {
+                        } else {
                             $errors[] = "The selected time is already booked";
                         }
-                    }
-                    else
-                    {
+                    } else {
                         $this->assign('errors', $errors);
                     }
                 }
@@ -219,7 +211,7 @@ class BookingsWebModule extends CalendarWebModule
 
                 $calendar_id = $this->getArg('calendarid');
                 $event_id = $this->getArg('eventid');
-                
+
                 $event = $this->service->events->get($calendar_id, $event_id);
 
 
@@ -244,13 +236,13 @@ class BookingsWebModule extends CalendarWebModule
 
                 $color_id = $event->getColorId();
                 //var_dump($color_id);
-                if($color_id == 10)
+                if ($color_id == 10)
                     $confirmation = "Event Confirmed";
                 elseif ($color_id == 5)
                     $confirmation = "Confirmation Pending";
                 else
                     $confirmation = "Event Denied!";
-                    
+
                 //var_dump($confirmation);
 
                 //$colors = $service->colors->get();colorId
@@ -281,8 +273,7 @@ class BookingsWebModule extends CalendarWebModule
                 $this->assign('end_date', $end_date);
 
 
-                if ($this->isOrganizer($maker))
-                {
+                if ($this->isOrganizer($maker)) {
                     $this->assign('edit_url', $this->linkTo('update', $event_id));
                     $this->assign('delete_url', $this->linkTo('delete', $event_id));
                 }
@@ -310,6 +301,30 @@ class BookingsWebModule extends CalendarWebModule
 
             case 'update':
 
+                $event_id = $this->getArg('eventid');
+                $calendar_id = $this->getArg('calendarid');
+
+                $this->retrieveAccessToken();
+
+                $event = $this->service->events->get($calendar_id, $event_id);
+
+                $attendees = $event->getAttendees();
+
+                $userDetails = $this->controller->getUserDetails($_SESSION['user_type'], $_SESSION['user_id'], $_SESSION['moodle_token']); //get the current users email address
+                $userEmail = $userDetails[0]['email']; //get the current users email address
+
+                if (0 != strcmp($attendees[0]->email, $userEmail))
+                {
+                    $this->redirectTo('details', [
+                        'calendarid'    =>  $calendar_id,
+                        'eventid'       =>  $event_id
+                    ]);
+                }
+
+                $this->assign('');
+
+                $updatedEvent = $this->service->events->update($calendar_id, $event_id, $event);
+
                 break;
 
             case 'list': //shows bookings made by user
@@ -319,7 +334,7 @@ class BookingsWebModule extends CalendarWebModule
                 if (($feed != 'personal') && ($feed != 'participant'))
                     $this->redirectTo('index');
 
-                $userDetails = $this->controller->getUserDetails($_SESSION['user_id'], $_SESSION['moodle_token']); //get the current users email address
+                $userDetails = $this->controller->getUserDetails($_SESSION['user_type'], $_SESSION['user_id'], $_SESSION['moodle_token']); //get the current users email address
                 $userEmail = $userDetails[0]['email']; //get the current users email address
                 var_dump($userDetails);
                 $this->retrieveAccessToken();
@@ -524,7 +539,9 @@ class BookingsWebModule extends CalendarWebModule
                         'password'  => $_POST['password'],
                     ];
 
-                    $result = $this->controller->getToken($credentials);
+                    $moodle_instance = $_POST['student-type'];
+
+                    $result = $this->controller->getToken($moodle_instance, $credentials);
 
                     # if unsuccessful, present user with error
                     # else, save the data to a cookie and proceed
@@ -534,9 +551,10 @@ class BookingsWebModule extends CalendarWebModule
                     {
                         $_SESSION['moodle_token'] = $result['token'];
 
-                        $userBooking = $this->controller->getUserId($_SESSION['moodle_token']);
+                        $userBooking = $this->controller->getUserId($moodle_instance, $_SESSION['user_type'], $_SESSION['moodle_token']);
                         $_SESSION['user_id'] = $userBooking['userid'];
                         $_SESSION['full_name'] = $userBooking['fullname'];
+                        $_SESSION['user_type'] = $moodle_instance;
                         $this->redirectTo('index');
                     }
                 }
@@ -615,7 +633,7 @@ class BookingsWebModule extends CalendarWebModule
 
     public function retrieveAccessToken()
     {
-        $conn = mysqli_connect('localhost', 'root', 'kurogo', 'kurogo');
+        $conn = mysqli_connect('localhost', 'root', 'root', 'kurogo');
         if(!$conn){
             die('Connect Error: ' . mysqli_connect_error());
         }
@@ -728,7 +746,7 @@ class BookingsWebModule extends CalendarWebModule
 
     private function isOrganizer($email)
     {
-        $userDetails = $this->controller->getUserDetails($_SESSION['user_id'], $_SESSION['moodle_token']);
+        $userDetails = $this->controller->getUserDetails($_SESSION['user_type'], $_SESSION['user_id'], $_SESSION['moodle_token']);
         return $email == $userDetails[0]['email'];
     }
 

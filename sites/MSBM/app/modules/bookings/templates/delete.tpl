@@ -10,5 +10,8 @@
     <input type="submit" value="Create Event">
 </form>
 
+<form action="logout" method="post">
+    <input type="submit" value="Logout">
+</form>
 
 {include file="findInclude:common/templates/footer.tpl"}

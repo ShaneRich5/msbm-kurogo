@@ -34,4 +34,8 @@
     <input type="submit" value="All Bookings">
 </form>
 
+<form action="logout" method="post">
+    <input type="submit" value="Logout">
+</form>
+
 {include file="findInclude:common/templates/footer.tpl"}

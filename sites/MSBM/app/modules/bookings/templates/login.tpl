@@ -11,6 +11,13 @@
             <label for="password">Password: </label>
             <input id="password" type="password" name="password">
         </p>
+
+        <p>
+            <label for="student-type">Program: </label>
+            <input type="radio" name="student-type" id="student-type" value="U" checked="true">Undergrad
+            <input type="radio" name="student-type" id="student-type" value="M">Masters
+        </p>
+
         <p>
             <input type="submit" value="Login">
         </p>

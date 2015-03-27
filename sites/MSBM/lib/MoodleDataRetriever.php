@@ -6,7 +6,8 @@
  * Time: 8:40 PM
  */
 
-//namespace MSBM\lib;
+define("MASTER_STUDENT", "M");
+define("UNDERGRAD_STUDENT", "U");
 
 class MoodleDataRetriever extends URLDataRetriever
 {
@@ -15,11 +16,15 @@ class MoodleDataRetriever extends URLDataRetriever
         'service' => 'moodlewsrestformat',
         'type' => 'json');
 
-    public function getToken($user)
+    public function getToken($moodle, $user)
     {
         # example of a call for user token
         # http://ourvle.mona.uwi.edu/login/token.php?username=620065739&password=19941206&service=moodle_mobile_app
-        $this->setBaseURL('http://ourvle.mona.uwi.edu/login/token.php');
+        if (0 == strcmp(MASTER_STUDENT, $moodle))
+            $this->setBaseURL('http://173.45.230.79/learning/login/token.php');
+        else
+            $this->setBaseURL('http://ourvle.mona.uwi.edu/login/token.php');
+
         $this->addParameter('username', $user['username']);
         $this->addParameter('password', $user['password']);
         $this->addParameter('service', 'moodle_mobile_app');
@@ -29,11 +34,16 @@ class MoodleDataRetriever extends URLDataRetriever
         return $token;
     }
 
-    public function getUserId($wstoken)
+    public function getUserId($moodle, $wstoken)
     {
         # example of a call for user id
         # http://ourvle.mona.uwi.edu/webservice/rest/server.php?wstoken=e23c35eeda5b1799ffcea51cec0c19b2&wsfunction=core_webservice_get_site_info
-        $this->setBaseURL('http://ourvle.mona.uwi.edu/webservice/rest/server.php');
+
+        if (0 == strcmp(MASTER_STUDENT, $moodle))
+            $this->setBaseURL('http://173.45.230.79/learning/login/token.php');
+        else
+            $this->setBaseURL('http://ourvle.mona.uwi.edu/webservice/rest/server.php');
+
         $this->addParameter('wstoken', $wstoken);
         $this->addParameter('wsfunction', 'core_webservice_get_site_info');
         $this->addParameter($this->format['service'], $this->format['type']);
@@ -41,11 +51,12 @@ class MoodleDataRetriever extends URLDataRetriever
         return $this->getData($response);
     }
 
-    public function getCourses($params)
+    public function getCourses($moodle, $params)
     {
-        # example of a call for user's courses
-        # http://ourvle.mona.uwi.edu/webservice/rest/server.php?wstoken=47aae912ad404c743d7b66ad0c6c0742&wsfunction=core_enrol_get_users_courses&userid=6150&moodlewsrestformat=json
-        $this->setBaseUrl('http://ourvle.mona.uwi.edu/webservice/rest/server.php');
+        if (0 == strcmp(MASTER_STUDENT, $moodle))
+            $this->setBaseURL('http://173.45.230.79/learning/login/token.php');
+        else
+            $this->setBaseURL('http://ourvle.mona.uwi.edu/webservice/rest/server.php');
         $this->addParameter('wstoken', $params['wstoken']);
         $this->addParameter('wsfunction', $params['wsfunction']);
         $this->addParameter('userid', $params['userid']);
@@ -54,11 +65,13 @@ class MoodleDataRetriever extends URLDataRetriever
         return $this->getData($response);
     }
 
-    public function getContent($courseid, $token)
+    public function getContent($moodle, $courseid, $token)
     {
-        # gets course content
-        # http://ourvle.mona.uwi.edu/webservice/rest/server.php?wstoken=47aae912ad404c743d7b66ad0c6c0742&wsfunction=core_course_get_contents&courseid=76
-        $this->setBaseURL('http://ourvle.mona.uwi.edu/webservice/rest/server.php');
+        if (0 == strcmp(MASTER_STUDENT, $moodle))
+            $this->setBaseURL('http://173.45.230.79/learning/login/token.php');
+        else
+            $this->setBaseURL('http://ourvle.mona.uwi.edu/webservice/rest/server.php');
+
         $this->addParameter('courseid', $courseid);
         $this->addParameter('wstoken', $token);
         $this->addParameter('wsfunction', 'core_course_get_contents');
@@ -67,9 +80,13 @@ class MoodleDataRetriever extends URLDataRetriever
         return $this->getData($response);
     }
 
-    public function getUserDetails($userid, $token)
+    public function getUserDetails($moodle, $userid, $token)
     {
-        $this->setBaseURL('http://ourvle.mona.uwi.edu/webservice/rest/server.php');
+        if (0 == strcmp(MASTER_STUDENT, $moodle))
+            $this->setBaseURL('http://173.45.230.79/learning/login/token.php');
+        else
+            $this->setBaseURL('http://ourvle.mona.uwi.edu/webservice/rest/server.php');
+
         $this->addParameter('wstoken', $token);
         $this->addParameter('wsfunction', 'core_user_get_users_by_id');
         $this->addParameter('userids[0]', $userid);

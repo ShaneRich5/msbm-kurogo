@@ -321,7 +321,7 @@ class BookingsWebModule extends CalendarWebModule
 
                 $userDetails = $this->controller->getUserDetails($_SESSION['user_id'], $_SESSION['moodle_token']); //get the current users email address
                 $userEmail = $userDetails[0]['email']; //get the current users email address
-
+                var_dump($userDetails);
                 $this->retrieveAccessToken();
 
                 $eventsList = [];

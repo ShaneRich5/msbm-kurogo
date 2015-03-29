@@ -14,7 +14,7 @@
 }
 .banner-message, a.banner-message { 
   display: block;
-  color: #ccc;
+  color: #ccc; /* #FF0000 */
   text-decoration: none;
   background-image: none; 
   padding: 6px; 

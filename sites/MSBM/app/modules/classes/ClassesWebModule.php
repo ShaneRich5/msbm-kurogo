@@ -508,58 +508,48 @@ class ClassesWebModule extends WebModule {
         break;
 
       case 'index':
-        if ($userCalendar = $this->getDefaultFeed('user')) {
-            $this->assign('selectedFeed', 'user|' . $userCalendar);
-            $feed = $this->getFeed($userCalendar, 'user');
-            $feeds = $this->getFeeds('user');
-            $upcomingEvents = array();
-            if ($event = $feed->getNextEvent(true)) {
-                $upcomingEvents[] = $this->linkForItem($event, array(
-                    'type'    =>'user',
-                    'calendar'=>$userCalendar
-                ));
-            } else {
-                $upcomingEvents[] = array(
-                    'title'=>$this->getLocalizedString('NO_EVENTS_REMAINING')
-                );
-            }
-            
-            $upcomingEvents[] = array(
-                'title'=>$this->getLocalizedString('MY_CALENDAR'),
-                'url'=>$this->dayURL(time(), 'user', $userCalendar)
-            );
-            if (count($feeds)>1) {
-                $upcomingEvents[] = array(
-                    'title'=>$this->getLocalizedString('OTHER_CALENDARS'),
-                    'url'=>$this->buildBreadcrumbURL('user', array())
-                );
-            }
-            $this->assign('upcomingEvents', $upcomingEvents);
-        }
+        $current = $this->getArg('time', time(), FILTER_VALIDATE_INT);
+        $type    = $this->getArg('type', 'static');
+        $calendar= $this->getArg('calendar', $this->getDefaultFeed($type));
+        $next    = strtotime("+1 day", $current);
+        $prev    = strtotime("-1 day", $current);
         
-        if ($resourceFeeds = $this->getFeeds('resource')) {
-            $resources = array(
-                array(
-                    'title'=>$this->getLocalizedString('RESOURCES'),
-                    'url'  =>$this->buildBreadcrumbURL('resources', array())
-                )
+        $feed = $this->getFeed($calendar, $type);
+        $title    = $this->getFeedTitle($calendar, $type);
+        $this->setLogData($type . ':' . $calendar, $title);
+        
+        $start = new DateTime(date('Y-m-d H:i:s', $current), $this->timezone);
+        $start->setTime(0,0,0);
+        $end = clone $start;
+        $end->setTime(23,59,59);
+
+        $feed->setStartDate($start);
+        $feed->setEndDate($end);
+        $iCalEvents = $feed->items();
+                
+        $events = array();
+        foreach($iCalEvents as $iCalEvent) {
+
+            $events[] = $this->linkForItem($iCalEvent, array(
+                'calendar' =>$calendar,
+                'type'     =>$type)
             );
-            $this->assign('resources', $resources);
         }
 
-        //get the categories
-        if ($categories = $this->getEventCategories()) {
-            $this->assign('categories', $categories);
-            $this->assign('categoryHeading', $this->getLocalizedString('CATEGORY_HEADING'));
-        }
+        $dayRange = new DayRange(time());
 
-        $this->loadPageConfigArea('index','calendarPages');
-        $this->assign('today',         mktime(0,0,0));
-        $this->assign('dateFormat', $this->getLocalizedString("LONG_DATE_FORMAT"));
-        $this->assign('placeholder', $this->getLocalizedString('SEARCH_TEXT'));
-        $this->assign('searchOptions', $this->searchOptions());
-        $this->assign('feeds',  $this->getFeedsByType($totalFeeds));
-        $this->assign('totalFeeds', $totalFeeds);
+        $this->assign('feedTitle', $title);
+        $this->assign('type',    $type);
+        $this->assign('calendar',$calendar);
+        $this->assign('current', $current);
+        $this->assign('next',    $next);
+        $this->assign('prev',    $prev);
+        $this->assign('nextURL', $this->dayURL($next, $type, $calendar, false));
+        $this->assign('prevURL', $this->dayURL($prev, $type, $calendar, false));
+        $this->assign('titleDateFormat', $this->getLocalizedString('MEDIUM_DATE_FORMAT'));
+        $this->assign('linkDateFormat', $this->getLocalizedString('SHORT_DATE_FORMAT'));
+        $this->assign('isToday', $dayRange->contains(new TimeRange($current)));
+        $this->assign('events',  $events);        
         break;
       
       case 'categories':

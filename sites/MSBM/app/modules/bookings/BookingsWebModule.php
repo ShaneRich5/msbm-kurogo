@@ -39,9 +39,12 @@ class BookingsWebModule extends CalendarWebModule
 
                 $this->assign('today', mktime(0, 0, 0));
                 $this->assign('dateFormat', $this->getLocalizedString("LONG_DATE_FORMAT"));
-
-                $this->retrieveAccessToken();
-
+                try {
+                    $this->retrieveAccessToken();
+                } catch (Exception $e) {
+                    header("Refresh:0");
+                }
+                
                 $options = [
                     [
                         'title' => 'All Bookings',
@@ -77,6 +80,9 @@ class BookingsWebModule extends CalendarWebModule
                 break;
 
             case 'create':
+
+                //var_dump($_SESSION['moodle_token']);
+                var_dump($_SESSION['user_id']);
                 $this->isMoodleDataSet();
 
                 $this->retrieveAccessToken();
@@ -130,10 +136,17 @@ class BookingsWebModule extends CalendarWebModule
 //                            . "-" . $_POST['start-date-month']
 //                            . "-" . $_POST['start-date-day'];
 
-                        if ($_POST['event-duration'] == 2)
+                        if ($_POST['event-duration'] == 1)
+                        
+                            $_POST['start-date-hour'] += 1;
+
+                        elseif($_POST['event-duration'] == 2)
+                        
                             $_POST['start-date-hour'] += 2;
+                        
                         else
-                            $_POST['start-date-hour'] += 4;
+                        
+                            $_POST['start-date-hour'] += 4; 
 
                         if ($_POST['start-date-hour'] >= 24) {
                             $_POST['start-date-hour'] -= 24;
@@ -193,9 +206,9 @@ class BookingsWebModule extends CalendarWebModule
                                 $this->assign('error', 'Please fill out the fields correctly');
                             }
                             if ($e == NULL)
-
-                                $this->redirectTo('index');
+                                $this->redirectTo('day');
                         } else {
+                            $this->assign('error', 'The selected time is already booked');
                             $errors[] = "The selected time is already booked";
                         }
                     } else {
@@ -336,7 +349,7 @@ class BookingsWebModule extends CalendarWebModule
 
                 $userDetails = $this->controller->getUserDetails($_SESSION['user_type'], $_SESSION['user_id'], $_SESSION['moodle_token']); //get the current users email address
                 $userEmail = $userDetails[0]['email']; //get the current users email address
-                var_dump($userDetails);
+                //var_dump($userDetails);
                 $this->retrieveAccessToken();
 
                 $eventsList = [];

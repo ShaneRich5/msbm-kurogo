@@ -21,7 +21,13 @@ class CoursesWebModule extends WebModule
 //                $_SESSION['moodle_token'];
                 # if the user's token has been saved in memory, skip this page,
                 # else, display login page
-                if (isset($_SESSION['moodle_token']) && isset($_SESSION['user_id']) && isset($_SESSION['user_type']))
+                var_dump('token' . $_SESSION['moodle_token']);
+                var_dump('user ID' . $_SESSION['user_id']);
+
+                $userData = $this->controller->getUserId('MASTER_STUDENT', $_SESSION['moodle_token']);
+                var_dump('user data' . $userData['user_id']);
+
+                if (isset($_SESSION['moodle_token']) && isset($_SESSION['user_id']))
                 {
                     $this->redirectTo('all');
                 }
@@ -60,15 +66,24 @@ class CoursesWebModule extends WebModule
                 break;
 
             case 'all':
+                var_dump($_SESSION['user_type']);
                 if ((!isset($_SESSION['moodle_token'])) && (!isset($_SESSION['user_id'])))
                     $this->redirectTo('index');
 
                 $userInfo = $this->controller->getUserDetails($_SESSION['user_type'], $_SESSION['user_id'], $_SESSION['moodle_token']);
 
+                if(0 == strcmp(MASTER_STUDENT,$_SESSION['user_type'])){
+                    var_dump('EMINEM');
+                    $moodle_version_wsfunction = 'moodle_enrol_get_users_courses';
+                }else{
+                     var_dump('Hammer Time');
+                     $moodle_version_wsfunction = 'core_enrol_get_users_courses';
+                }
+
                 # Retrieve json list of courses
                 $coursesParam = array(
                     'wstoken' => $_SESSION['moodle_token'],
-                    'wsfunction' => 'core_enrol_get_users_courses',
+                    'wsfunction' => $moodle_version_wsfunction,
                     'userid' => $_SESSION['user_id'],
                 );
 

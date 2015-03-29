@@ -43,7 +43,8 @@
         <h1>Duration</h1>
 
         <div class="focal">
-            <input type="radio" name="event-duration" value="2" checked="true">2 hours
+            <input type="radio" name="event-duration" value="1" checked="true">1 hour    
+            <input type="radio" name="event-duration" value="2">2 hours    
             <input type="radio" name="event-duration" value="4">4 hours
         </div>
 
